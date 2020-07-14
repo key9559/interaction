@@ -277,6 +277,19 @@ button {
   color: white;
 }
 
+.buttons_wrap1 .btn6 {
+  background: -webkit-gradient(linear, right top, left top, from(#009fff), color-stop(50%, #ff00ff), to(#009fff));
+  background: linear-gradient(to left, #009fff 0%, #ff00ff 50%, #009fff 100%);
+  background-size: 200%;
+  background-position: left center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.buttons_wrap1 .btn6:hover {
+  background-position: right center;
+}
+
 .buttons_wrap2 .btn {
   border: 0px none;
   -webkit-transition: all 0.3s;

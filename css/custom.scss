@@ -222,6 +222,15 @@ button{
             }
         }
     }
+    .btn6{
+        background: linear-gradient(to left, #009fff 0%, #ff00ff 50%, #009fff 100%);
+        background-size: 200%;
+        background-position: left center;
+        transition: all 0.5s;
+        &:hover {
+            background-position: right center;
+        }
+    }
 }
 .buttons_wrap2 {
     .btn{
