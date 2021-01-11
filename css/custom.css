@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
   -webkit-box-sizing: border-box;
@@ -6,7 +7,7 @@ html, body {
   background-color: #e5e5e5;
   font-size: 15px;
   font-weight: 500;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 body * {
@@ -61,7 +62,7 @@ button {
 }
 
 .buttons_wrap1 .btn1:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 44px;
@@ -93,7 +94,7 @@ button {
 }
 
 .buttons_wrap1 .btn2:before, .buttons_wrap1 .btn2:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   width: 0px;
@@ -114,8 +115,9 @@ button {
   right: 0px;
 }
 
-.buttons_wrap1 .btn2 ._txt:before, .buttons_wrap1 .btn2 ._txt:after {
-  content: '';
+.buttons_wrap1 .btn2 ._txt:before,
+.buttons_wrap1 .btn2 ._txt:after {
+  content: "";
   display: block;
   position: absolute;
   height: 0px;
@@ -163,7 +165,7 @@ button {
 }
 
 .buttons_wrap1 .btn3:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0px;
@@ -189,7 +191,7 @@ button {
 }
 
 .buttons_wrap1 .btn4:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0px;
@@ -219,7 +221,7 @@ button {
 }
 
 .buttons_wrap1 .btn5:before, .buttons_wrap1 .btn5:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   width: 100%;
@@ -240,8 +242,9 @@ button {
   left: 0px;
 }
 
-.buttons_wrap1 .btn5 ._txt:before, .buttons_wrap1 .btn5 ._txt:after {
-  content: '';
+.buttons_wrap1 .btn5 ._txt:before,
+.buttons_wrap1 .btn5 ._txt:after {
+  content: "";
   display: block;
   position: absolute;
   width: 3px;
@@ -360,8 +363,10 @@ button {
   position: relative;
 }
 
-.buttons_wrap2 .btn5:before, .buttons_wrap2 .btn5:after, .buttons_wrap2 .btn5 ._txt:before, .buttons_wrap2 .btn5 ._txt:after {
-  content: '';
+.buttons_wrap2 .btn5:before, .buttons_wrap2 .btn5:after,
+.buttons_wrap2 .btn5 ._txt:before,
+.buttons_wrap2 .btn5 ._txt:after {
+  content: "";
   display: block;
   position: absolute;
   width: 0%;
@@ -379,7 +384,8 @@ button {
   left: 0px;
 }
 
-.buttons_wrap2 .btn5 ._txt:before, .buttons_wrap2 .btn5 ._txt:after {
+.buttons_wrap2 .btn5 ._txt:before,
+.buttons_wrap2 .btn5 ._txt:after {
   width: 1px;
   height: 0%;
 }
@@ -422,8 +428,10 @@ button {
   position: relative;
 }
 
-.buttons_wrap2 .btn6:before, .buttons_wrap2 .btn6:after, .buttons_wrap2 .btn6 ._txt:before, .buttons_wrap2 .btn6 ._txt:after {
-  content: '';
+.buttons_wrap2 .btn6:before, .buttons_wrap2 .btn6:after,
+.buttons_wrap2 .btn6 ._txt:before,
+.buttons_wrap2 .btn6 ._txt:after {
+  content: "";
   display: block;
   position: absolute;
   width: 5px;
@@ -443,7 +451,8 @@ button {
   right: 0px;
 }
 
-.buttons_wrap2 .btn6 ._txt:before, .buttons_wrap2 .btn6 ._txt:after {
+.buttons_wrap2 .btn6 ._txt:before,
+.buttons_wrap2 .btn6 ._txt:after {
   width: 1px;
   height: 5px;
 }
@@ -467,7 +476,8 @@ button {
   width: 100%;
 }
 
-.buttons_wrap2 .btn6:hover ._txt:before, .buttons_wrap2 .btn6:hover ._txt:after {
+.buttons_wrap2 .btn6:hover ._txt:before,
+.buttons_wrap2 .btn6:hover ._txt:after {
   height: 100%;
 }
 
@@ -475,8 +485,10 @@ button {
   position: relative;
 }
 
-.buttons_wrap2 .btn7:before, .buttons_wrap2 .btn7:after, .buttons_wrap2 .btn7 ._txt:before, .buttons_wrap2 .btn7 ._txt:after {
-  content: '';
+.buttons_wrap2 .btn7:before, .buttons_wrap2 .btn7:after,
+.buttons_wrap2 .btn7 ._txt:before,
+.buttons_wrap2 .btn7 ._txt:after {
+  content: "";
   display: block;
   position: absolute;
   width: 100%;
@@ -496,7 +508,8 @@ button {
   right: 0px;
 }
 
-.buttons_wrap2 .btn7 ._txt:before, .buttons_wrap2 .btn7 ._txt:after {
+.buttons_wrap2 .btn7 ._txt:before,
+.buttons_wrap2 .btn7 ._txt:after {
   width: 1px;
   height: 100%;
 }
@@ -512,7 +525,7 @@ button {
 }
 
 .buttons_wrap2 .btn7 .border:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: 0px;
@@ -564,6 +577,38 @@ button {
   text-shadow: none;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
+}
+
+.buttons_wrap2 .btn8 ._txt {
+  position: relative;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.buttons_wrap2 .btn8:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.buttons_wrap2 .btn8:hover ._txt {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  opacity: 0;
+}
+
+.buttons_wrap2 .btn8:hover:after {
+  top: 0;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  opacity: 1;
 }
 
 .buttons_wrap3 .btn {
@@ -619,7 +664,7 @@ button {
 }
 
 .buttons_wrap4 .btn1:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 7px;
