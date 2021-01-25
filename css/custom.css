@@ -62,11 +62,11 @@ button {
 }
 
 .buttons_wrap1 .btn1:before {
-  content: "";
-  display: block;
   position: absolute;
   top: 44px;
-  left: 0%;
+  left: 0;
+  content: "";
+  display: block;
   width: 202px;
   height: 3px;
   background: -webkit-gradient(linear, right top, left top, from(#ff00ff), color-stop(50%, #009fff), to(#ff00ff));
@@ -96,7 +96,6 @@ button {
 .buttons_wrap1 .btn2:before, .buttons_wrap1 .btn2:after {
   content: "";
   display: block;
-  position: absolute;
   width: 0px;
   height: 3px;
   background: -webkit-gradient(linear, left top, right top, from(#ff00ff), to(#009fff));
@@ -106,20 +105,23 @@ button {
 }
 
 .buttons_wrap1 .btn2:before {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .buttons_wrap1 .btn2:after {
-  bottom: 0px;
-  right: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
 }
 
 .buttons_wrap1 .btn2 ._txt:before,
 .buttons_wrap1 .btn2 ._txt:after {
   content: "";
   display: block;
-  position: absolute;
   height: 0px;
   width: 3px;
   -webkit-transition: all 0.2s;
@@ -127,14 +129,18 @@ button {
 }
 
 .buttons_wrap1 .btn2 ._txt:before {
-  right: 0px;
-  top: 0px;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
   background-color: #009fff;
 }
 
 .buttons_wrap1 .btn2 ._txt:after {
-  left: 0px;
-  bottom: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
   background-color: #ff00ff;
 }
 
@@ -165,11 +171,11 @@ button {
 }
 
 .buttons_wrap1 .btn3:before {
+  position: absolute;
+  top: 0;
+  left: -33px;
   content: "";
   display: block;
-  position: absolute;
-  top: 0px;
-  left: -33px;
   width: 20px;
   height: 100%;
   -webkit-transform: skew(-30deg);
@@ -191,11 +197,11 @@ button {
 }
 
 .buttons_wrap1 .btn4:before {
+  position: absolute;
+  top: 0;
+  left: 0;
   content: "";
   display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
   width: 0%;
   height: 100%;
   background: -webkit-gradient(linear, right top, left top, from(#009fff), to(#ff00ff));
@@ -223,7 +229,6 @@ button {
 .buttons_wrap1 .btn5:before, .buttons_wrap1 .btn5:after {
   content: "";
   display: block;
-  position: absolute;
   width: 100%;
   height: 3px;
   background: -webkit-gradient(linear, right top, left top, from(#009fff), to(#ff00ff));
@@ -233,33 +238,39 @@ button {
 }
 
 .buttons_wrap1 .btn5:before {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .buttons_wrap1 .btn5:after {
-  bottom: 0px;
-  left: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
 }
 
 .buttons_wrap1 .btn5 ._txt:before,
 .buttons_wrap1 .btn5 ._txt:after {
   content: "";
   display: block;
-  position: absolute;
   width: 3px;
   height: 100%;
 }
 
 .buttons_wrap1 .btn5 ._txt:before {
-  top: 0px;
-  right: 0px;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
   background-color: #009fff;
 }
 
 .buttons_wrap1 .btn5 ._txt:after {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: #ff00ff;
 }
 
@@ -291,6 +302,36 @@ button {
 
 .buttons_wrap1 .btn6:hover {
   background-position: right center;
+}
+
+.buttons_wrap1 .btn7 {
+  position: relative;
+}
+
+.buttons_wrap1 .btn7:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  display: block;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background-color: #e5e5e5;
+  z-index: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.buttons_wrap1 .btn7 ._txt {
+  position: relative;
+  z-index: 1;
+}
+
+.buttons_wrap1 .btn7:hover:after {
+  width: 0;
+  height: 0;
 }
 
 .buttons_wrap2 .btn {
@@ -368,20 +409,22 @@ button {
 .buttons_wrap2 .btn5 ._txt:after {
   content: "";
   display: block;
-  position: absolute;
   width: 0%;
   height: 1px;
   background-color: #000;
 }
 
 .buttons_wrap2 .btn5:before {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .buttons_wrap2 .btn5:after {
-  bottom: 0px;
-  left: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
 }
 
 .buttons_wrap2 .btn5 ._txt:before,
@@ -391,13 +434,16 @@ button {
 }
 
 .buttons_wrap2 .btn5 ._txt:before {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .buttons_wrap2 .btn5 ._txt:after {
-  top: 0px;
-  right: 0px;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
 }
 
 .buttons_wrap2 .btn5:hover:before {
@@ -433,7 +479,6 @@ button {
 .buttons_wrap2 .btn6 ._txt:after {
   content: "";
   display: block;
-  position: absolute;
   width: 5px;
   height: 1px;
   background-color: #000;
@@ -442,13 +487,17 @@ button {
 }
 
 .buttons_wrap2 .btn6:before {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .buttons_wrap2 .btn6:after {
-  bottom: 0px;
-  right: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
 }
 
 .buttons_wrap2 .btn6 ._txt:before,
@@ -458,13 +507,17 @@ button {
 }
 
 .buttons_wrap2 .btn6 ._txt:before {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .buttons_wrap2 .btn6 ._txt:after {
-  bottom: 0px;
-  right: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
 }
 
 .buttons_wrap2 .btn6:hover {
@@ -490,7 +543,6 @@ button {
 .buttons_wrap2 .btn7 ._txt:after {
   content: "";
   display: block;
-  position: absolute;
   width: 100%;
   height: 1px;
   background-color: #000;
@@ -499,13 +551,17 @@ button {
 }
 
 .buttons_wrap2 .btn7:before {
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .buttons_wrap2 .btn7:after {
-  bottom: 0px;
-  right: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
 }
 
 .buttons_wrap2 .btn7 ._txt:before,
@@ -515,21 +571,26 @@ button {
 }
 
 .buttons_wrap2 .btn7 ._txt:before {
-  top: 0px;
-  right: 0px;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
 }
 
 .buttons_wrap2 .btn7 ._txt:after {
-  bottom: 0px;
-  left: 0px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
 }
 
 .buttons_wrap2 .btn7 .border:before {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
   content: "";
   display: block;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
   width: 0px;
   height: 3px;
   background-color: #000;
@@ -586,10 +647,10 @@ button {
 }
 
 .buttons_wrap2 .btn8:after {
-  content: attr(data-text);
   position: absolute;
   top: 10px;
   left: 0;
+  content: attr(data-text);
   width: 100%;
   opacity: 0;
   -webkit-transform: rotateX(-90deg);
@@ -647,6 +708,68 @@ button {
   text-shadow: none;
 }
 
+.buttons_wrap3 .btn4 {
+  position: relative;
+}
+
+.buttons_wrap3 .btn4:before, .buttons_wrap3 .btn4:after {
+  content: "";
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 2px;
+  height: 0%;
+  background-color: #000;
+}
+
+.buttons_wrap3 .btn4 ._txt:before,
+.buttons_wrap3 .btn4 ._txt:after {
+  content: "";
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+}
+
+.buttons_wrap3 .btn4:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.buttons_wrap3 .btn4:after {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+
+.buttons_wrap3 .btn4 ._txt:before {
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+}
+
+.buttons_wrap3 .btn4 ._txt:after {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+}
+
+.buttons_wrap3 .btn4:hover:before, .buttons_wrap3 .btn4:hover:after {
+  height: 100%;
+}
+
+.buttons_wrap3 .btn4:hover ._txt:before,
+.buttons_wrap3 .btn4:hover ._txt:after {
+  width: 100%;
+}
+
 .buttons_wrap4 .btn {
   border: 3px solid #666;
   border-radius: 10px;
@@ -664,11 +787,11 @@ button {
 }
 
 .buttons_wrap4 .btn1:before {
-  content: "";
-  display: block;
   position: absolute;
   top: 7px;
   left: 8px;
+  content: "";
+  display: block;
   width: 5px;
   height: 20px;
   border-radius: 5px;

@@ -1,3 +1,19 @@
+@charset "UTF-8";
+
+//mixin
+@mixin absolute($t: 0, $l: 0, $b: null, $r: null) {
+  position: absolute;
+
+  @if $t {
+    top: if($b, auto, $t);
+    bottom: $b;
+
+    left: if($r, auto, $l);
+    right: if($l == 0 or $l, $r, $l);
+  }
+}
+
+// reset
 html,
 body {
   margin: 0px;
@@ -18,6 +34,8 @@ button {
   outline: 0px none;
   background-color: transparent;
 }
+
+//style
 .buttons_wrap {
   max-width: 1200px;
   margin: 50px auto;
@@ -51,11 +69,10 @@ button {
     color: transparent;
     overflow: hidden;
     &:before {
+      @include absolute($t: 44px);
+
       content: "";
       display: block;
-      position: absolute;
-      top: 44px;
-      left: 0%;
       width: 202px;
       height: 3px;
       background: linear-gradient(
@@ -84,37 +101,33 @@ button {
     &:after {
       content: "";
       display: block;
-      position: absolute;
       width: 0px;
       height: 3px;
       background: linear-gradient(to right, #ff00ff 0%, #009fff 100%);
       transition: all 0.2s;
     }
     &:before {
-      top: 0px;
-      left: 0px;
+      @include absolute();
     }
     &:after {
-      bottom: 0px;
-      right: 0px;
+      @include absolute($b: 0, $r: 0);
     }
     ._txt:before,
     ._txt:after {
       content: "";
       display: block;
-      position: absolute;
       height: 0px;
       width: 3px;
       transition: all 0.2s;
     }
     ._txt:before {
-      right: 0px;
-      top: 0px;
+      @include absolute($r: 0);
+
       background-color: #009fff;
     }
     ._txt:after {
-      left: 0px;
-      bottom: 0px;
+      @include absolute($b: 0);
+
       background-color: #ff00ff;
     }
     &:hover {
@@ -138,11 +151,10 @@ button {
   .btn3 {
     overflow: hidden;
     &:before {
+      @include absolute($l: -33px);
+
       content: "";
       display: block;
-      position: absolute;
-      top: 0px;
-      left: -33px;
       width: 20px;
       height: 100%;
       transform: skew(-30deg);
@@ -158,11 +170,10 @@ button {
     color: #009fff;
     transition: all 0.3s;
     &:before {
+      @include absolute();
+
       content: "";
       display: block;
-      position: absolute;
-      top: 0px;
-      left: 0px;
       width: 0%;
       height: 100%;
       background: linear-gradient(to left, #009fff, #ff00ff);
@@ -184,36 +195,32 @@ button {
     &:after {
       content: "";
       display: block;
-      position: absolute;
       width: 100%;
       height: 3px;
       background: linear-gradient(to left, #009fff, #ff00ff);
       transition: all 0.5s;
     }
     &:before {
-      top: 0px;
-      left: 0px;
+      @include absolute();
     }
     &:after {
-      bottom: 0px;
-      left: 0px;
+      @include absolute($b: 0, $r: 0);
     }
     ._txt:before,
     ._txt:after {
       content: "";
       display: block;
-      position: absolute;
       width: 3px;
       height: 100%;
     }
     ._txt:before {
-      top: 0px;
-      right: 0px;
+      @include absolute($r: 0);
+
       background-color: #009fff;
     }
     ._txt:after {
-      top: 0px;
-      left: 0px;
+      @include absolute();
+
       background-color: #ff00ff;
     }
     ._txt {
@@ -240,6 +247,31 @@ button {
     transition: all 0.5s;
     &:hover {
       background-position: right center;
+    }
+  }
+  .btn7 {
+    position: relative;
+    &:after {
+      @include absolute($t: 50%, $l: 50%);
+
+      content: "";
+      display: block;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      background-color: #e5e5e5;
+      z-index: 0;
+      transition: all 0.3s;
+    }
+    ._txt {
+      position: relative;
+      z-index: 1;
+    }
+    &:hover {
+      &:after {
+        width: 0;
+        height: 0;
+      }
     }
   }
 }
@@ -292,18 +324,15 @@ button {
     ._txt:after {
       content: "";
       display: block;
-      position: absolute;
       width: 0%;
       height: 1px;
       background-color: #000;
     }
     &:before {
-      top: 0px;
-      left: 0px;
+      @include absolute();
     }
     &:after {
-      bottom: 0px;
-      left: 0px;
+      @include absolute($b: 0);
     }
     ._txt:before,
     ._txt:after {
@@ -311,12 +340,10 @@ button {
       height: 0%;
     }
     ._txt:before {
-      top: 0px;
-      left: 0px;
+      @include absolute();
     }
     ._txt:after {
-      top: 0px;
-      right: 0px;
+      @include absolute($r: 0);
     }
     &:hover {
       &:before {
@@ -345,19 +372,16 @@ button {
     ._txt:after {
       content: "";
       display: block;
-      position: absolute;
       width: 5px;
       height: 1px;
       background-color: #000;
       transition: all 0.3s;
     }
     &:before {
-      top: 0px;
-      left: 0px;
+      @include absolute();
     }
     &:after {
-      bottom: 0px;
-      right: 0px;
+      @include absolute($b: 0, $r: 0);
     }
     ._txt:before,
     ._txt:after {
@@ -365,12 +389,10 @@ button {
       height: 5px;
     }
     ._txt:before {
-      top: 0px;
-      left: 0px;
+      @include absolute();
     }
     ._txt:after {
-      bottom: 0px;
-      right: 0px;
+      @include absolute($b: 0, $r: 0);
     }
     &:hover {
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -392,19 +414,16 @@ button {
     ._txt:after {
       content: "";
       display: block;
-      position: absolute;
       width: 100%;
       height: 1px;
       background-color: #000;
       transition: all 0.1s;
     }
     &:before {
-      top: 0px;
-      left: 0px;
+      @include absolute();
     }
     &:after {
-      bottom: 0px;
-      right: 0px;
+      @include absolute($b: 0, $r: 0);
     }
     ._txt:before,
     ._txt:after {
@@ -412,19 +431,16 @@ button {
       height: 100%;
     }
     ._txt:before {
-      top: 0px;
-      right: 0px;
+      @include absolute($r: 0);
     }
     ._txt:after {
-      bottom: 0px;
-      left: 0px;
+      @include absolute($b: 0);
     }
     .border:before {
+      @include absolute($b: 0);
+
       content: "";
       display: block;
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
       width: 0px;
       height: 3px;
       background-color: #000;
@@ -465,10 +481,9 @@ button {
       transition: all 0.4s;
     }
     &:after {
+      @include absolute($t: 10px);
+
       content: attr(data-text);
-      position: absolute;
-      top: 10px;
-      left: 0;
       width: 100%;
       opacity: 0;
       transform: rotateX(-90deg);
@@ -516,6 +531,50 @@ button {
       text-shadow: none;
     }
   }
+  .btn4 {
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      transition: all 0.3s;
+      width: 2px;
+      height: 0%;
+      background-color: #000;
+    }
+    ._txt:before,
+    ._txt:after {
+      content: "";
+      display: block;
+      transition: all 0.3s;
+      width: 0%;
+      height: 2px;
+      background-color: #000;
+    }
+    &:before {
+      @include absolute();
+    }
+    &:after {
+      @include absolute($b: 0, $r: 0);
+    }
+    ._txt:before {
+      @include absolute($r: 0);
+    }
+    ._txt:after {
+      @include absolute($b: 0);
+    }
+
+    &:hover {
+      &:before,
+      &:after {
+        height: 100%;
+      }
+      ._txt:before,
+      ._txt:after {
+        width: 100%;
+      }
+    }
+  }
 }
 .buttons_wrap4 {
   .btn {
@@ -531,11 +590,10 @@ button {
       inset 2px 2px 5px rgba(255, 255, 255, 0.7);
     text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
     &:before {
+      @include absolute($t: 7px, $l: 8px);
+
       content: "";
       display: block;
-      position: absolute;
-      top: 7px;
-      left: 8px;
       width: 5px;
       height: 20px;
       border-radius: 5px;
