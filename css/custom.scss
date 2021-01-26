@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+// reset
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #e5e5e5;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", "dotum", Times, serif;
+}
+body * {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+button {
+  border: 1px solid;
+  outline: 0px none;
+  background-color: transparent;
+}
+
 //mixin
 @mixin absolute($t: 0, $l: 0, $b: null, $r: null) {
   position: absolute;
@@ -13,32 +35,20 @@
   }
 }
 
-// reset
-html,
-body {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  background-color: #e5e5e5;
-  font-size: 15px;
-  font-weight: 500;
-  font-family: Georgia, "Times New Roman", Times, serif;
+//common
+.l-center {
+  max-width: 1200px;
+  margin: 0 auto;
 }
-body * {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
-button {
-  border: 1px solid;
-  outline: 0px none;
-  background-color: transparent;
+p {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 //style
 .buttons_wrap {
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 20px auto 30px;
   padding: 0px 20px;
   .btn {
     position: relative;
@@ -57,6 +67,7 @@ button {
     }
   }
 }
+
 .buttons_wrap1 {
   .btn {
     border: 0px none;
@@ -275,6 +286,7 @@ button {
     }
   }
 }
+
 .buttons_wrap2 {
   .btn {
     border: 0px none;
@@ -503,6 +515,7 @@ button {
     }
   }
 }
+
 .buttons_wrap3 {
   .btn {
     transition: all 0.3s;
@@ -576,6 +589,7 @@ button {
     }
   }
 }
+
 .buttons_wrap4 {
   .btn {
     border: 3px solid #666;
@@ -613,6 +627,51 @@ button {
     &:hover {
       transform: scale(0.9);
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.buttons_wrap5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn {
+    flex: 1 1;
+    margin: 10px 5px;
+    transition: all 0.3s;
+    &:hover {
+      flex: 1.5 1.5;
+    }
+  }
+}
+
+.buttons_wrap6 {
+  .btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    ._txt {
+      font-size: 0;
+      &:before {
+        @include absolute($t: 50%);
+
+        content: "";
+        display: block;
+        width: 70%;
+        height: 1px;
+        transform: translateY(-50%);
+        background-color: #000;
+      }
+      &:after {
+        @include absolute($t: 50%, $r: 30%);
+
+        content: "";
+        display: block;
+        transform: rotate(45deg) translate(-1px, -4px);
+        width: 10px;
+        height: 1px;
+        background-color: #000;
+      }
     }
   }
 }

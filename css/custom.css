@@ -7,7 +7,7 @@ body {
   background-color: #e5e5e5;
   font-size: 15px;
   font-weight: 500;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", "dotum", Times, serif;
 }
 
 body * {
@@ -23,9 +23,19 @@ button {
   background-color: transparent;
 }
 
+.l-center {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .buttons_wrap {
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 20px auto 30px;
   padding: 0px 20px;
 }
 
@@ -815,4 +825,68 @@ button {
           transform: scale(0.9);
   -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttons_wrap5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttons_wrap5 .btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  margin: 10px 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.buttons_wrap5 .btn:hover {
+  -webkit-box-flex: 1.5;
+      -ms-flex: 1.5 1.5;
+          flex: 1.5 1.5;
+}
+
+.buttons_wrap6 .btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.buttons_wrap6 .btn ._txt {
+  font-size: 0;
+}
+
+.buttons_wrap6 .btn ._txt:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  display: block;
+  width: 70%;
+  height: 1px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #000;
+}
+
+.buttons_wrap6 .btn ._txt:after {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: 30%;
+  content: "";
+  display: block;
+  -webkit-transform: rotate(45deg) translate(-1px, -4px);
+          transform: rotate(45deg) translate(-1px, -4px);
+  width: 10px;
+  height: 1px;
+  background-color: #000;
 }
