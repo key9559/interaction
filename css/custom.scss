@@ -650,8 +650,10 @@ p {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    transition: all 0.3s;
     ._txt {
       font-size: 0;
+      transition: all 0.3s;
       &:before {
         @include absolute($t: 50%);
 
@@ -661,6 +663,7 @@ p {
         height: 1px;
         transform: translateY(-50%);
         background-color: #000;
+        transition: all 0.3s;
       }
       &:after {
         @include absolute($t: 50%, $r: 30%);
@@ -671,6 +674,37 @@ p {
         width: 10px;
         height: 1px;
         background-color: #000;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .btn1 {
+    ._txt {
+      @include absolute($l: -20px);
+    }
+    &:hover ._txt {
+      left: 5px;
+    }
+  }
+  .btn2 {
+    ._txt {
+      transform: rotate(-180deg);
+      &:before {
+        width: 100%;
+      }
+      &:after {
+        width: 0;
+      }
+    }
+    &:hover {
+      ._txt {
+        transform: rotate(0deg);
+        &:before {
+          width: 70%;
+        }
+        &:after {
+          width: 10px;
+        }
       }
     }
   }

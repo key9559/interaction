@@ -858,10 +858,14 @@ p {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .buttons_wrap6 .btn ._txt {
   font-size: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .buttons_wrap6 .btn ._txt:before {
@@ -875,6 +879,8 @@ p {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-color: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .buttons_wrap6 .btn ._txt:after {
@@ -889,4 +895,42 @@ p {
   width: 10px;
   height: 1px;
   background-color: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.buttons_wrap6 .btn1 ._txt {
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
+
+.buttons_wrap6 .btn1:hover ._txt {
+  left: 5px;
+}
+
+.buttons_wrap6 .btn2 ._txt {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.buttons_wrap6 .btn2 ._txt:before {
+  width: 100%;
+}
+
+.buttons_wrap6 .btn2 ._txt:after {
+  width: 0;
+}
+
+.buttons_wrap6 .btn2:hover ._txt {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.buttons_wrap6 .btn2:hover ._txt:before {
+  width: 70%;
+}
+
+.buttons_wrap6 .btn2:hover ._txt:after {
+  width: 10px;
 }
