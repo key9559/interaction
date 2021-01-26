@@ -408,7 +408,6 @@ button {
       @include absolute($b: 0, $r: 0);
     }
     &:hover {
-      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
       &:before,
       &:after {
         width: 100%;
@@ -479,7 +478,6 @@ button {
       }
       .border:before {
         width: 100%;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         transition-delay: 0.4s;
       }
     }
@@ -706,6 +704,41 @@ button {
         &:after {
           width: 10px;
         }
+      }
+    }
+  }
+  .btn3 {
+    transform: rotate(-180deg);
+    ._txt:after {
+      width: 0;
+    }
+    &:hover {
+      transform: none;
+      ._txt:after {
+        width: 10px;
+      }
+    }
+  }
+  .btn4 {
+    border: 0;
+    .trans {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 1px solid;
+      border-radius: 50%;
+      transform: translateX(-30%);
+      transition: all 0.3s;
+    }
+    ._txt:after {
+      width: 0px;
+    }
+    &:hover {
+      .trans {
+        transform: none;
+      }
+      ._txt:after {
+        width: 10px;
       }
     }
   }
