@@ -743,3 +743,25 @@ button {
     }
   }
 }
+
+.buttons_wrap7 {
+  .btn {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    ._txt {
+      text-indent: -9999em;
+    }
+  }
+
+  .btn1 {
+    width: 320px;
+    height: 99px;
+    background-image: url("../image/btn_start_over.jpg");
+  }
+
+  .btn2 {
+    width: 272px;
+    height: 91px;
+    background-image: url("../image/img_start.jpg");
+  }
+}

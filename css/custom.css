@@ -975,3 +975,24 @@ button {
 .buttons_wrap6 .btn4:hover ._txt:after {
   width: 10px;
 }
+
+.buttons_wrap7 .btn {
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.buttons_wrap7 .btn ._txt {
+  text-indent: -9999em;
+}
+
+.buttons_wrap7 .btn1 {
+  width: 320px;
+  height: 99px;
+  background-image: url("../image/btn_start_over.jpg");
+}
+
+.buttons_wrap7 .btn2 {
+  width: 272px;
+  height: 91px;
+  background-image: url("../image/img_start.jpg");
+}
