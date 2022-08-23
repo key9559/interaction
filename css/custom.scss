@@ -11,11 +11,13 @@ body {
   font-weight: 500;
   font-family: Georgia, "Times New Roman", "dotum", Times, serif;
 }
+
 body * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
+
 button {
   border: 1px solid;
   outline: 0px none;
@@ -29,9 +31,30 @@ button {
   @if $t {
     top: if($b, auto, $t);
     bottom: $b;
-
     left: if($r, auto, $l);
-    right: if($l == 0 or $l, $r, $l);
+    right: if($l ==0 or $l, $r, $l);
+  }
+}
+
+@mixin before($c: "", $d: block) {
+  &:before {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin after($c: "", $d: block) {
+  &:after {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @content;
   }
 }
 
@@ -40,6 +63,7 @@ button {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .infomation {
   margin-top: 20px;
   font-size: 20px;
@@ -51,6 +75,7 @@ button {
   max-width: 1200px;
   margin: 20px auto 30px;
   padding: 0px 20px;
+
   .btn {
     position: relative;
     width: 100px;
@@ -61,6 +86,7 @@ button {
     text-align: center;
     font-weight: 800;
     cursor: pointer;
+
     ._txt {
       display: block;
       width: 100%;
@@ -75,16 +101,15 @@ button {
     background: linear-gradient(to left, #009fff, #ff00ff);
     color: white;
   }
+
   .btn1 {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     overflow: hidden;
-    &:before {
-      @include absolute($t: 44px);
 
-      content: "";
-      display: block;
+    @include before {
+      @include absolute($t: 44px);
       width: 202px;
       height: 3px;
       background: linear-gradient(
@@ -95,146 +120,166 @@ button {
       );
       transition: all 0.5s;
     }
-    &:hover {
+
+    @include hover {
       background: linear-gradient(to left, #ff00ff, #009fff);
       background-clip: text;
       -webkit-background-clip: text;
+
       &:before {
         left: -100%;
       }
     }
   }
+
   .btn2 {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     overflow: hidden;
+
     &:before,
     &:after {
-      content: "";
-      display: block;
       width: 0px;
       height: 3px;
       background: linear-gradient(to right, #ff00ff 0%, #009fff 100%);
       transition: all 0.2s;
     }
-    &:before {
+
+    @include before {
       @include absolute();
     }
-    &:after {
+
+    @include after {
       @include absolute($b: 0, $r: 0);
     }
-    ._txt:before,
-    ._txt:after {
-      content: "";
-      display: block;
-      height: 0px;
-      width: 3px;
-      transition: all 0.2s;
-    }
-    ._txt:before {
-      @include absolute($r: 0);
 
-      background-color: #009fff;
-    }
-    ._txt:after {
-      @include absolute($b: 0);
+    ._txt {
+      &:before,
+      &:after {
+        height: 0px;
+        width: 3px;
+        transition: all 0.2s;
+      }
 
-      background-color: #ff00ff;
+      @include before {
+        @include absolute($r: 0);
+
+        background-color: #009fff;
+      }
+
+      @include after {
+        @include absolute($b: 0);
+
+        background-color: #ff00ff;
+      }
     }
-    &:hover {
+
+    @include hover {
       &:before {
         width: 100px;
       }
-      ._txt:before {
-        height: 50px;
-        transition-delay: 0.2s;
-      }
+
       &:after {
         width: 100px;
         transition-delay: 0.4s;
       }
+
+      ._txt:before {
+        height: 50px;
+        transition-delay: 0.2s;
+      }
+
       ._txt:after {
         height: 50px;
         transition-delay: 0.6s;
       }
     }
   }
+
   .btn3 {
     overflow: hidden;
-    &:before {
-      @include absolute($l: -33px);
 
-      content: "";
-      display: block;
+    @include before {
+      @include absolute($l: -33px);
       width: 20px;
       height: 100%;
       transform: skew(-30deg);
       background-color: rgba(255, 255, 255, 0.3);
       transition: all 0.3s;
     }
-    &:hover:before {
-      left: 113px;
+
+    @include hover {
+      &:before {
+        left: 113px;
+      }
     }
   }
+
   .btn4 {
     background: none;
     color: #009fff;
     transition: all 0.3s;
-    &:before {
-      @include absolute();
 
-      content: "";
-      display: block;
+    @include before {
+      @include absolute();
       width: 0%;
       height: 100%;
       background: linear-gradient(to left, #009fff, #ff00ff);
       transition: all 0.3s;
     }
+
     ._txt {
       position: relative;
     }
-    &:hover {
+
+    @include hover {
       color: white;
+
       &:before {
         width: 100%;
       }
     }
   }
+
   .btn5 {
     background: none;
+
     &:before,
     &:after {
-      content: "";
-      display: block;
       width: 100%;
       height: 3px;
       background: linear-gradient(to left, #009fff, #ff00ff);
       transition: all 0.5s;
     }
-    &:before {
+
+    @include before {
       @include absolute();
     }
-    &:after {
+
+    @include after {
       @include absolute($b: 0, $r: 0);
     }
-    ._txt:before,
-    ._txt:after {
-      content: "";
-      display: block;
-      width: 3px;
-      height: 100%;
-    }
-    ._txt:before {
-      @include absolute($r: 0);
 
-      background-color: #009fff;
+    ._txt {
+      &:before,
+      &:after {
+        width: 3px;
+        height: 100%;
+      }
+
+      @include before {
+        @include absolute($r: 0);
+
+        background-color: #009fff;
+      }
     }
+
     ._txt:after {
       @include absolute();
-
       background-color: #ff00ff;
     }
+
     ._txt {
       position: relative;
       background: linear-gradient(to left, #009fff, #ff00ff);
@@ -242,32 +287,35 @@ button {
       color: transparent;
       z-index: 1;
     }
-    &:hover {
+
+    @include hover {
       &:before,
       &:after {
         height: 50%;
       }
+
       ._txt {
         color: white;
       }
     }
   }
+
   .btn6 {
     background: linear-gradient(to left, #009fff 0%, #ff00ff 50%, #009fff 100%);
     background-size: 200%;
     background-position: left center;
     transition: all 0.5s;
-    &:hover {
+
+    @include hover {
       background-position: right center;
     }
   }
+
   .btn7 {
     position: relative;
-    &:after {
-      @include absolute($t: 50%, $l: 50%);
 
-      content: "";
-      display: block;
+    @include after {
+      @include absolute($t: 50%, $l: 50%);
       transform: translate(-50%, -50%);
       width: calc(100% - 2px);
       height: calc(100% - 2px);
@@ -275,11 +323,13 @@ button {
       z-index: 0;
       transition: all 0.3s;
     }
+
     ._txt {
       position: relative;
       z-index: 1;
     }
-    &:hover {
+
+    @include hover {
       &:after {
         width: 0;
         height: 0;
@@ -293,219 +343,268 @@ button {
     border: 0px none;
     transition: all 0.3s;
   }
+
   .btn1 {
     box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5), inset -3px -3px 5px #fff;
-    &:hover {
+
+    @include hover {
       box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.5), inset -2px -2px 3px #fff;
     }
+
     &:active {
       box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.7), inset -1px -1px 5px #fff;
     }
   }
+
   .btn2 {
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px #fff;
-    &:hover {
+
+    @include hover {
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -4px -4px 8px #fff;
     }
+
     &:active {
       box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3), -1px -1px 2px #fff;
     }
   }
+
   .btn3 {
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3), -5px -5px 8px #fff;
-    &:hover {
+
+    @include hover {
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 8px #fff;
     }
+
     &:active {
       box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5), inset -1px -1px 4px #fff;
     }
   }
+
   .btn4 {
     box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.3), inset -1px -1px 6px #fff;
-    &:hover {
+
+    @include hover {
       box-shadow: inset 3px 3px 6px rgba(#000, 0.3), inset -3px -3px 6px #fff;
     }
+
     &:active {
       box-shadow: inset 5px 5px 7px rgba(#000, 0.3), inset -5px -5px 7px #fff;
     }
   }
+
   .btn5 {
     position: relative;
+
     &:before,
     &:after,
     ._txt:before,
     ._txt:after {
-      content: "";
-      display: block;
       width: 0%;
       height: 1px;
       background-color: #000;
     }
-    &:before {
+
+    @include before {
       @include absolute();
     }
-    &:after {
+
+    @include after {
       @include absolute($b: 0);
     }
-    ._txt:before,
-    ._txt:after {
-      width: 1px;
-      height: 0%;
+
+    ._txt {
+      &:before,
+      &:after {
+        width: 1px;
+        height: 0%;
+      }
+
+      @include before {
+        @include absolute();
+      }
     }
-    ._txt:before {
-      @include absolute();
-    }
+
     ._txt:after {
       @include absolute($r: 0);
     }
-    &:hover {
+
+    @include hover {
       &:before {
         width: 100%;
         transition: all 0.3s;
       }
+
       &:after {
         width: 100%;
         transition: all 0.3s 0.2s;
       }
-      ._txt:before {
-        height: 100%;
-        transition: all 0.3s;
-      }
-      ._txt:after {
-        height: 100%;
-        transition: all 0.3s 0.2s;
+
+      ._txt {
+        &:before {
+          height: 100%;
+          transition: all 0.3s;
+        }
+
+        &:after {
+          height: 100%;
+          transition: all 0.3s 0.2s;
+        }
       }
     }
   }
+
   .btn6 {
     position: relative;
+
     &:before,
     &:after,
     ._txt:before,
     ._txt:after {
-      content: "";
-      display: block;
       width: 5px;
       height: 1px;
       background-color: #000;
       transition: all 0.3s;
     }
-    &:before {
+
+    @include before {
       @include absolute();
     }
-    &:after {
+
+    @include after {
       @include absolute($b: 0, $r: 0);
     }
+
     ._txt:before,
     ._txt:after {
       width: 1px;
       height: 5px;
     }
-    ._txt:before {
-      @include absolute();
+
+    ._txt {
+      @include before {
+        @include absolute();
+      }
+
+      @include after {
+        @include absolute($b: 0, $r: 0);
+      }
     }
-    ._txt:after {
-      @include absolute($b: 0, $r: 0);
-    }
-    &:hover {
+
+    @include hover {
       &:before,
       &:after {
         width: 100%;
       }
+
       ._txt:before,
       ._txt:after {
         height: 100%;
       }
     }
   }
+
   .btn7 {
     position: relative;
+
     &:before,
     &:after,
     ._txt:before,
     ._txt:after {
-      content: "";
-      display: block;
       width: 100%;
       height: 1px;
       background-color: #000;
       transition: all 0.1s;
     }
-    &:before {
+
+    @include before {
       @include absolute();
     }
-    &:after {
+
+    @include after {
       @include absolute($b: 0, $r: 0);
     }
+
     ._txt:before,
     ._txt:after {
       width: 1px;
       height: 100%;
     }
-    ._txt:before {
-      @include absolute($r: 0);
-    }
-    ._txt:after {
-      @include absolute($b: 0);
-    }
-    .border:before {
-      @include absolute($b: 0);
 
-      content: "";
-      display: block;
-      width: 0px;
-      height: 3px;
-      background-color: #000;
-      transition: all 0.2s;
+    ._txt {
+      @include before {
+        @include absolute($r: 0);
+      }
+
+      @include after {
+        @include absolute($b: 0);
+      }
     }
-    &:hover {
+
+    .border {
+      @include before {
+        @include absolute($b: 0);
+        width: 0px;
+        height: 3px;
+        background-color: #000;
+        transition: all 0.2s;
+      }
+    }
+
+    @include hover {
       text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
       transition-delay: 0.2s;
+
       &:before {
         width: 0px;
         transition-delay: 0.2s;
       }
+
       &:after {
         width: 0px;
       }
+
       ._txt:before {
         height: 0px;
         transition-delay: 0.1s;
       }
+
       ._txt:after {
         height: 0px;
         transition-delay: 0.3s;
       }
+
       .border:before {
         width: 100%;
         transition-delay: 0.4s;
       }
     }
+
     &:active {
       text-shadow: none;
       transition-delay: 0s;
     }
   }
+
   .btn8 {
     ._txt {
       position: relative;
       transition: all 0.4s;
     }
-    &:after {
-      @include absolute($t: 10px);
 
-      content: attr(data-text);
+    @include after($c: attr(data-text)) {
+      @include absolute($t: 10px);
       width: 100%;
       opacity: 0;
       transform: rotateX(-90deg);
       transition: all 0.4s;
     }
 
-    &:hover {
+    @include hover {
       ._txt {
         transform: rotateX(90deg);
         opacity: 0;
       }
+
       &:after {
         top: 0;
         transform: rotateX(0deg);
@@ -519,68 +618,80 @@ button {
   .btn {
     transition: all 0.3s;
   }
+
   .btn1 {
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    &:hover {
+
+    @include hover {
       text-shadow: none;
     }
   }
+
   .btn2 {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    &:hover {
+
+    @include hover {
       box-shadow: none;
       text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     }
   }
+
   .btn3 {
-    &:hover {
+    @include hover {
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
       text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     }
+
     &:active {
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
         inset 2px 2px 5px rgba(0, 0, 0, 0.3);
       text-shadow: none;
     }
   }
+
   .btn4 {
     position: relative;
+
     &:before,
     &:after {
-      content: "";
-      display: block;
       transition: all 0.3s;
       width: 2px;
       height: 0%;
       background-color: #000;
     }
+
     ._txt:before,
     ._txt:after {
-      content: "";
-      display: block;
       transition: all 0.3s;
       width: 0%;
       height: 2px;
       background-color: #000;
     }
-    &:before {
+
+    @include before {
       @include absolute();
     }
-    &:after {
+
+    @include after {
       @include absolute($b: 0, $r: 0);
     }
-    ._txt:before {
-      @include absolute($r: 0);
-    }
-    ._txt:after {
-      @include absolute($b: 0);
+
+    ._txt {
+      @include before {
+        @include absolute($r: 0);
+      }
+
+      @include after {
+        @include absolute($b: 0);
+      }
     }
 
-    &:hover {
+    @include hover {
       &:before,
       &:after {
         height: 100%;
       }
+
       ._txt:before,
       ._txt:after {
         width: 100%;
@@ -596,34 +707,36 @@ button {
     line-height: 41px;
     transition: all 0.3s;
   }
+
   .btn1 {
     background-color: hotpink;
     color: #666;
     box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
       inset 2px 2px 5px rgba(255, 255, 255, 0.7);
     text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
-    &:before {
-      @include absolute($t: 7px, $l: 8px);
 
-      content: "";
-      display: block;
+    @include before {
+      @include absolute($t: 7px, $l: 8px);
       width: 5px;
       height: 20px;
       border-radius: 5px;
       background-color: rgba(255, 255, 255, 0.5);
       transition: all 0.3s;
     }
-    &:hover {
+
+    @include hover {
       box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3),
         inset 0px 0px 5px rgba(255, 255, 255, 0.7);
       text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
-    }
-    &:hover:before {
-      content: none;
+
+      &:before {
+        content: none;
+      }
     }
   }
+
   .btn2 {
-    &:hover {
+    @include hover {
       transform: scale(0.9);
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     }
@@ -634,11 +747,13 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+
   .btn {
     flex: 1 1;
     margin: 10px 5px;
     transition: all 0.3s;
-    &:hover {
+
+    @include hover {
       flex: 1.5 1.5;
     }
   }
@@ -650,25 +765,22 @@ button {
     height: 50px;
     border-radius: 50%;
     transition: all 0.3s;
+
     ._txt {
       font-size: 0;
       transition: all 0.3s;
-      &:before {
-        @include absolute($t: 50%);
 
-        content: "";
-        display: block;
+      @include before {
+        @include absolute($t: 50%);
         width: 70%;
         height: 1px;
         transform: translateY(-50%);
         background-color: #000;
         transition: all 0.3s;
       }
-      &:after {
-        @include absolute($t: 50%, $r: 30%);
 
-        content: "";
-        display: block;
+      @include after {
+        @include absolute($t: 50%, $r: 30%);
         transform: rotate(45deg) translate(-1px, -4px);
         width: 10px;
         height: 1px;
@@ -677,50 +789,66 @@ button {
       }
     }
   }
+
   .btn1 {
     ._txt {
       @include absolute($l: -20px);
     }
-    &:hover ._txt {
-      left: 5px;
+
+    @include hover {
+      ._txt {
+        left: 5px;
+      }
     }
   }
+
   .btn2 {
     ._txt {
       transform: rotate(-180deg);
-      &:before {
+
+      @include before {
         width: 100%;
       }
-      &:after {
+
+      @include after {
         width: 0;
       }
     }
-    &:hover {
+
+    @include hover {
       ._txt {
         transform: rotate(0deg);
+
         &:before {
           width: 70%;
         }
+
         &:after {
           width: 10px;
         }
       }
     }
   }
+
   .btn3 {
     transform: rotate(-180deg);
+
     ._txt:after {
       width: 0;
     }
-    &:hover {
+
+    @include hover {
       transform: none;
+
       ._txt:after {
         width: 10px;
       }
     }
   }
+
   .btn4 {
     border: 0;
+
     .trans {
       display: block;
       width: 100%;
@@ -730,13 +858,16 @@ button {
       transform: translateX(-30%);
       transition: all 0.3s;
     }
+
     ._txt:after {
       width: 0px;
     }
-    &:hover {
+
+    @include hover {
       .trans {
         transform: none;
       }
+
       ._txt:after {
         width: 10px;
       }
@@ -748,6 +879,7 @@ button {
   .btn {
     overflow: hidden;
     background-repeat: no-repeat;
+
     ._txt {
       text-indent: -9999em;
     }
