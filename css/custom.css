@@ -35,6 +35,27 @@ button {
   font-weight: 600;
 }
 
+.link-wrapper {
+  z-index: 50;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.link-wrapper .link {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+.link-wrapper .link.on {
+  border-bottom: 1px solid salmon;
+  color: salmon;
+}
+
 @-webkit-keyframes fadeAni {
   0% {
     opacity: 0;
