@@ -1,12 +1,44 @@
 @charset "UTF-8";
 
+// vali
+$bg-color: #e5e5e5;
+
+// mixin
+@mixin make-before($c: "", $d: block) {
+  &:before {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin make-after($c: "", $d: block) {
+  &:after {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // reset
 html,
 body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: #e5e5e5;
+  background-color: $bg-color;
   font-size: 15px;
   font-weight: 500;
   font-family: Georgia, "Times New Roman", "dotum", Times, serif;
@@ -24,44 +56,11 @@ button {
   background-color: transparent;
 }
 
-//mixin
-@mixin absolute($t: 0, $l: 0, $b: null, $r: null) {
-  position: absolute;
-
-  @if $t {
-    top: if($b, auto, $t);
-    bottom: $b;
-    left: if($r, auto, $l);
-    right: if($l ==0 or $l, $r, $l);
-  }
-}
-
-@mixin before($c: "", $d: block) {
-  &:before {
-    content: $c;
-    display: $d;
-    @content;
-  }
-}
-
-@mixin after($c: "", $d: block) {
-  &:after {
-    content: $c;
-    display: $d;
-    @content;
-  }
-}
-
-@mixin hover {
-  &:hover {
-    @content;
-  }
-}
-
-//common
+// common
 .l-center {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .infomation {
@@ -70,11 +69,13 @@ button {
   font-weight: 600;
 }
 
-//style
+// animation
+
+// style
 .buttons_wrap {
-  max-width: 1200px;
+  position: relative;
   margin: 20px auto 30px;
-  padding: 0px 20px;
+  padding-top: 50px;
 
   .btn {
     position: relative;
@@ -93,46 +94,180 @@ button {
       height: 100%;
     }
   }
+
+  .btn0 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+
+  .btn1 {
+    margin-left: 0;
+  }
 }
 
 .buttons_wrap1 {
   .btn {
     border: 0px none;
-    background: linear-gradient(to left, #009fff, #ff00ff);
+    background: linear-gradient(to left, #563094, #ffbd54);
     color: white;
   }
 
   .btn1 {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
     overflow: hidden;
 
-    @include before {
-      @include absolute($t: 44px);
-      width: 202px;
-      height: 3px;
-      background: linear-gradient(
-        to left,
-        #ff00ff 0%,
-        #009fff 50%,
-        #ff00ff 100%
-      );
-      transition: all 0.5s;
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: -33px;
+      width: 20px;
+      height: 100%;
+      transform: skew(-30deg);
+      background-color: rgba(255, 255, 255, 0.3);
+      transition: all 0.3s;
     }
 
     @include hover {
-      background: linear-gradient(to left, #ff00ff, #009fff);
-      background-clip: text;
-      -webkit-background-clip: text;
-
       &:before {
-        left: -100%;
+        left: 113px;
       }
     }
   }
 
   .btn2 {
+    background: none;
+    color: #563094;
+    transition: all 0.3s;
+
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(to left, #563094, #ffbd54);
+      transition: all 0.3s;
+    }
+
+    ._txt {
+      position: relative;
+    }
+
+    @include hover {
+      color: white;
+
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .btn3 {
+    background: none;
+
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
+    }
+
+    &:before,
+    &:after {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to left, #563094, #ffbd54);
+      transition: all 0.5s;
+    }
+
+    ._txt {
+      @include make-before {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
+        background-color: #563094;
+      }
+
+      @include make-after {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
+        background-color: #ffbd54;
+      }
+
+      &:before,
+      &:after {
+        width: 3px;
+        height: 100%;
+      }
+    }
+
+    ._txt:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #ffbd54;
+    }
+
+    ._txt {
+      position: relative;
+      background: linear-gradient(to left, #563094, #ffbd54);
+      -webkit-background-clip: text;
+      color: transparent;
+      z-index: 1;
+    }
+
+    @include hover {
+      &:before,
+      &:after {
+        height: 50%;
+      }
+
+      ._txt {
+        color: white;
+      }
+    }
+  }
+
+  .btn4 {
+    position: relative;
+
+    @include make-after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      background-color: #e5e5e5;
+      z-index: 0;
+      transition: all 0.3s;
+    }
+
+    ._txt {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include hover {
+      &:after {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+
+  .btn5 {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -142,16 +277,22 @@ button {
     &:after {
       width: 0px;
       height: 3px;
-      background: linear-gradient(to right, #ff00ff 0%, #009fff 100%);
+      background: linear-gradient(to right, #ffbd54 0%, #563094 100%);
       transition: all 0.2s;
     }
 
-    @include before {
-      @include absolute();
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
-    @include after {
-      @include absolute($b: 0, $r: 0);
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
     }
 
     ._txt {
@@ -162,16 +303,20 @@ button {
         transition: all 0.2s;
       }
 
-      @include before {
-        @include absolute($r: 0);
-
-        background-color: #009fff;
+      @include make-before {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
+        background-color: #563094;
       }
 
-      @include after {
-        @include absolute($b: 0);
-
-        background-color: #ff00ff;
+      @include make-after {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        background-color: #ffbd54;
       }
     }
 
@@ -197,143 +342,55 @@ button {
     }
   }
 
-  .btn3 {
+  .btn6 {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     overflow: hidden;
+    background-image: linear-gradient(
+      to left,
+      #ffbd54 0%,
+      #563094 50%,
+      #ffbd54 100%
+    );
+    background-position: center left;
+    background-size: 200%;
+    transition: all 0.5s;
 
-    @include before {
-      @include absolute($l: -33px);
-      width: 20px;
-      height: 100%;
-      transform: skew(-30deg);
-      background-color: rgba(255, 255, 255, 0.3);
-      transition: all 0.3s;
-    }
-
-    @include hover {
-      &:before {
-        left: 113px;
-      }
-    }
-  }
-
-  .btn4 {
-    background: none;
-    color: #009fff;
-    transition: all 0.3s;
-
-    @include before {
-      @include absolute();
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(to left, #009fff, #ff00ff);
-      transition: all 0.3s;
-    }
-
-    ._txt {
-      position: relative;
-    }
-
-    @include hover {
-      color: white;
-
-      &:before {
-        width: 100%;
-      }
-    }
-  }
-
-  .btn5 {
-    background: none;
-
-    &:before,
-    &:after {
+    @include make-before {
+      position: absolute;
+      top: 44px;
       width: 100%;
       height: 3px;
-      background: linear-gradient(to left, #009fff, #ff00ff);
+      background-image: linear-gradient(
+        to left,
+        #ffbd54 0%,
+        #563094 50%,
+        #ffbd54 100%
+      );
+      background-position: center left;
+      background-size: 200%;
       transition: all 0.5s;
     }
 
-    @include before {
-      @include absolute();
-    }
-
-    @include after {
-      @include absolute($b: 0, $r: 0);
-    }
-
-    ._txt {
-      &:before,
-      &:after {
-        width: 3px;
-        height: 100%;
-      }
-
-      @include before {
-        @include absolute($r: 0);
-
-        background-color: #009fff;
-      }
-    }
-
-    ._txt:after {
-      @include absolute();
-      background-color: #ff00ff;
-    }
-
-    ._txt {
-      position: relative;
-      background: linear-gradient(to left, #009fff, #ff00ff);
-      -webkit-background-clip: text;
-      color: transparent;
-      z-index: 1;
-    }
-
     @include hover {
-      &:before,
-      &:after {
-        height: 50%;
-      }
+      background-position: center right;
 
-      ._txt {
-        color: white;
+      &:before {
+        // left: -100%;
+        background-position: center right;
       }
     }
   }
 
-  .btn6 {
-    background: linear-gradient(to left, #009fff 0%, #ff00ff 50%, #009fff 100%);
+  .btn7 {
+    background: linear-gradient(to left, #563094 0%, #ffbd54 50%, #563094 100%);
     background-size: 200%;
     background-position: left center;
     transition: all 0.5s;
 
     @include hover {
       background-position: right center;
-    }
-  }
-
-  .btn7 {
-    position: relative;
-
-    @include after {
-      @include absolute($t: 50%, $l: 50%);
-      transform: translate(-50%, -50%);
-      width: calc(100% - 2px);
-      height: calc(100% - 2px);
-      background-color: #e5e5e5;
-      z-index: 0;
-      transition: all 0.3s;
-    }
-
-    ._txt {
-      position: relative;
-      z-index: 1;
-    }
-
-    @include hover {
-      &:after {
-        width: 0;
-        height: 0;
-      }
     }
   }
 }
@@ -395,6 +452,19 @@ button {
   .btn5 {
     position: relative;
 
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+    }
+
     &:before,
     &:after,
     ._txt:before,
@@ -404,28 +474,31 @@ button {
       background-color: #000;
     }
 
-    @include before {
-      @include absolute();
-    }
-
-    @include after {
-      @include absolute($b: 0);
-    }
-
     ._txt {
+      @include make-before {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      @include make-after {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
       &:before,
       &:after {
         width: 1px;
         height: 0%;
       }
-
-      @include before {
-        @include absolute();
-      }
     }
 
     ._txt:after {
-      @include absolute($r: 0);
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: 0;
     }
 
     @include hover {
@@ -466,12 +539,18 @@ button {
       transition: all 0.3s;
     }
 
-    @include before {
-      @include absolute();
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
-    @include after {
-      @include absolute($b: 0, $r: 0);
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
     }
 
     ._txt:before,
@@ -481,12 +560,18 @@ button {
     }
 
     ._txt {
-      @include before {
-        @include absolute();
+      @include make-before {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
-      @include after {
-        @include absolute($b: 0, $r: 0);
+      @include make-after {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: 0;
       }
     }
 
@@ -516,12 +601,18 @@ button {
       transition: all 0.1s;
     }
 
-    @include before {
-      @include absolute();
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
-    @include after {
-      @include absolute($b: 0, $r: 0);
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
     }
 
     ._txt:before,
@@ -531,18 +622,27 @@ button {
     }
 
     ._txt {
-      @include before {
-        @include absolute($r: 0);
+      @include make-before {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
       }
 
-      @include after {
-        @include absolute($b: 0);
+      @include make-after {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
       }
     }
 
     .border {
-      @include before {
-        @include absolute($b: 0);
+      @include make-before {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
         width: 0px;
         height: 3px;
         background-color: #000;
@@ -591,8 +691,10 @@ button {
       transition: all 0.4s;
     }
 
-    @include after($c: attr(data-text)) {
-      @include absolute($t: 10px);
+    @include make-after($c: attr(data-text)) {
+      position: absolute;
+      top: 10px;
+      left: 0;
       width: 100%;
       opacity: 0;
       transform: rotateX(-90deg);
@@ -609,6 +711,113 @@ button {
         top: 0;
         transform: rotateX(0deg);
         opacity: 1;
+      }
+    }
+  }
+
+  .btn9 {
+    background-color: hotpink;
+    color: #666;
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+      inset 2px 2px 5px rgba(255, 255, 255, 0.7);
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+
+    @include make-before {
+      position: absolute;
+      top: 7px;
+      left: 8px;
+      width: 5px;
+      height: 20px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.5);
+      transition: all 0.3s;
+    }
+
+    @include hover {
+      box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3),
+        inset 0px 0px 5px rgba(255, 255, 255, 0.7);
+      text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .btn10 {
+    overflow: hidden;
+
+    ._txt {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.4s;
+    }
+
+    .icon {
+      @include flex-center;
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.4s;
+    }
+
+    @include hover {
+      background-color: pink;
+
+      ._txt {
+        top: -100%;
+      }
+
+      .icon {
+        top: 0;
+      }
+    }
+  }
+
+  .btn11 {
+    width: auto;
+    color: transparent;
+    font-size: 20px;
+    -webkit-text-stroke: 1px #000;
+
+    @include make-before {
+      position: absolute;
+      top: 50%;
+      left: -3px;
+      width: 3px;
+      height: 1em;
+      background-color: #000;
+      transform: translateY(-50%);
+      transition: all 0.4s;
+    }
+
+    @include make-after($c: attr(data-text)) {
+      overflow: hidden;
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      transition: all 0.4s;
+      color: #000;
+    }
+
+    @include hover {
+      filter: drop-shadow(0 0 30px #000);
+
+      &:before {
+        left: 100%;
+      }
+
+      &:after {
+        width: 100%;
       }
     }
   }
@@ -668,21 +877,33 @@ button {
       background-color: #000;
     }
 
-    @include before {
-      @include absolute();
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
-    @include after {
-      @include absolute($b: 0, $r: 0);
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
     }
 
     ._txt {
-      @include before {
-        @include absolute($r: 0);
+      @include make-before {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
       }
 
-      @include after {
-        @include absolute($b: 0);
+      @include make-after {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
       }
     }
 
@@ -698,68 +919,131 @@ button {
       }
     }
   }
-}
 
-.buttons_wrap4 {
-  .btn {
-    border: 3px solid #666;
-    border-radius: 10px;
-    line-height: 41px;
-    transition: all 0.3s;
-  }
-
-  .btn1 {
-    background-color: hotpink;
-    color: #666;
-    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
-      inset 2px 2px 5px rgba(255, 255, 255, 0.7);
-    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
-
-    @include before {
-      @include absolute($t: 7px, $l: 8px);
-      width: 5px;
-      height: 20px;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.5);
-      transition: all 0.3s;
-    }
-
-    @include hover {
-      box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3),
-        inset 0px 0px 5px rgba(255, 255, 255, 0.7);
-      text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
-
-      &:before {
-        content: none;
-      }
-    }
-  }
-
-  .btn2 {
+  .btn5 {
     @include hover {
       transform: scale(0.9);
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     }
   }
-}
 
-.buttons_wrap5 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // reference https://uiverse.io/detail/cssbuttons-io/brown-otter-21
+  .btn6 {
+    @include make-before {
+      top: -1px;
+      left: 0.5em;
+    }
 
-  .btn {
-    flex: 1 1;
-    margin: 10px 5px;
-    transition: all 0.3s;
+    @include make-after {
+      top: auto;
+      bottom: -1px;
+      left: auto;
+      right: 0.8em;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      width: 1.5em;
+      height: 1px;
+      background-color: $bg-color;
+      transition: width 0.2s, left 0.4s, right 0.4s;
+    }
 
     @include hover {
-      flex: 1.5 1.5;
+      &:before {
+        left: 0;
+        width: 0;
+      }
+
+      &:after {
+        right: 0;
+        width: 0;
+      }
+    }
+  }
+
+  .btn7 {
+    overflow: hidden;
+
+    @include make-before {
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: -45px;
+      width: 10%;
+      height: 100%;
+      border-radius: 0;
+      background-color: #333;
+      transform: skew(-45deg);
+      transition: all 0.3s;
+    }
+
+    ._txt {
+      z-index: 1;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    @include hover {
+      &:before {
+        width: 200%;
+        border-radius: 30px;
+      }
+
+      ._txt {
+        color: #fff;
+      }
+    }
+  }
+
+  .btn8 {
+    overflow: hidden;
+
+    ._txt {
+      z-index: 2;
+      position: relative;
+    }
+
+    @include make-before {
+      z-index: 1;
+      background-color: lightcoral;
+      transition-duration: 0.2s;
+    }
+
+    @include make-after {
+      z-index: 0;
+      background-color: rgba(0, 0, 0, 0.07);
+      transition: all 0.4s 0.1s;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 100%;
+      left: 2%;
+      border: 0;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      transform: scale(0.5);
+    }
+
+    @include hover {
+      &:before {
+        transition: all 0.4s;
+        transform: scale(4);
+      }
+
+      &:after {
+        transform: scale(2);
+      }
     }
   }
 }
 
-.buttons_wrap6 {
+.buttons_wrap4 {
   .btn {
     width: 50px;
     height: 50px;
@@ -770,8 +1054,10 @@ button {
       font-size: 0;
       transition: all 0.3s;
 
-      @include before {
-        @include absolute($t: 50%);
+      @include make-before {
+        position: absolute;
+        top: 50%;
+        left: 0;
         width: 70%;
         height: 1px;
         transform: translateY(-50%);
@@ -779,8 +1065,11 @@ button {
         transition: all 0.3s;
       }
 
-      @include after {
-        @include absolute($t: 50%, $r: 30%);
+      @include make-after {
+        position: absolute;
+        top: 50%;
+        left: auto;
+        right: 30%;
         transform: rotate(45deg) translate(-1px, -4px);
         width: 10px;
         height: 1px;
@@ -792,7 +1081,9 @@ button {
 
   .btn1 {
     ._txt {
-      @include absolute($l: -20px);
+      position: absolute;
+      top: 0;
+      left: -20px;
     }
 
     @include hover {
@@ -806,11 +1097,11 @@ button {
     ._txt {
       transform: rotate(-180deg);
 
-      @include before {
+      @include make-before {
         width: 100%;
       }
 
-      @include after {
+      @include make-after {
         width: 0;
       }
     }
@@ -875,7 +1166,7 @@ button {
   }
 }
 
-.buttons_wrap7 {
+.buttons_wrap5 {
   .btn {
     overflow: hidden;
     background-repeat: no-repeat;
@@ -895,5 +1186,21 @@ button {
     width: 272px;
     height: 91px;
     background-image: url("../image/img_start.jpg");
+  }
+}
+
+.buttons_wrap_width {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .btn {
+    flex: 1 1;
+    margin: 10px 5px;
+    transition: all 0.3s;
+
+    @include hover {
+      flex: 1.5 1.5;
+    }
   }
 }
