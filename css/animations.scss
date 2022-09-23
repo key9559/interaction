@@ -1,0 +1,64 @@
+// animations page
+@charset "UTF-8";
+
+// vali
+$bg-color: #e5e5e5;
+
+// mixin
+@mixin make-before($c: "", $d: block) {
+  &:before {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin make-after($c: "", $d: block) {
+  &:after {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// animation
+@keyframes dongdong {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+// style
+.ani-wrap {
+  margin: 50px 0;
+}
+
+.dongdong {
+  @include flex-center;
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: beige;
+  animation-name: dongdong;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
