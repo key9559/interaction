@@ -1,35 +1,20 @@
-// 정리
-var contm = 0;
-var mc;
-function bgMove($btnName, imgHeight, sliceCnt) {
-  $btnName.hover(
-    function () {
-      mc = setInterval(function () {
-        var position = -1 * (contm * imgHeight);
-        $btnName.css("background-position-y", position);
-        contm++;
-        if (contm == sliceCnt) {
-          contm = 0;
-        }
-      }, 40);
-    },
-    function () {
-      clearInterval(mc);
-      $btnName.css("background-position-y", 0);
-    }
-  );
-}
-// arr for
+// gnb
+const gnbWrap = $(".link-wrapper");
 
-var btnClass = [".btn_start1", ".btn_start2"];
-var btnHeight = [99, 91];
-var btnRepeat = [37, 31];
+gnbWrap.append(`
+<div class="l-center">
+	<a href="index.html" class="gnb-link">메인</a>
+	<a href="buttons.html" class="gnb-link">버튼모음</a>
+	<a href="inputs.html" class="gnb-link">인풋모음</a>
+	<a href="animations.html" class="gnb-link">애니메이션모음</a>
+</div>`);
 
-if (
-  btnClass.length == btnHeight.length &&
-  btnHeight.length == btnRepeat.length
-) {
-  for (i = 0; i < btnClass.length; i++) {
-    bgMove($(btnClass[i]), btnHeight[i], btnRepeat[i]);
-  }
+const gnbLink = $(".gnb-link");
+
+if ($("#page").hasClass("button-page")) {
+  gnbLink.eq(1).addClass("on");
+} else if ($("#page").hasClass("input-page")) {
+  gnbLink.eq(2).addClass("on");
+} else if ($("#page").hasClass("ani-page")) {
+  gnbLink.eq(3).addClass("on");
 }

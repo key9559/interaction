@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+// function
+@function path($path) {
+  @return map-get($path-set, $path);
+}
+
+@function urlPath($pathName, $img) {
+  @return url(path($pathName) + $img);
+}
+
+// vali
+$bg-color: #e5e5e5;
+
+$path-set: (
+  img: "../image/",
+);
+
+// mixin
+@mixin make-before($c: "", $d: block) {
+  &:before {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin make-after($c: "", $d: block) {
+  &:after {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin flex($d: flex) {
+  display: $d;
+  @content;
+}
+
+@mixin flex-op($a: null, $j: null) {
+  align-items: $a;
+  justify-content: $j;
+}
+
+@mixin flex-center {
+  @include flex {
+    @include flex-op(center, center);
+  }
+}
+
+@mixin input-reset {
+  border-radius: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+@mixin bg-url($path, $img) {
+  background-image: urlPath($path, $img);
+}
+
+@mixin bg-op($p: center, $s: auto, $r: no-repeat) {
+  background-position: $p;
+  background-size: $s;
+  background-repeat: $r;
+}

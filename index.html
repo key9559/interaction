@@ -8,31 +8,31 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="#e5e5e5" />
   <title>buttons</title>
-  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    .link-wrap .gnb-link {
+      display: block;
+      width: fit-content;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="link-wrapper">
+  <div id="page" class="main-page">
     <div class="l-center">
-      <a href="index.html" class="link on">메인</a>
-      <a href="buttons.html" class="link">버튼모음</a>
-      <a href="animations.html" class="link">애니메이션모음</a>
-      <a href="scrolls.html" class="link">스크롤모음</a>
+      <p class="infomation">
+        각종 인터렉션 모음
+      </p>
+      <div class="link-wrap">
+        <a href="buttons.html" class="gnb-link">버튼모음</a>
+        <a href="inputs.html" class="gnb-link">인풋모음</a>
+        <a href="animation.html" class="gnb-link">애니메이션모음</a>
+      </div>
     </div>
-  </div>
-  <div class="l-center">
-    <p class="infomation">
-      각종 인터렉션 모음
-    </p>
-    <div class="link-wrap">
-      <a href="buttons.html" class="link">버튼모음</a>
-      <a href="animation.html" class="link">애니메이션모음</a>
-      <a href="scroll.html" class="link">스크롤모음</a>
-    </div>
-  </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/ui.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/ui.js"></script>
+  </div>
 </body>
 
 </html>

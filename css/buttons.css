@@ -1,3 +1,4 @@
+/* button animation */
 @-webkit-keyframes fadeAni {
   0% {
     opacity: 0;
@@ -19,10 +20,10 @@
     background-position: 0% 0%;
   }
   25% {
-    background-position: 100% 0%;
+    background-position: 100% 50%;
   }
   50% {
-    background-position: 100% 100%;
+    background-position: 50% 100%;
   }
   75% {
     background-position: 0% 100%;
@@ -36,10 +37,10 @@
     background-position: 0% 0%;
   }
   25% {
-    background-position: 100% 0%;
+    background-position: 100% 50%;
   }
   50% {
-    background-position: 100% 100%;
+    background-position: 50% 100%;
   }
   75% {
     background-position: 0% 100%;
@@ -48,6 +49,7 @@
     background-position: 0% 0%;
   }
 }
+/* button style */
 .buttons_wrap {
   position: relative;
   margin: 20px auto 30px;
@@ -179,8 +181,8 @@
 
 .buttons_wrap1 .btn {
   border: 0px none;
-  background: -webkit-gradient(linear, right top, left top, from(#563094), to(#ffbd54));
-  background: linear-gradient(to left, #563094, #ffbd54);
+  background-image: -webkit-gradient(linear, left top, right top, from(#563094), to(#ffbd54));
+  background-image: linear-gradient(to right, #563094, #ffbd54);
   color: white;
 }
 .buttons_wrap1 .btn1 {
@@ -217,8 +219,8 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background: -webkit-gradient(linear, right top, left top, from(#563094), to(#ffbd54));
-  background: linear-gradient(to left, #563094, #ffbd54);
+  background: -webkit-gradient(linear, left top, right top, from(#563094), to(#ffbd54));
+  background: linear-gradient(to right, #563094, #ffbd54);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -253,8 +255,8 @@
 .buttons_wrap1 .btn3:before, .buttons_wrap1 .btn3:after {
   width: 100%;
   height: 3px;
-  background: -webkit-gradient(linear, right top, left top, from(#563094), to(#ffbd54));
-  background: linear-gradient(to left, #563094, #ffbd54);
+  background: -webkit-gradient(linear, left top, right top, from(#563094), to(#ffbd54));
+  background: linear-gradient(to right, #563094, #ffbd54);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -265,26 +267,19 @@
   top: 0;
   left: auto;
   right: 0;
-  background-color: #563094;
+  background-color: #ffbd54;
 }
 .buttons_wrap1 .btn3 .txt:after {
   content: "";
   display: block;
   position: absolute;
   top: 0;
-  left: auto;
-  right: 0;
-  background-color: #ffbd54;
+  left: 0;
+  background-color: #563094;
 }
 .buttons_wrap1 .btn3 .txt:before, .buttons_wrap1 .btn3 .txt:after {
   width: 3px;
   height: 100%;
-}
-.buttons_wrap1 .btn3 .txt:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #ffbd54;
 }
 .buttons_wrap1 .btn3 .txt {
   position: relative;
@@ -311,8 +306,8 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   background-color: #e5e5e5;
   z-index: 0;
   -webkit-transition: all 0.3s;
@@ -335,8 +330,8 @@
 .buttons_wrap1 .btn5:before, .buttons_wrap1 .btn5:after {
   width: 0px;
   height: 3px;
-  background: -webkit-gradient(linear, left top, right top, from(#ffbd54), to(#563094));
-  background: linear-gradient(to right, #ffbd54 0%, #563094 100%);
+  background: -webkit-gradient(linear, right top, left top, from(#ffbd54), to(#563094));
+  background: linear-gradient(to left, #ffbd54 0%, #563094 100%);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -369,7 +364,7 @@
   top: 0;
   left: auto;
   right: 0;
-  background-color: #563094;
+  background-color: #ffbd54;
 }
 .buttons_wrap1 .btn5 .txt:after {
   content: "";
@@ -378,7 +373,7 @@
   top: auto;
   bottom: 0;
   left: 0;
-  background-color: #ffbd54;
+  background-color: #563094;
 }
 .buttons_wrap1 .btn5:hover:before {
   width: 100px;
@@ -403,8 +398,8 @@
   -webkit-background-clip: text;
   color: transparent;
   overflow: hidden;
-  background-image: -webkit-gradient(linear, right top, left top, from(#ffbd54), color-stop(50%, #563094), to(#ffbd54));
-  background-image: linear-gradient(to left, #ffbd54 0%, #563094 50%, #ffbd54 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(#563094), color-stop(50%, #ffbd54), to(#563094));
+  background-image: linear-gradient(to left, #563094 0%, #ffbd54 50%, #563094 100%);
   background-position: center left;
   background-size: 200%;
   -webkit-transition: all 0.5s;
@@ -417,8 +412,8 @@
   top: 44px;
   width: 100%;
   height: 3px;
-  background-image: -webkit-gradient(linear, right top, left top, from(#ffbd54), color-stop(50%, #563094), to(#ffbd54));
-  background-image: linear-gradient(to left, #ffbd54 0%, #563094 50%, #ffbd54 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(#563094), color-stop(50%, #ffbd54), to(#563094));
+  background-image: linear-gradient(to left, #563094 0%, #ffbd54 50%, #563094 100%);
   background-position: center left;
   background-size: 200%;
   -webkit-transition: all 0.5s;
@@ -440,6 +435,63 @@
 }
 .buttons_wrap1 .btn7:hover {
   background-position: right center;
+}
+.buttons_wrap1 .btn8 {
+  background-image: linear-gradient(-30deg, #563094, #a67100, #ffbd54, #a67100, #563094);
+  background-size: 500px 500px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  color: white;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+.buttons_wrap1 .btn8:hover {
+  -webkit-animation-name: bgPosition;
+          animation-name: bgPosition;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+.buttons_wrap1 .btn9 {
+  overflow: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.buttons_wrap1 .btn9 .txt {
+  z-index: 1;
+  position: relative;
+  background: #563094;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.buttons_wrap1 .btn9:before {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, right top, left top, from(#563094), to(#ffbd54));
+  background-image: linear-gradient(to left, #563094, #ffbd54);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.buttons_wrap1 .btn9:hover {
+  -webkit-box-shadow: -10px 10px 25px #563094, 10px -10px 25px #ffbd54;
+          box-shadow: -10px 10px 25px #563094, 10px -10px 25px #ffbd54;
+}
+.buttons_wrap1 .btn9:hover .txt {
+  background: none;
+}
+.buttons_wrap1 .btn9:hover:before {
+  z-index: 1;
 }
 
 .buttons_wrap2 .btn {
@@ -845,12 +897,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   top: 100%;
   left: 0;
@@ -869,25 +921,48 @@
   top: 0;
 }
 .buttons_wrap2 .btn12 {
-  background-image: linear-gradient(-30deg, #0c1db8, #f63642, #ff9900, #0c1db8);
-  background-size: 500px 500px;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  color: white;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  border-radius: 5px;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
+.buttons_wrap2 .btn12:before, .buttons_wrap2 .btn12:after {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: calc(100% - 1px);
+  border: 1px solid #333;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.buttons_wrap2 .btn12:before {
+  content: "";
+  display: block;
+  left: 0;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+}
+.buttons_wrap2 .btn12:after {
+  content: "";
+  display: block;
+  right: 0;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+.buttons_wrap2 .btn12 .txt {
+  z-index: 1;
+  position: relative;
 }
 .buttons_wrap2 .btn12:hover {
-  -webkit-animation-name: bgPosition;
-          animation-name: bgPosition;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-box-shadow: inset 0px 0px 15px rgba(25, 25, 25, 0.4);
+          box-shadow: inset 0px 0px 15px rgba(25, 25, 25, 0.4);
+}
+.buttons_wrap2 .btn12:hover:before, .buttons_wrap2 .btn12:hover:after {
+  width: 50%;
 }
 
 .buttons_wrap3 .btn {

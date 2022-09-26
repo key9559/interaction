@@ -1,39 +1,6 @@
-// buttons page
-@charset "UTF-8";
+@import "util";
 
-// vali
-$bg-color: #e5e5e5;
-
-// mixin
-@mixin make-before($c: "", $d: block) {
-  &:before {
-    content: $c;
-    display: $d;
-    @content;
-  }
-}
-
-@mixin make-after($c: "", $d: block) {
-  &:after {
-    content: $c;
-    display: $d;
-    @content;
-  }
-}
-
-@mixin hover {
-  &:hover {
-    @content;
-  }
-}
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// animation
+/* button animation */
 // wrap2 btn11
 @keyframes fadeAni {
   0% {
@@ -45,18 +12,18 @@ $bg-color: #e5e5e5;
   }
 }
 
-// wrap2 btn12
+// wrap1 btn8
 @keyframes bgPosition {
   0% {
     background-position: 0% 0%;
   }
 
   25% {
-    background-position: 100% 0%;
+    background-position: 100% 50%;
   }
 
   50% {
-    background-position: 100% 100%;
+    background-position: 50% 100%;
   }
 
   75% {
@@ -68,7 +35,7 @@ $bg-color: #e5e5e5;
   }
 }
 
-// style
+/* button style */
 .buttons_wrap {
   position: relative;
   margin: 20px auto 30px;
@@ -205,7 +172,7 @@ $bg-color: #e5e5e5;
 .buttons_wrap1 {
   .btn {
     border: 0px none;
-    background: linear-gradient(to left, #563094, #ffbd54);
+    background-image: linear-gradient(to right, #563094, #ffbd54);
     color: white;
   }
 
@@ -241,7 +208,7 @@ $bg-color: #e5e5e5;
       left: 0;
       width: 0%;
       height: 100%;
-      background: linear-gradient(to left, #563094, #ffbd54);
+      background: linear-gradient(to right, #563094, #ffbd54);
       transition: all 0.3s;
     }
 
@@ -279,7 +246,7 @@ $bg-color: #e5e5e5;
     &:after {
       width: 100%;
       height: 3px;
-      background: linear-gradient(to left, #563094, #ffbd54);
+      background: linear-gradient(to right, #563094, #ffbd54);
       transition: all 0.5s;
     }
 
@@ -289,15 +256,14 @@ $bg-color: #e5e5e5;
         top: 0;
         left: auto;
         right: 0;
-        background-color: #563094;
+        background-color: #ffbd54;
       }
 
       @include make-after {
         position: absolute;
         top: 0;
-        left: auto;
-        right: 0;
-        background-color: #ffbd54;
+        left: 0;
+        background-color: #563094;
       }
 
       &:before,
@@ -305,13 +271,6 @@ $bg-color: #e5e5e5;
         width: 3px;
         height: 100%;
       }
-    }
-
-    .txt:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #ffbd54;
     }
 
     .txt {
@@ -342,8 +301,8 @@ $bg-color: #e5e5e5;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: calc(100% - 2px);
-      height: calc(100% - 2px);
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
       background-color: #e5e5e5;
       z-index: 0;
       transition: all 0.3s;
@@ -372,7 +331,7 @@ $bg-color: #e5e5e5;
     &:after {
       width: 0px;
       height: 3px;
-      background: linear-gradient(to right, #ffbd54 0%, #563094 100%);
+      background: linear-gradient(to left, #ffbd54 0%, #563094 100%);
       transition: all 0.2s;
     }
 
@@ -403,7 +362,7 @@ $bg-color: #e5e5e5;
         top: 0;
         left: auto;
         right: 0;
-        background-color: #563094;
+        background-color: #ffbd54;
       }
 
       @include make-after {
@@ -411,7 +370,7 @@ $bg-color: #e5e5e5;
         top: auto;
         bottom: 0;
         left: 0;
-        background-color: #ffbd54;
+        background-color: #563094;
       }
     }
 
@@ -444,9 +403,9 @@ $bg-color: #e5e5e5;
     overflow: hidden;
     background-image: linear-gradient(
       to left,
-      #ffbd54 0%,
-      #563094 50%,
-      #ffbd54 100%
+      #563094 0%,
+      #ffbd54 50%,
+      #563094 100%
     );
     background-position: center left;
     background-size: 200%;
@@ -459,9 +418,9 @@ $bg-color: #e5e5e5;
       height: 3px;
       background-image: linear-gradient(
         to left,
-        #ffbd54 0%,
-        #563094 50%,
-        #ffbd54 100%
+        #563094 0%,
+        #ffbd54 50%,
+        #563094 100%
       );
       background-position: center left;
       background-size: 200%;
@@ -486,6 +445,65 @@ $bg-color: #e5e5e5;
 
     @include hover {
       background-position: right center;
+    }
+  }
+
+  .btn8 {
+    background-image: linear-gradient(
+      -30deg,
+      #563094,
+      #a67100,
+      #ffbd54,
+      #a67100,
+      #563094
+    );
+    background-size: 500px 500px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    color: white;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-fill-mode: backwards;
+
+    @include hover {
+      animation-name: bgPosition;
+      animation-duration: 2s;
+    }
+  }
+
+  .btn9 {
+    overflow: hidden;
+    transition: all 0.4s;
+
+    .txt {
+      z-index: 1;
+      position: relative;
+      background: #563094;
+      transition: all 0.4s;
+    }
+
+    @include make-before {
+      z-index: 0;
+      position: absolute;
+      top: 100%;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to left, #563094, #ffbd54);
+      transition: all 0.4s;
+    }
+
+    @include hover {
+      box-shadow: -10px 10px 25px #563094, 10px -10px 25px #ffbd54;
+
+      .txt {
+        background: none;
+      }
+
+      &:before {
+        z-index: 1;
+      }
     }
   }
 }
@@ -938,25 +956,46 @@ $bg-color: #e5e5e5;
   }
 
   .btn12 {
-    background-image: linear-gradient(
-      -30deg,
-      #0c1db8,
-      #f63642,
-      #ff9900,
-      #0c1db8
-    );
-    background-size: 500px 500px;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    color: white;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-timing-function: linear;
-    animation-fill-mode: backwards;
+    border-radius: 5px;
+    transition-delay: 0s;
+    transition-duration: 0.1s;
+
+    &:before,
+    &:after {
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      width: 3px;
+      height: calc(100% - 1px);
+      border: 1px solid #333;
+      transition: all 0.4s;
+    }
+
+    @include make-before {
+      left: 0;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+    }
+
+    @include make-after {
+      right: 0;
+      border-left: none;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .txt {
+      z-index: 1;
+      position: relative;
+    }
 
     @include hover {
-      animation-name: bgPosition;
-      animation-duration: 2s;
+      transition: all 1s;
+      box-shadow: inset 0px 0px 15px rgba(25, 25, 25, 0.4);
+
+      &:before,
+      &:after {
+        width: 50%;
+      }
     }
   }
 }

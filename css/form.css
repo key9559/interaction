@@ -1,0 +1,240 @@
+/* ---------------------- checkbox style ---------------------- */
+.inp-chck-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 20px;
+}
+.inp-chck-wrap .inp-chck-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.inp-chck-wrap .inp-chck-txt {
+  margin-left: 4px;
+}
+.inp-chck-wrap .inp-chck-txt:hover {
+  border-bottom: 1px solid;
+}
+
+/* checked 1 */
+.inp-chck-wrap1 .check {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #32cd32;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.inp-chck-wrap1 .inp-chck:checked ~ .inp-chck-icon .check {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 7px;
+  height: 15px;
+  width: 7px;
+  border-color: #32cd32;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
+}
+
+/* checked 2 */
+.inp-chck-wrap2 .inp-chck-icon {
+  position: relative;
+}
+.inp-chck-wrap2 .inp-chck-icon svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #4285f4;
+  stroke-width: 1.5;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.inp-chck-wrap2 .inp-chck-icon svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.inp-chck-wrap2 .inp-chck-icon svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.inp-chck-wrap2 .inp-chck:checked ~ .inp-chck-icon svg path {
+  stroke-dashoffset: 60;
+}
+.inp-chck-wrap2 .inp-chck:checked ~ .inp-chck-icon svg polyline {
+  stroke-dashoffset: 42;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+/* checked 3 */
+@-webkit-keyframes chck3 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1) rotateY(0deg);
+            transform: scale(1) rotateY(0deg);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(0.8) rotateY(180deg);
+            transform: scale(0.8) rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) rotateY(360deg);
+            transform: scale(1) rotateY(360deg);
+  }
+}
+@keyframes chck3 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1) rotateY(0deg);
+            transform: scale(1) rotateY(0deg);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(0.8) rotateY(180deg);
+            transform: scale(0.8) rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) rotateY(360deg);
+            transform: scale(1) rotateY(360deg);
+  }
+}
+.inp-chck-wrap3 .inp-chck-icon {
+  position: relative;
+  border-radius: 2px;
+  background-color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.inp-chck-wrap3 .inp-chck-icon:before {
+  content: "";
+  display: block;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  top: calc(50% - 8px);
+  right: calc(50% - 4px);
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.inp-chck-wrap3 .inp-chck:checked ~ .inp-chck-icon {
+  -webkit-animation: chck3 0.3s ease-in forwards;
+          animation: chck3 0.3s ease-in forwards;
+  background-color: rgb(120, 190, 120);
+}
+.inp-chck-wrap3 .inp-chck:checked ~ .inp-chck-icon:before {
+  opacity: 1;
+  -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+}
+
+/* ---------------------- textbox style ---------------------- */
+.inp-txt-wrap {
+  margin-top: 20px;
+}
+.inp-txt-wrap .inp-grp {
+  position: relative;
+}
+
+.inp-txt {
+  border-radius: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid;
+}
+
+/* text 1 */
+.inp-txt-wrap1 .inp-txt {
+  z-index: 1;
+  position: relative;
+}
+.inp-txt-wrap1 .inp-txt-label {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  line-height: 40px;
+  font-size: 15px;
+  background-color: #e5e5e5;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.inp-txt-wrap1 .inp-txt:focus ~ .inp-txt-label,
+.inp-txt-wrap1 .inp-txt:valid ~ .inp-txt-label {
+  z-index: 1;
+  top: -6px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+/* text 2 */
+.inp-txt-wrap2 .inp-grp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.inp-txt-wrap2 .inp-txt-label:after {
+  content: "";
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #32cd32;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.inp-txt-wrap2 .inp-txt {
+  border: none;
+  border-bottom: 1px solid;
+}
+.inp-txt-wrap2 .inp-txt:focus ~ .inp-txt-label:after {
+  width: 100%;
+}

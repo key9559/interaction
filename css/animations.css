@@ -26,12 +26,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -46,4 +46,83 @@
           animation-direction: alternate;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+}
+
+@-webkit-keyframes bgRepeat {
+  0% {
+    background-position: 0% bottom;
+  }
+  100% {
+    background-position: 100% bottom;
+  }
+}
+
+@keyframes bgRepeat {
+  0% {
+    background-position: 0% bottom;
+  }
+  100% {
+    background-position: 100% bottom;
+  }
+}
+.ani-wrap2 .wave-wrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+.ani-wrap2 .wave {
+  background-image: url("../image/ani_wave.png");
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 50%;
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  -webkit-animation: bgRepeat 10s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+          animation: bgRepeat 10s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.ani-wrap2 .wave2 {
+  bottom: -10px;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+.ani-wrap2 .wave3 {
+  bottom: -20px;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.ani-wrap3 .txt-wrap {
+  font-size: 25px;
+}
+.ani-wrap3 .txt-wrap:hover .highlight:before {
+  width: calc(100% + 10px);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+.ani-wrap3 .highlight {
+  position: relative;
+}
+.ani-wrap3 .highlight .txt {
+  z-index: 1;
+  position: relative;
+}
+.ani-wrap3 .highlight:before {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 0;
+  height: 20px;
+  background-color: yellow;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0s linear;
+  transition: all 0s linear;
 }

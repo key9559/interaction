@@ -45,7 +45,7 @@ button {
   background-color: #fff;
 }
 
-.link {
+.gnb-link {
   display: inline-block;
   margin-right: 10px;
   padding: 10px;
@@ -53,17 +53,14 @@ button {
   color: #333;
   border-bottom: 1px solid #333;
 }
-.link:hover {
+.gnb-link:hover {
   color: yellowgreen;
 }
-.link.on {
+.gnb-link.on {
   border-bottom: 1px solid yellowgreen;
   color: yellowgreen;
 }
 
-.link-wrap .link {
-  display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.d-none {
+  display: none;
 }

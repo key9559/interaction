@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#e5e5e5" />
+  <title>buttons</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/form.css" />
+  <style>
+    .link-wrap .link {
+      display: block;
+      width: fit-content;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page" class="input-page">
+    <div class="link-wrapper">
+      <!-- ui.js -->
+    </div>
+    <div class="l-center">
+      <form action="">
+        <p class="infomation">
+          checkbox 인터렉션 모음
+        </p>
+        <!-- checked 1 -->
+        <div class="inp-chck-wrap inp-chck-wrap1">
+          <input name="chck1" id="chck1" type="checkbox" class="inp-chck d-none">
+          <label for="chck1" class="inp-label inp-chck-icon">
+            <span class="check"></span>
+          </label>
+          <label for="chck1" class="inp-label inp-chck-txt">글자영역</label>
+        </div>
+
+        <!-- checked 2 -->
+        <div class="inp-chck-wrap inp-chck-wrap2">
+          <input name="chck2" id="chck2" type="checkbox" class="inp-chck d-none">
+          <label for="chck2" class="inp-label inp-chck-icon">
+            <svg width="18px" height="18px" viewBox="0 0 18 18">
+              <path
+                d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+              </path>
+              <polyline points="1 9 7 14 15 4"></polyline>
+            </svg>
+          </label>
+          <label for="chck2" class="inp-label inp-chck-txt">글자영역</label>
+        </div>
+
+        <!-- checked 3 -->
+        <div class="inp-chck-wrap inp-chck-wrap3">
+          <input name="chck3" id="chck3" type="checkbox" class="inp-chck d-none">
+          <label for="chck3" class="inp-label inp-chck-icon">
+            <span class="check"></span>
+          </label>
+          <label for="chck3" class="inp-label inp-chck-txt">글자영역</label>
+        </div>
+
+        <p class="infomation">
+          text input 인터렉션 모음
+        </p>
+        <!-- text 1 -->
+        <div class="inp-txt-wrap inp-txt-wrap1">
+          <div class="inp-grp">
+            <input type="text" name="txt1" id="txt1" class="inp-txt" required />
+            <label for="txt1" class="inp-txt-label">name</label>
+          </div>
+        </div>
+
+        <!-- text 2 -->
+        <div class="inp-txt-wrap inp-txt-wrap2">
+          <div class="inp-grp">
+            <input type="text" name="txt2" id="txt2" class="inp-txt" />
+            <label for="txt2" class="inp-txt-label">name</label>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/ui.js"></script>
+  </div>
+</body>
+
+</html>
