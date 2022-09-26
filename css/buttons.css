@@ -1018,7 +1018,7 @@
   position: absolute;
   width: 1.5em;
   height: 1px;
-  background-color: #e5e5e5;
+  background-color: #f5f5f5;
   -webkit-transition: width 0.2s, left 0.4s, right 0.4s;
   transition: width 0.2s, left 0.4s, right 0.4s;
 }
@@ -1161,7 +1161,7 @@
   width: 10px;
   height: 4px;
   border: 2px solid purple;
-  background-color: #e5e5e5;
+  background-color: #f5f5f5;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }

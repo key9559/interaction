@@ -16,13 +16,14 @@
   margin: 50px 0;
 }
 
+// dongdong
 .dongdong {
   @include flex-center;
 
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: beige;
+  background-image: radial-gradient(circle, beige, #f4f483);
   animation-name: dongdong;
   animation-iteration-count: infinite;
   animation-duration: 1s;
@@ -30,6 +31,7 @@
   animation-timing-function: linear;
 }
 
+// wave
 @keyframes bgRepeat {
   0% {
     background-position: 0% bottom;
@@ -74,36 +76,94 @@
   }
 }
 
-.ani-wrap3 {
-  .txt-wrap {
-    font-size: 25px;
-
-    @include hover {
-      .highlight:before {
-        width: calc(100% + 10px);
-        transition-duration: 0.5s;
-      }
-    }
+// rotate
+@keyframes rotateConts {
+  0% {
+    transform: rotate(0);
   }
 
-  .highlight {
-    position: relative;
+  100% {
+    transform: rotate(359deg);
+  }
+}
 
-    .txt {
-      z-index: 1;
-      position: relative;
+.rotate-wrapper {
+  overflow: hidden;
+}
+
+.rotate-wrap {
+  position: relative;
+  // width: 100%;
+  // padding-top: 100%;
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  animation-name: rotateConts;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  .rotate-conts {
+    @include flex-center;
+
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    background-image: radial-gradient(circle, #fff, #ccc);
+    font-size: 30px;
+    font-weight: 600;
+    animation-name: rotateConts;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+
+    &1 {
+      top: 0;
+      left: calc(50% - 100px);
     }
 
-    @include make-before {
-      z-index: 0;
-      position: absolute;
-      top: 50%;
-      left: -5px;
-      width: 0;
-      height: 20px;
-      background-color: yellow;
-      transform: translateY(-50%);
-      transition: all 0s linear;
+    &2 {
+      top: calc(25% - 125px);
+      left: auto;
+      right: calc(25% - 125px);
+    }
+
+    &3 {
+      top: calc(50% - 100px);
+      left: auto;
+      right: 0;
+    }
+
+    &4 {
+      top: auto;
+      bottom: calc(25% - 125px);
+      left: auto;
+      right: calc(25% - 125px);
+    }
+
+    &5 {
+      top: auto;
+      bottom: 0;
+      left: calc(50% - 100px);
+    }
+
+    &6 {
+      top: auto;
+      bottom: calc(25% - 125px);
+      left: calc(25% - 125px);
+    }
+
+    &7 {
+      top: calc(50% - 100px);
+      left: 0;
+    }
+
+    &8 {
+      top: calc(25% - 125px);
+      left: calc(25% - 125px);
     }
   }
 }

@@ -1,0 +1,95 @@
+@import "util";
+.scr-wrap {
+  margin-top: 20px;
+  outline: 1px solid;
+}
+
+// highlight
+.scr-wrap1 {
+  .txt-wrap {
+    font-size: 25px;
+
+    @include hover {
+      .highlight:before {
+        width: calc(100% + 10px);
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  .highlight {
+    position: relative;
+
+    .txt {
+      z-index: 1;
+      position: relative;
+    }
+
+    @include make-before {
+      z-index: 0;
+      position: absolute;
+      top: 50%;
+      left: -5px;
+      width: 0;
+      height: 20px;
+      background-color: yellow;
+      transform: translateY(-50%);
+      transition: all 0s linear;
+    }
+  }
+}
+
+// section coloring
+.scr-wrap2 {
+  .section-wrap {
+    @include flex-center;
+
+    position: relative;
+    height: 500px;
+
+    .contents-wrap {
+      opacity: 0;
+      z-index: 2;
+      position: relative;
+      font-size: 50px;
+      text-transform: uppercase;
+      transition: all 0.5s ease-in-out;
+    }
+
+    @include make-before {
+      z-index: 0;
+      background-color: white;
+    }
+
+    @include make-after {
+      z-index: 1;
+      background-color: #ddd;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    @include hover {
+      &:before {
+        height: 100%;
+      }
+
+      &:after {
+        height: 100%;
+        transition-delay: 0.2s;
+      }
+
+      .contents-wrap {
+        opacity: 1;
+        transition-delay: 0.4s;
+      }
+    }
+  }
+}

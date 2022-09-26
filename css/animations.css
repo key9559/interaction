@@ -35,7 +35,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: beige;
+  background-image: radial-gradient(circle, beige, #f4f483);
   -webkit-animation-name: dongdong;
           animation-name: dongdong;
   -webkit-animation-iteration-count: infinite;
@@ -96,33 +96,108 @@
           animation-duration: 5s;
 }
 
-.ani-wrap3 .txt-wrap {
-  font-size: 25px;
+@-webkit-keyframes rotateConts {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
 }
-.ani-wrap3 .txt-wrap:hover .highlight:before {
-  width: calc(100% + 10px);
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+
+@keyframes rotateConts {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
 }
-.ani-wrap3 .highlight {
+.rotate-wrapper {
+  overflow: hidden;
+}
+
+.rotate-wrap {
   position: relative;
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  -webkit-animation-name: rotateConts;
+          animation-name: rotateConts;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
-.ani-wrap3 .highlight .txt {
-  z-index: 1;
-  position: relative;
-}
-.ani-wrap3 .highlight:before {
-  content: "";
-  display: block;
-  z-index: 0;
+.rotate-wrap .rotate-conts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
-  top: 50%;
-  left: -5px;
-  width: 0;
-  height: 20px;
-  background-color: yellow;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: all 0s linear;
-  transition: all 0s linear;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  background-image: radial-gradient(circle, #fff, #ccc);
+  font-size: 30px;
+  font-weight: 600;
+  -webkit-animation-name: rotateConts;
+          animation-name: rotateConts;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  animation-direction: reverse;
+}
+.rotate-wrap .rotate-conts1 {
+  top: 0;
+  left: calc(50% - 100px);
+}
+.rotate-wrap .rotate-conts2 {
+  top: calc(25% - 125px);
+  left: auto;
+  right: calc(25% - 125px);
+}
+.rotate-wrap .rotate-conts3 {
+  top: calc(50% - 100px);
+  left: auto;
+  right: 0;
+}
+.rotate-wrap .rotate-conts4 {
+  top: auto;
+  bottom: calc(25% - 125px);
+  left: auto;
+  right: calc(25% - 125px);
+}
+.rotate-wrap .rotate-conts5 {
+  top: auto;
+  bottom: 0;
+  left: calc(50% - 100px);
+}
+.rotate-wrap .rotate-conts6 {
+  top: auto;
+  bottom: calc(25% - 125px);
+  left: calc(25% - 125px);
+}
+.rotate-wrap .rotate-conts7 {
+  top: calc(50% - 100px);
+  left: 0;
+}
+.rotate-wrap .rotate-conts8 {
+  top: calc(25% - 125px);
+  left: calc(25% - 125px);
 }
