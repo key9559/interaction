@@ -6,11 +6,6 @@
 .scr-wrap1 .txt-wrap {
   font-size: 25px;
 }
-.scr-wrap1 .txt-wrap:hover .highlight:before {
-  width: calc(100% + 10px);
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-}
 .scr-wrap1 .highlight {
   position: relative;
 }
@@ -32,6 +27,11 @@
           transform: translateY(-50%);
   -webkit-transition: all 0s linear;
   transition: all 0s linear;
+}
+.scr-wrap1:hover .highlight:before {
+  width: calc(100% + 10px);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .scr-wrap2 .section-wrap {
@@ -77,16 +77,94 @@
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-.scr-wrap2 .section-wrap:hover:before {
+.scr-wrap2:hover .section-wrap:before {
   height: 100%;
 }
-.scr-wrap2 .section-wrap:hover:after {
+.scr-wrap2:hover .section-wrap:after {
   height: 100%;
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.scr-wrap2 .section-wrap:hover .contents-wrap {
+.scr-wrap2:hover .contents-wrap {
   opacity: 1;
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
+}
+
+.scr-wrap3 .stick-wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.scr-wrap3 .stick {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 0%;
+  margin-top: 0px;
+  margin-left: -10px;
+  font-size: 0;
+  color: transparent;
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.scr-wrap3 .stick:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #ffbd54;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.scr-wrap3 .stick1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.scr-wrap3 .stick2 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.scr-wrap3 .stick3 {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.scr-wrap3 .stick4 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.scr-wrap3 .stick5 {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+.scr-wrap3 .stick6 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.scr-wrap3 .stick7 {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+.scr-wrap3 .stick8 {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.scr-wrap3:hover .stick {
+  opacity: 1;
+  height: 50%;
+  margin-top: -150px;
+  margin-left: -10px;
 }

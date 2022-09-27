@@ -4,10 +4,10 @@ const gnbWrap = $(".link-wrapper");
 gnbWrap.append(`
 <div class="l-center">
 	<a href="index.html" class="gnb-link">메인</a>
-	<a href="buttons.html" class="gnb-link">버튼모음</a>
-	<a href="inputs.html" class="gnb-link">인풋모음</a>
-	<a href="animations.html" class="gnb-link">애니메이션모음</a>
-	<a href="scrolls.html" class="gnb-link">스크롤모음</a>
+	<a href="buttons.html" class="gnb-link">버튼</a>
+	<a href="inputs.html" class="gnb-link">인풋</a>
+	<a href="animations.html" class="gnb-link">애니메이션</a>
+	<a href="scrolls.html" class="gnb-link">스크롤</a>
 </div>`);
 
 const gnbLink = $(".gnb-link");

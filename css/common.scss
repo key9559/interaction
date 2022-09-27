@@ -63,6 +63,12 @@ button {
     border-bottom: 1px solid yellowgreen;
     color: yellowgreen;
   }
+
+  @media all and (max-width: 1024px) {
+    margin-right: 5px;
+    padding: 5px;
+    font-size: 12px;
+  }
 }
 
 .d-none {
