@@ -10,21 +10,31 @@
   <title>buttons</title>
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/btn-ham.css" />
 </head>
 
 <body>
   <div id="page" class="button-page">
-    <div class="link-wrapper">
+    <header class="link-wrapper">
       <!-- ui.js -->
-    </div>
-    <div class="l-center">
+    </header>
+    <main class="l-center">
 
       <p class="infomation">
         button: hover(마우스올린 상태) <br />
         active: hover + active(누르고 있을 때)
       </p>
 
-      <div class="buttons_wrap buttons_Wrap_freesize">
+      <div class="buttons_wrap buttons_wrap_hamburger">
+        <button class="btn-ham btn-ham1">
+          <span class="bar bar1">gnb</span>
+        </button>
+        <button class="btn-ham btn-ham2">
+          <span class="bar bar1">gnb</span>
+        </button>
+      </div>
+
+      <div class="buttons_wrap buttons_wrap_freesize">
         <button class="btn btn0"><span class="txt">base style freesize</span></button>
         <button class="btn btn1">
           <span class="txt" data-text="b">b</span>
@@ -113,7 +123,7 @@
         <button class="btn btn2"><span class="txt">button</span></button>
         <button class="btn btn3"><span class="txt">button</span></button>
       </div>
-    </div>
+    </main>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/ui.js"></script>

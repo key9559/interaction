@@ -1,0 +1,59 @@
+@import "util";
+
+.btn-ham {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  .bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #563094;
+    font-size: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s;
+
+    @include make-virtual {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 3px;
+      background-color: #563094;
+      transition: all 0.4s;
+    }
+
+    &:before {
+      top: -8px;
+    }
+
+    &:after {
+      top: 8px;
+    }
+  }
+}
+
+.btn-ham1.active {
+  .bar:before,
+  .bar:after {
+    top: 0;
+  }
+}
+
+.btn-ham2.active {
+  .bar {
+    background-color: transparent;
+
+    &:before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    &:after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}

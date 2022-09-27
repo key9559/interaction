@@ -1,6 +1,12 @@
-// 정리
+// hamburger button
+$(".btn-ham").on("click", function () {
+  $(this).toggleClass("active");
+});
+
+// image buttons
 var contm = 0;
 var mc;
+
 function bgMove($btnName, imgHeight, sliceCnt) {
   $btnName.hover(
     function () {
