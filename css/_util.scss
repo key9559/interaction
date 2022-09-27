@@ -33,6 +33,20 @@ $path-set: (
   }
 }
 
+@mixin make-virtual($c: "", $d: block) {
+  &:before {
+    content: $c;
+    display: $d;
+    @content;
+  }
+
+  &:after {
+    content: $c;
+    display: $d;
+    @content;
+  }
+}
+
 @mixin hover {
   &:hover {
     @content;

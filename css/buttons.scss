@@ -89,7 +89,7 @@
       height: 30px;
       line-height: 30px;
       text-transform: uppercase;
-      background-color: pink;
+      background-color: #ffbd54;
 
       @include make-after($c: attr(data-text)) {
         position: absolute;
@@ -97,8 +97,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: lightblue;
+        background-color: #563094;
         transition: all 0.4s;
+        color: white;
       }
 
       &:nth-child(even) {
@@ -125,7 +126,7 @@
     width: auto;
     color: transparent;
     font-size: 20px;
-    -webkit-text-stroke: 1px #000;
+    -webkit-text-stroke: 1px #563094;
 
     @include make-before {
       position: absolute;
@@ -133,7 +134,7 @@
       left: -3px;
       width: 3px;
       height: 1em;
-      background-color: #000;
+      background-color: #563094;
       transform: translateY(-50%);
       transition: all 0.4s;
       animation-name: fadeAni;
@@ -151,11 +152,11 @@
       width: 0;
       height: 100%;
       transition: all 0.4s;
-      color: #000;
+      color: #563094;
     }
 
     @include hover {
-      filter: drop-shadow(0 0 30px #000);
+      filter: drop-shadow(0 0 30px #563094);
 
       &:before {
         left: 100%;
@@ -891,7 +892,7 @@
   }
 
   .btn10 {
-    background-color: hotpink;
+    background-color: #ffbd54;
     color: #666;
     box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
       inset 2px 2px 5px rgba(255, 255, 255, 0.7);
@@ -1189,7 +1190,7 @@
   }
 
   .btn9 {
-    color: purple;
+    color: #563094;
 
     @include make-before {
       top: -4px;
@@ -1208,13 +1209,13 @@
       position: absolute;
       width: 10px;
       height: 4px;
-      border: 2px solid purple;
+      border: 2px solid #563094;
       background-color: $bg-color;
       transition: all 0.4s;
     }
 
     @include hover {
-      outline: 2px solid purple;
+      outline: 2px solid #563094;
 
       &:before {
         left: 70px;

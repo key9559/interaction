@@ -56,7 +56,7 @@
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: #4285f4;
+  stroke: #32cd32;
   stroke-width: 1.5;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -148,7 +148,7 @@
 .inp-chck-wrap3 .inp-chck:checked ~ .inp-chck-icon {
   -webkit-animation: chck3 0.3s ease-in forwards;
           animation: chck3 0.3s ease-in forwards;
-  background-color: rgb(120, 190, 120);
+  background-color: #32cd32;
 }
 .inp-chck-wrap3 .inp-chck:checked ~ .inp-chck-icon:before {
   opacity: 1;

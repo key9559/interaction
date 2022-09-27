@@ -1,34 +1,92 @@
 @import "util";
 
-// animation
-@keyframes dongdong {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-20px);
-  }
-}
-
 // style
 .ani-wrap {
   margin: 50px 0;
 }
 
 // dongdong
-.dongdong {
-  @include flex-center;
+@keyframes dongdong {
+  0% {
+    transform: translateY(0);
+  }
 
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-image: radial-gradient(circle, beige, #f4f483);
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.dongdong {
+  width: 50px;
   animation-name: dongdong;
   animation-iteration-count: infinite;
   animation-duration: 1s;
   animation-direction: alternate;
   animation-timing-function: linear;
+}
+
+// ringring
+@keyframes ringring {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  20% {
+    transform: rotate(10deg);
+  }
+
+  40% {
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.ringring {
+  width: 40px;
+  transform-origin: 100% 100%;
+  animation-name: ringring;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+// arrow
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+.arrow-wrap {
+  position: relative;
+  height: 50px;
+
+  .down {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-name: arrow;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
 }
 
 // wave
@@ -62,7 +120,10 @@
     background-size: 50%;
     background-position: bottom left;
     background-repeat: repeat-x;
-    animation: bgRepeat 10s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+    animation-name: bgRepeat;
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier(0.55, 0.5, 0.45, 0.5);
+    animation-iteration-count: infinite;
   }
 
   .wave2 {
@@ -165,5 +226,77 @@
       top: calc(25% - 125px);
       left: calc(25% - 125px);
     }
+  }
+}
+
+// circle
+@keyframes circleWave {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 0;
+    width: 1000px;
+    height: 1000px;
+  }
+}
+
+.circle-wrap {
+  @include flex-center;
+
+  position: relative;
+  height: 1000px;
+
+  @include make-virtual {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(124, 229, 255, 0.3);
+    transform: translate(-50%, -50%);
+    animation-name: circleWave;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &:after {
+    animation-delay: 1s;
+  }
+
+  .circle-grp {
+    @include make-virtual {
+      z-index: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: rgba(124, 229, 255, 0.3);
+      transform: translate(-50%, -50%);
+      animation-name: circleWave;
+      animation-duration: 4s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    &:before {
+      animation-delay: 2s;
+    }
+
+    &:after {
+      animation-delay: 3s;
+    }
+  }
+
+  .circle-conts {
+    z-index: 1;
+    position: relative;
   }
 }
