@@ -228,8 +228,7 @@
 
 .rotate-wrap {
   position: relative;
-  width: 1000px;
-  height: 1000px;
+  padding-top: 100%;
   margin: 0 auto;
   -webkit-animation-name: rotateConts;
           animation-name: rotateConts;
