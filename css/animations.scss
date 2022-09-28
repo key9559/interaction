@@ -297,3 +297,62 @@
     position: relative;
   }
 }
+
+//firework
+@keyframes firework {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+}
+.ani-wrap3 {
+  .stick-wrap {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  .stick {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 10px;
+    height: 50%;
+    font-size: 0;
+    color: transparent;
+    user-select: none;
+    transform-origin: bottom center;
+
+    @include make-before {
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 10px;
+      height: 30px;
+      border-radius: 5px;
+      background-color: #ffbd54;
+      transition: all 0.4s;
+      animation-name: firework;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+    }
+  }
+
+  @for $i from 1 through 8 {
+    .stick#{$i} {
+      transform: rotate($i * 45deg);
+    }
+  }
+}

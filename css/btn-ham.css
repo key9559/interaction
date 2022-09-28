@@ -66,3 +66,35 @@
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+
+.btn-ham3.active .bar {
+  background-color: transparent;
+}
+.btn-ham3.active .bar:before {
+  top: 0;
+  -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+}
+.btn-ham3.active .bar:after {
+  top: 0;
+  -webkit-transform: rotate(-405deg);
+          transform: rotate(-405deg);
+}
+
+.btn-ham4.active .bar {
+  background-color: transparent;
+}
+.btn-ham4.active .bar:before {
+  top: -4px;
+  left: 50%;
+  width: 14px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+}
+.btn-ham4.active .bar:after {
+  top: 4px;
+  left: 50%;
+  width: 14px;
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+}

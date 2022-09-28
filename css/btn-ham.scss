@@ -51,9 +51,46 @@
       top: 0;
       transform: rotate(45deg);
     }
+
     &:after {
       top: 0;
       transform: rotate(-45deg);
+    }
+  }
+}
+
+.btn-ham3.active {
+  .bar {
+    background-color: transparent;
+
+    &:before {
+      top: 0;
+      transform: rotate(405deg);
+    }
+
+    &:after {
+      top: 0;
+      transform: rotate(-405deg);
+    }
+  }
+}
+
+.btn-ham4.active {
+  .bar {
+    background-color: transparent;
+
+    &:before {
+      top: -4px;
+      left: 50%;
+      width: 14px;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    &:after {
+      top: 4px;
+      left: 50%;
+      width: 14px;
+      transform: translateX(-50%) rotate(-45deg);
     }
   }
 }

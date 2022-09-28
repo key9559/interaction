@@ -446,3 +446,111 @@
   z-index: 1;
   position: relative;
 }
+
+@-webkit-keyframes firework {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes firework {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+}
+.ani-wrap3 .stick-wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.ani-wrap3 .stick {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 10px;
+  height: 50%;
+  font-size: 0;
+  color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+.ani-wrap3 .stick:before {
+  content: "";
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #ffbd54;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-animation-name: firework;
+          animation-name: firework;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.ani-wrap3 .stick1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.ani-wrap3 .stick2 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.ani-wrap3 .stick3 {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.ani-wrap3 .stick4 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.ani-wrap3 .stick5 {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+.ani-wrap3 .stick6 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.ani-wrap3 .stick7 {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+.ani-wrap3 .stick8 {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
