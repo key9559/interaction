@@ -1410,6 +1410,128 @@
 .buttons_wrap3 .btn11:hover .txt:before, .buttons_wrap3 .btn11:hover .txt:after {
   height: 100%;
 }
+.buttons_wrap3 .btn12:before {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: black;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.buttons_wrap3 .btn12:after {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: black;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.buttons_wrap3 .btn12:after {
+  top: auto;
+  bottom: 50%;
+}
+.buttons_wrap3 .btn12 .txt {
+  z-index: 1;
+  position: relative;
+}
+.buttons_wrap3 .btn12:hover:before, .buttons_wrap3 .btn12:hover:after {
+  height: 50%;
+}
+.buttons_wrap3 .btn12:hover .txt {
+  color: white;
+}
+.buttons_wrap3 .btn13:before {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: black;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.buttons_wrap3 .btn13:after {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: black;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.buttons_wrap3 .btn13:after {
+  top: auto;
+  bottom: 0;
+}
+.buttons_wrap3 .btn13 .txt {
+  z-index: 1;
+  position: relative;
+}
+.buttons_wrap3 .btn13:hover:before, .buttons_wrap3 .btn13:hover:after {
+  height: 50%;
+}
+.buttons_wrap3 .btn13:hover .txt {
+  color: white;
+}
+.buttons_wrap3 .btn14 {
+  background-color: #f5f5f5;
+}
+.buttons_wrap3 .btn14 .txt {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+.buttons_wrap3 .btn14:before {
+  content: attr(data-text);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.buttons_wrap3 .btn14:hover:before {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+.buttons_wrap3 .btn14:hover .txt {
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
 
 .buttons_wrap4 .btn {
   width: 50px;

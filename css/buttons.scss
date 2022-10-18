@@ -279,6 +279,7 @@
     }
 
     @include hover {
+
       &:before,
       &:after {
         height: 50%;
@@ -347,6 +348,7 @@
     }
 
     .txt {
+
       &:before,
       &:after {
         height: 0px;
@@ -398,12 +400,10 @@
     -webkit-background-clip: text;
     color: transparent;
     overflow: hidden;
-    background-image: linear-gradient(
-      to left,
-      #563094 0%,
-      #ffbd54 50%,
-      #563094 100%
-    );
+    background-image: linear-gradient(to left,
+        #563094 0%,
+        #ffbd54 50%,
+        #563094 100%);
     background-position: center left;
     background-size: 200%;
     transition: all 0.5s;
@@ -413,12 +413,10 @@
       top: 44px;
       width: 100%;
       height: 3px;
-      background-image: linear-gradient(
-        to left,
-        #563094 0%,
-        #ffbd54 50%,
-        #563094 100%
-      );
+      background-image: linear-gradient(to left,
+          #563094 0%,
+          #ffbd54 50%,
+          #563094 100%);
       background-position: center left;
       background-size: 200%;
       transition: all 0.5s;
@@ -446,14 +444,12 @@
   }
 
   .btn8 {
-    background-image: linear-gradient(
-      -30deg,
-      #563094,
-      #a67100,
-      #ffbd54,
-      #a67100,
-      #563094
-    );
+    background-image: linear-gradient(-30deg,
+        #563094,
+        #a67100,
+        #ffbd54,
+        #a67100,
+        #563094);
     background-size: 500px 500px;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -686,6 +682,7 @@
     }
 
     @include hover {
+
       &:before,
       &:after {
         width: 100%;
@@ -845,6 +842,7 @@
     }
 
     @include hover {
+
       &:before,
       &:after {
         height: 100%;
@@ -1358,12 +1356,14 @@
     }
 
     @include hover {
+
       &:before,
       &:after {
         width: 100%;
       }
 
       .txt {
+
         &:before,
         &:after {
           width: 100%;
@@ -1420,16 +1420,123 @@
     }
 
     @include hover {
+
       &:before,
       &:after {
         height: 100%;
       }
 
       .txt {
+
         &:before,
         &:after {
           height: 100%;
         }
+      }
+    }
+  }
+
+  .btn12 {
+    @include make-virtual {
+      z-index: 0;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: black;
+      transition: all 0.2s;
+    }
+
+    &:after {
+      top: auto;
+      bottom: 50%;
+    }
+
+    .txt {
+      z-index: 1;
+      position: relative;
+    }
+
+    @include hover {
+
+      &:before,
+      &:after {
+        height: 50%;
+      }
+
+      .txt {
+        color: white;
+      }
+    }
+  }
+
+  .btn13 {
+    @include make-virtual {
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: black;
+      transition: all 0.2s;
+    }
+
+    &:after {
+      top: auto;
+      bottom: 0;
+    }
+
+    .txt {
+      z-index: 1;
+      position: relative;
+    }
+
+    @include hover {
+
+      &:before,
+      &:after {
+        height: 50%;
+      }
+
+      .txt {
+        color: white;
+      }
+    }
+  }
+
+  .btn14 {
+    background-color: #f5f5f5;
+
+    .txt {
+      transition: all 0.3s;
+      backface-visibility: visible;
+      transform-style: preserve-3d;
+      transition-delay: 0.1s;
+    }
+
+    @include make-before($c: attr(data-text)) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotateY(90deg);
+      backface-visibility: visible;
+      transform-style: preserve-3d;
+      transition: all 0.3s;
+    }
+
+    @include hover {
+      &:before {
+        transform: none;
+        transition-delay: 0.1s;
+      }
+
+      .txt {
+        transform: rotateY(-90deg);
+        transition-delay: 0s;
       }
     }
   }
