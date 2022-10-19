@@ -28,7 +28,7 @@
   -webkit-transition: all 0s linear;
   transition: all 0s linear;
 }
-.scr-wrap1:hover .highlight:before {
+.scr-wrap1:not([disabled=disabled]):hover .highlight:before, .scr-wrap1:not([disabled=disabled]):focus .highlight:before {
   width: calc(100% + 10px);
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
@@ -77,15 +77,15 @@
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-.scr-wrap2:hover .section-wrap:before {
+.scr-wrap2:not([disabled=disabled]):hover .section-wrap:before, .scr-wrap2:not([disabled=disabled]):focus .section-wrap:before {
   height: 100%;
 }
-.scr-wrap2:hover .section-wrap:after {
+.scr-wrap2:not([disabled=disabled]):hover .section-wrap:after, .scr-wrap2:not([disabled=disabled]):focus .section-wrap:after {
   height: 100%;
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.scr-wrap2:hover .contents-wrap {
+.scr-wrap2:not([disabled=disabled]):hover .contents-wrap, .scr-wrap2:not([disabled=disabled]):focus .contents-wrap {
   opacity: 1;
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
@@ -157,7 +157,7 @@
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
-.scr-wrap3:hover .stick:before {
+.scr-wrap3:not([disabled=disabled]):hover .stick:before, .scr-wrap3:not([disabled=disabled]):focus .stick:before {
   opacity: 1;
   top: 0;
   left: 0;

@@ -6,7 +6,7 @@
 }
 
 @function urlPath($pathName, $img) {
-  @return url(path($pathName) + $img);
+  @return url(path($pathName)+$img);
 }
 
 // vali
@@ -48,7 +48,9 @@ $path-set: (
 }
 
 @mixin hover {
-  &:hover {
+
+  &:not([disabled="disabled"]):hover,
+  &:not([disabled="disabled"]):focus {
     @content;
   }
 }
@@ -81,8 +83,8 @@ $path-set: (
   box-shadow: none;
 }
 
-@mixin bg-url($path, $img) {
-  background-image: urlPath($path, $img);
+@mixin bg-url($path, $img){
+background-image: urlPath($path, $img);
 }
 
 @mixin bg-op($p: center, $s: auto, $r: no-repeat) {

@@ -19,7 +19,7 @@
 .inp-chck-wrap .inp-chck-txt {
   margin-left: 4px;
 }
-.inp-chck-wrap .inp-chck-txt:hover {
+.inp-chck-wrap .inp-chck-txt:not([disabled=disabled]):hover, .inp-chck-wrap .inp-chck-txt:not([disabled=disabled]):focus {
   border-bottom: 1px solid;
 }
 

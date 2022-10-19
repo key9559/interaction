@@ -1,4 +1,5 @@
 @import "util";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
 
 // reset
 html,
@@ -9,7 +10,7 @@ body {
   background-color: $bg-color;
   font-size: 15px;
   font-weight: 500;
-  font-family: Georgia, "Times New Roman", "dotum", Times, serif;
+  font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
 body * {

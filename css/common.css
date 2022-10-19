@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap");
 html,
 body {
   margin: 0px;
@@ -7,7 +8,7 @@ body {
   background-color: #f5f5f5;
   font-size: 15px;
   font-weight: 500;
-  font-family: Georgia, "Times New Roman", "dotum", Times, serif;
+  font-family: "IBM Plex Sans KR", sans-serif;
 }
 
 body * {
@@ -53,7 +54,7 @@ button {
   color: #333;
   border-bottom: 1px solid #333;
 }
-.gnb-link:hover {
+.gnb-link:not([disabled=disabled]):hover, .gnb-link:not([disabled=disabled]):focus {
   color: yellowgreen;
 }
 .gnb-link.on {

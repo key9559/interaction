@@ -115,10 +115,10 @@
   top: auto;
   bottom: 100%;
 }
-.buttons_wrap_freesize .btn1:hover .txt:after {
+.buttons_wrap_freesize .btn1:not([disabled=disabled]):hover .txt:after, .buttons_wrap_freesize .btn1:not([disabled=disabled]):focus .txt:after {
   top: 0;
 }
-.buttons_wrap_freesize .btn1:hover .txt:nth-child(even):after {
+.buttons_wrap_freesize .btn1:not([disabled=disabled]):hover .txt:nth-child(even):after, .buttons_wrap_freesize .btn1:not([disabled=disabled]):focus .txt:nth-child(even):after {
   top: auto;
   bottom: 0;
 }
@@ -164,16 +164,16 @@
   transition: all 0.4s;
   color: #563094;
 }
-.buttons_wrap_freesize .btn2:hover {
+.buttons_wrap_freesize .btn2:not([disabled=disabled]):hover, .buttons_wrap_freesize .btn2:not([disabled=disabled]):focus {
   -webkit-filter: drop-shadow(0 0 30px #563094);
           filter: drop-shadow(0 0 30px #563094);
 }
-.buttons_wrap_freesize .btn2:hover:before {
+.buttons_wrap_freesize .btn2:not([disabled=disabled]):hover:before, .buttons_wrap_freesize .btn2:not([disabled=disabled]):focus:before {
   left: 100%;
   -webkit-animation: none;
           animation: none;
 }
-.buttons_wrap_freesize .btn2:hover:after {
+.buttons_wrap_freesize .btn2:not([disabled=disabled]):hover:after, .buttons_wrap_freesize .btn2:not([disabled=disabled]):focus:after {
   width: 100%;
 }
 
@@ -200,7 +200,7 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap1 .btn1:hover:before {
+.buttons_wrap1 .btn1:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn1:not([disabled=disabled]):focus:before {
   left: 113px;
 }
 .buttons_wrap1 .btn2 {
@@ -225,10 +225,10 @@
 .buttons_wrap1 .btn2 .txt {
   position: relative;
 }
-.buttons_wrap1 .btn2:hover {
+.buttons_wrap1 .btn2:not([disabled=disabled]):hover, .buttons_wrap1 .btn2:not([disabled=disabled]):focus {
   color: white;
 }
-.buttons_wrap1 .btn2:hover:before {
+.buttons_wrap1 .btn2:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn2:not([disabled=disabled]):focus:before {
   width: 100%;
 }
 .buttons_wrap1 .btn3 {
@@ -287,10 +287,10 @@
   color: transparent;
   z-index: 1;
 }
-.buttons_wrap1 .btn3:hover:before, .buttons_wrap1 .btn3:hover:after {
+.buttons_wrap1 .btn3:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn3:not([disabled=disabled]):hover:after, .buttons_wrap1 .btn3:not([disabled=disabled]):focus:before, .buttons_wrap1 .btn3:not([disabled=disabled]):focus:after {
   height: 50%;
 }
-.buttons_wrap1 .btn3:hover .txt {
+.buttons_wrap1 .btn3:not([disabled=disabled]):hover .txt, .buttons_wrap1 .btn3:not([disabled=disabled]):focus .txt {
   color: white;
 }
 .buttons_wrap1 .btn4 {
@@ -315,7 +315,7 @@
   position: relative;
   z-index: 1;
 }
-.buttons_wrap1 .btn4:hover:after {
+.buttons_wrap1 .btn4:not([disabled=disabled]):hover:after, .buttons_wrap1 .btn4:not([disabled=disabled]):focus:after {
   width: 0;
   height: 0;
 }
@@ -373,20 +373,20 @@
   left: 0;
   background-color: #563094;
 }
-.buttons_wrap1 .btn5:hover:before {
+.buttons_wrap1 .btn5:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn5:not([disabled=disabled]):focus:before {
   width: 100px;
 }
-.buttons_wrap1 .btn5:hover:after {
+.buttons_wrap1 .btn5:not([disabled=disabled]):hover:after, .buttons_wrap1 .btn5:not([disabled=disabled]):focus:after {
   width: 100px;
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
 }
-.buttons_wrap1 .btn5:hover .txt:before {
+.buttons_wrap1 .btn5:not([disabled=disabled]):hover .txt:before, .buttons_wrap1 .btn5:not([disabled=disabled]):focus .txt:before {
   height: 50px;
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.buttons_wrap1 .btn5:hover .txt:after {
+.buttons_wrap1 .btn5:not([disabled=disabled]):hover .txt:after, .buttons_wrap1 .btn5:not([disabled=disabled]):focus .txt:after {
   height: 50px;
   -webkit-transition-delay: 0.6s;
           transition-delay: 0.6s;
@@ -417,10 +417,10 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-.buttons_wrap1 .btn6:hover {
+.buttons_wrap1 .btn6:not([disabled=disabled]):hover, .buttons_wrap1 .btn6:not([disabled=disabled]):focus {
   background-position: center right;
 }
-.buttons_wrap1 .btn6:hover:before {
+.buttons_wrap1 .btn6:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn6:not([disabled=disabled]):focus:before {
   background-position: center right;
 }
 .buttons_wrap1 .btn7 {
@@ -431,7 +431,7 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-.buttons_wrap1 .btn7:hover {
+.buttons_wrap1 .btn7:not([disabled=disabled]):hover, .buttons_wrap1 .btn7:not([disabled=disabled]):focus {
   background-position: right center;
 }
 .buttons_wrap1 .btn8 {
@@ -449,7 +449,7 @@
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
 }
-.buttons_wrap1 .btn8:hover {
+.buttons_wrap1 .btn8:not([disabled=disabled]):hover, .buttons_wrap1 .btn8:not([disabled=disabled]):focus {
   -webkit-animation-name: bgPosition;
           animation-name: bgPosition;
   -webkit-animation-duration: 2s;
@@ -481,14 +481,14 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap1 .btn9:hover {
+.buttons_wrap1 .btn9:not([disabled=disabled]):hover, .buttons_wrap1 .btn9:not([disabled=disabled]):focus {
   -webkit-box-shadow: -10px 10px 25px #563094, 10px -10px 25px #ffbd54;
           box-shadow: -10px 10px 25px #563094, 10px -10px 25px #ffbd54;
 }
-.buttons_wrap1 .btn9:hover .txt {
+.buttons_wrap1 .btn9:not([disabled=disabled]):hover .txt, .buttons_wrap1 .btn9:not([disabled=disabled]):focus .txt {
   background: none;
 }
-.buttons_wrap1 .btn9:hover:before {
+.buttons_wrap1 .btn9:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn9:not([disabled=disabled]):focus:before {
   z-index: 1;
 }
 
@@ -501,7 +501,7 @@
   -webkit-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5), inset -3px -3px 5px #fff;
           box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5), inset -3px -3px 5px #fff;
 }
-.buttons_wrap2 .btn1:hover {
+.buttons_wrap2 .btn1:not([disabled=disabled]):hover, .buttons_wrap2 .btn1:not([disabled=disabled]):focus {
   -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.5), inset -2px -2px 3px #fff;
           box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.5), inset -2px -2px 3px #fff;
 }
@@ -513,7 +513,7 @@
   -webkit-box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px #fff;
           box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px #fff;
 }
-.buttons_wrap2 .btn2:hover {
+.buttons_wrap2 .btn2:not([disabled=disabled]):hover, .buttons_wrap2 .btn2:not([disabled=disabled]):focus {
   -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -4px -4px 8px #fff;
           box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -4px -4px 8px #fff;
 }
@@ -525,7 +525,7 @@
   -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3), -5px -5px 8px #fff;
           box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3), -5px -5px 8px #fff;
 }
-.buttons_wrap2 .btn3:hover {
+.buttons_wrap2 .btn3:not([disabled=disabled]):hover, .buttons_wrap2 .btn3:not([disabled=disabled]):focus {
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 8px #fff;
           box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 8px #fff;
 }
@@ -537,7 +537,7 @@
   -webkit-box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.3), inset -1px -1px 6px #fff;
           box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.3), inset -1px -1px 6px #fff;
 }
-.buttons_wrap2 .btn4:hover {
+.buttons_wrap2 .btn4:not([disabled=disabled]):hover, .buttons_wrap2 .btn4:not([disabled=disabled]):focus {
   -webkit-box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px #fff;
           box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px #fff;
 }
@@ -594,22 +594,22 @@
   left: auto;
   right: 0;
 }
-.buttons_wrap2 .btn5:hover:before {
+.buttons_wrap2 .btn5:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn5:not([disabled=disabled]):focus:before {
   width: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap2 .btn5:hover:after {
+.buttons_wrap2 .btn5:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn5:not([disabled=disabled]):focus:after {
   width: 100%;
   -webkit-transition: all 0.3s 0.2s;
   transition: all 0.3s 0.2s;
 }
-.buttons_wrap2 .btn5:hover .txt:before {
+.buttons_wrap2 .btn5:not([disabled=disabled]):hover .txt:before, .buttons_wrap2 .btn5:not([disabled=disabled]):focus .txt:before {
   height: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap2 .btn5:hover .txt:after {
+.buttons_wrap2 .btn5:not([disabled=disabled]):hover .txt:after, .buttons_wrap2 .btn5:not([disabled=disabled]):focus .txt:after {
   height: 100%;
   -webkit-transition: all 0.3s 0.2s;
   transition: all 0.3s 0.2s;
@@ -663,11 +663,12 @@
   left: auto;
   right: 0;
 }
-.buttons_wrap2 .btn6:hover:before, .buttons_wrap2 .btn6:hover:after {
+.buttons_wrap2 .btn6:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn6:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn6:not([disabled=disabled]):focus:before, .buttons_wrap2 .btn6:not([disabled=disabled]):focus:after {
   width: 100%;
 }
-.buttons_wrap2 .btn6:hover .txt:before,
-.buttons_wrap2 .btn6:hover .txt:after {
+.buttons_wrap2 .btn6:not([disabled=disabled]):hover .txt:before,
+.buttons_wrap2 .btn6:not([disabled=disabled]):hover .txt:after, .buttons_wrap2 .btn6:not([disabled=disabled]):focus .txt:before,
+.buttons_wrap2 .btn6:not([disabled=disabled]):focus .txt:after {
   height: 100%;
 }
 .buttons_wrap2 .btn7 {
@@ -732,30 +733,30 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-.buttons_wrap2 .btn7:hover {
+.buttons_wrap2 .btn7:not([disabled=disabled]):hover, .buttons_wrap2 .btn7:not([disabled=disabled]):focus {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.buttons_wrap2 .btn7:hover:before {
+.buttons_wrap2 .btn7:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn7:not([disabled=disabled]):focus:before {
   width: 0px;
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.buttons_wrap2 .btn7:hover:after {
+.buttons_wrap2 .btn7:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn7:not([disabled=disabled]):focus:after {
   width: 0px;
 }
-.buttons_wrap2 .btn7:hover .txt:before {
+.buttons_wrap2 .btn7:not([disabled=disabled]):hover .txt:before, .buttons_wrap2 .btn7:not([disabled=disabled]):focus .txt:before {
   height: 0px;
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
-.buttons_wrap2 .btn7:hover .txt:after {
+.buttons_wrap2 .btn7:not([disabled=disabled]):hover .txt:after, .buttons_wrap2 .btn7:not([disabled=disabled]):focus .txt:after {
   height: 0px;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
-.buttons_wrap2 .btn7:hover .border:before {
+.buttons_wrap2 .btn7:not([disabled=disabled]):hover .border:before, .buttons_wrap2 .btn7:not([disabled=disabled]):focus .border:before {
   width: 100%;
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
@@ -815,11 +816,12 @@
   bottom: 0;
   left: 0;
 }
-.buttons_wrap2 .btn8:hover:before, .buttons_wrap2 .btn8:hover:after {
+.buttons_wrap2 .btn8:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn8:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn8:not([disabled=disabled]):focus:before, .buttons_wrap2 .btn8:not([disabled=disabled]):focus:after {
   height: 100%;
 }
-.buttons_wrap2 .btn8:hover .txt:before,
-.buttons_wrap2 .btn8:hover .txt:after {
+.buttons_wrap2 .btn8:not([disabled=disabled]):hover .txt:before,
+.buttons_wrap2 .btn8:not([disabled=disabled]):hover .txt:after, .buttons_wrap2 .btn8:not([disabled=disabled]):focus .txt:before,
+.buttons_wrap2 .btn8:not([disabled=disabled]):focus .txt:after {
   width: 100%;
 }
 .buttons_wrap2 .btn9 .txt {
@@ -840,12 +842,12 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap2 .btn9:hover .txt {
+.buttons_wrap2 .btn9:not([disabled=disabled]):hover .txt, .buttons_wrap2 .btn9:not([disabled=disabled]):focus .txt {
   -webkit-transform: rotateX(90deg);
           transform: rotateX(90deg);
   opacity: 0;
 }
-.buttons_wrap2 .btn9:hover:after {
+.buttons_wrap2 .btn9:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn9:not([disabled=disabled]):focus:after {
   top: 0;
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
@@ -871,12 +873,12 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap2 .btn10:hover {
+.buttons_wrap2 .btn10:not([disabled=disabled]):hover, .buttons_wrap2 .btn10:not([disabled=disabled]):focus {
   -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 5px rgba(255, 255, 255, 0.7);
           box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 5px rgba(255, 255, 255, 0.7);
   text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
 }
-.buttons_wrap2 .btn10:hover:before {
+.buttons_wrap2 .btn10:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn10:not([disabled=disabled]):focus:before {
   content: none;
 }
 .buttons_wrap2 .btn11 {
@@ -909,13 +911,13 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap2 .btn11:hover {
+.buttons_wrap2 .btn11:not([disabled=disabled]):hover, .buttons_wrap2 .btn11:not([disabled=disabled]):focus {
   background-color: pink;
 }
-.buttons_wrap2 .btn11:hover .txt {
+.buttons_wrap2 .btn11:not([disabled=disabled]):hover .txt, .buttons_wrap2 .btn11:not([disabled=disabled]):focus .txt {
   top: -100%;
 }
-.buttons_wrap2 .btn11:hover .icon {
+.buttons_wrap2 .btn11:not([disabled=disabled]):hover .icon, .buttons_wrap2 .btn11:not([disabled=disabled]):focus .icon {
   top: 0;
 }
 .buttons_wrap2 .btn12 {
@@ -953,13 +955,13 @@
   z-index: 1;
   position: relative;
 }
-.buttons_wrap2 .btn12:hover {
+.buttons_wrap2 .btn12:not([disabled=disabled]):hover, .buttons_wrap2 .btn12:not([disabled=disabled]):focus {
   -webkit-transition: all 1s;
   transition: all 1s;
   -webkit-box-shadow: inset 0px 0px 15px rgba(25, 25, 25, 0.4);
           box-shadow: inset 0px 0px 15px rgba(25, 25, 25, 0.4);
 }
-.buttons_wrap2 .btn12:hover:before, .buttons_wrap2 .btn12:hover:after {
+.buttons_wrap2 .btn12:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn12:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn12:not([disabled=disabled]):focus:before, .buttons_wrap2 .btn12:not([disabled=disabled]):focus:after {
   width: 50%;
 }
 .buttons_wrap2 .btn13 .txt {
@@ -994,12 +996,12 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap2 .btn13:hover:before {
+.buttons_wrap2 .btn13:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn13:not([disabled=disabled]):focus:before {
   opacity: 0;
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
 }
-.buttons_wrap2 .btn13:hover:after {
+.buttons_wrap2 .btn13:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn13:not([disabled=disabled]):focus:after {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -1037,12 +1039,12 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.buttons_wrap2 .btn14:hover:before {
+.buttons_wrap2 .btn14:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn14:not([disabled=disabled]):focus:before {
   opacity: 0;
   -webkit-transform: scaleX(0.5);
           transform: scaleX(0.5);
 }
-.buttons_wrap2 .btn14:hover:after {
+.buttons_wrap2 .btn14:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn14:not([disabled=disabled]):focus:after {
   opacity: 1;
   width: 100%;
 }
@@ -1054,19 +1056,19 @@
 .buttons_wrap3 .btn1 {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
-.buttons_wrap3 .btn1:hover {
+.buttons_wrap3 .btn1:not([disabled=disabled]):hover, .buttons_wrap3 .btn1:not([disabled=disabled]):focus {
   text-shadow: none;
 }
 .buttons_wrap3 .btn2 {
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
-.buttons_wrap3 .btn2:hover {
+.buttons_wrap3 .btn2:not([disabled=disabled]):hover, .buttons_wrap3 .btn2:not([disabled=disabled]):focus {
   -webkit-box-shadow: none;
           box-shadow: none;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
-.buttons_wrap3 .btn3:hover {
+.buttons_wrap3 .btn3:not([disabled=disabled]):hover, .buttons_wrap3 .btn3:not([disabled=disabled]):focus {
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
@@ -1076,7 +1078,7 @@
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(0, 0, 0, 0.3);
   text-shadow: none;
 }
-.buttons_wrap3 .btn4:hover {
+.buttons_wrap3 .btn4:not([disabled=disabled]):hover, .buttons_wrap3 .btn4:not([disabled=disabled]):focus {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
@@ -1104,11 +1106,11 @@
   -webkit-transition: width 0.2s, left 0.4s, right 0.4s;
   transition: width 0.2s, left 0.4s, right 0.4s;
 }
-.buttons_wrap3 .btn5:hover:before {
+.buttons_wrap3 .btn5:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn5:not([disabled=disabled]):focus:before {
   left: 0;
   width: 0;
 }
-.buttons_wrap3 .btn5:hover:after {
+.buttons_wrap3 .btn5:not([disabled=disabled]):hover:after, .buttons_wrap3 .btn5:not([disabled=disabled]):focus:after {
   right: 0;
   width: 0;
 }
@@ -1138,11 +1140,11 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap3 .btn6:hover:before {
+.buttons_wrap3 .btn6:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn6:not([disabled=disabled]):focus:before {
   width: 200%;
   border-radius: 30px;
 }
-.buttons_wrap3 .btn6:hover .txt {
+.buttons_wrap3 .btn6:not([disabled=disabled]):hover .txt, .buttons_wrap3 .btn6:not([disabled=disabled]):focus .txt {
   color: #fff;
 }
 .buttons_wrap3 .btn7 {
@@ -1179,13 +1181,13 @@
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
 }
-.buttons_wrap3 .btn7:hover:before {
+.buttons_wrap3 .btn7:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn7:not([disabled=disabled]):focus:before {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   -webkit-transform: scale(4);
           transform: scale(4);
 }
-.buttons_wrap3 .btn7:hover:after {
+.buttons_wrap3 .btn7:not([disabled=disabled]):hover:after, .buttons_wrap3 .btn7:not([disabled=disabled]):focus:after {
   -webkit-transform: scale(2);
           transform: scale(2);
 }
@@ -1213,10 +1215,10 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap3 .btn8:hover {
+.buttons_wrap3 .btn8:not([disabled=disabled]):hover, .buttons_wrap3 .btn8:not([disabled=disabled]):focus {
   color: white;
 }
-.buttons_wrap3 .btn8:hover:before {
+.buttons_wrap3 .btn8:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn8:not([disabled=disabled]):focus:before {
   background-color: #333;
   -webkit-transform: translateX(-50%) skew(40deg) scale(20);
           transform: translateX(-50%) skew(40deg) scale(20);
@@ -1247,14 +1249,14 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap3 .btn9:hover {
+.buttons_wrap3 .btn9:not([disabled=disabled]):hover, .buttons_wrap3 .btn9:not([disabled=disabled]):focus {
   outline: 2px solid #563094;
 }
-.buttons_wrap3 .btn9:hover:before {
+.buttons_wrap3 .btn9:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn9:not([disabled=disabled]):focus:before {
   left: 70px;
   width: 20px;
 }
-.buttons_wrap3 .btn9:hover:after {
+.buttons_wrap3 .btn9:not([disabled=disabled]):hover:after, .buttons_wrap3 .btn9:not([disabled=disabled]):focus:after {
   right: 70px;
   width: 20px;
 }
@@ -1328,10 +1330,10 @@
   -webkit-transition-delay: 0.12s;
           transition-delay: 0.12s;
 }
-.buttons_wrap3 .btn10:hover:before, .buttons_wrap3 .btn10:hover:after {
+.buttons_wrap3 .btn10:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn10:not([disabled=disabled]):hover:after, .buttons_wrap3 .btn10:not([disabled=disabled]):focus:before, .buttons_wrap3 .btn10:not([disabled=disabled]):focus:after {
   width: 100%;
 }
-.buttons_wrap3 .btn10:hover .txt:before, .buttons_wrap3 .btn10:hover .txt:after {
+.buttons_wrap3 .btn10:not([disabled=disabled]):hover .txt:before, .buttons_wrap3 .btn10:not([disabled=disabled]):hover .txt:after, .buttons_wrap3 .btn10:not([disabled=disabled]):focus .txt:before, .buttons_wrap3 .btn10:not([disabled=disabled]):focus .txt:after {
   width: 100%;
 }
 .buttons_wrap3 .btn11:before {
@@ -1404,10 +1406,10 @@
   -webkit-transition-delay: 0.12s;
           transition-delay: 0.12s;
 }
-.buttons_wrap3 .btn11:hover:before, .buttons_wrap3 .btn11:hover:after {
+.buttons_wrap3 .btn11:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn11:not([disabled=disabled]):hover:after, .buttons_wrap3 .btn11:not([disabled=disabled]):focus:before, .buttons_wrap3 .btn11:not([disabled=disabled]):focus:after {
   height: 100%;
 }
-.buttons_wrap3 .btn11:hover .txt:before, .buttons_wrap3 .btn11:hover .txt:after {
+.buttons_wrap3 .btn11:not([disabled=disabled]):hover .txt:before, .buttons_wrap3 .btn11:not([disabled=disabled]):hover .txt:after, .buttons_wrap3 .btn11:not([disabled=disabled]):focus .txt:before, .buttons_wrap3 .btn11:not([disabled=disabled]):focus .txt:after {
   height: 100%;
 }
 .buttons_wrap3 .btn12:before {
@@ -1444,10 +1446,10 @@
   z-index: 1;
   position: relative;
 }
-.buttons_wrap3 .btn12:hover:before, .buttons_wrap3 .btn12:hover:after {
+.buttons_wrap3 .btn12:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn12:not([disabled=disabled]):hover:after, .buttons_wrap3 .btn12:not([disabled=disabled]):focus:before, .buttons_wrap3 .btn12:not([disabled=disabled]):focus:after {
   height: 50%;
 }
-.buttons_wrap3 .btn12:hover .txt {
+.buttons_wrap3 .btn12:not([disabled=disabled]):hover .txt, .buttons_wrap3 .btn12:not([disabled=disabled]):focus .txt {
   color: white;
 }
 .buttons_wrap3 .btn13:before {
@@ -1484,10 +1486,10 @@
   z-index: 1;
   position: relative;
 }
-.buttons_wrap3 .btn13:hover:before, .buttons_wrap3 .btn13:hover:after {
+.buttons_wrap3 .btn13:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn13:not([disabled=disabled]):hover:after, .buttons_wrap3 .btn13:not([disabled=disabled]):focus:before, .buttons_wrap3 .btn13:not([disabled=disabled]):focus:after {
   height: 50%;
 }
-.buttons_wrap3 .btn13:hover .txt {
+.buttons_wrap3 .btn13:not([disabled=disabled]):hover .txt, .buttons_wrap3 .btn13:not([disabled=disabled]):focus .txt {
   color: white;
 }
 .buttons_wrap3 .btn14 {
@@ -1520,13 +1522,13 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap3 .btn14:hover:before {
+.buttons_wrap3 .btn14:not([disabled=disabled]):hover:before, .buttons_wrap3 .btn14:not([disabled=disabled]):focus:before {
   -webkit-transform: none;
           transform: none;
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
-.buttons_wrap3 .btn14:hover .txt {
+.buttons_wrap3 .btn14:not([disabled=disabled]):hover .txt, .buttons_wrap3 .btn14:not([disabled=disabled]):focus .txt {
   -webkit-transform: rotateY(-90deg);
           transform: rotateY(-90deg);
   -webkit-transition-delay: 0s;
@@ -1579,7 +1581,7 @@
   top: 0;
   left: -20px;
 }
-.buttons_wrap4 .btn1:hover .txt {
+.buttons_wrap4 .btn1:not([disabled=disabled]):hover .txt, .buttons_wrap4 .btn1:not([disabled=disabled]):focus .txt {
   left: 5px;
 }
 .buttons_wrap4 .btn2 .txt {
@@ -1596,14 +1598,14 @@
   display: block;
   width: 0;
 }
-.buttons_wrap4 .btn2:hover .txt {
+.buttons_wrap4 .btn2:not([disabled=disabled]):hover .txt, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .txt {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
-.buttons_wrap4 .btn2:hover .txt:before {
+.buttons_wrap4 .btn2:not([disabled=disabled]):hover .txt:before, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .txt:before {
   width: 70%;
 }
-.buttons_wrap4 .btn2:hover .txt:after {
+.buttons_wrap4 .btn2:not([disabled=disabled]):hover .txt:after, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .txt:after {
   width: 10px;
 }
 .buttons_wrap4 .btn3 {
@@ -1613,11 +1615,11 @@
 .buttons_wrap4 .btn3 .txt:after {
   width: 0;
 }
-.buttons_wrap4 .btn3:hover {
+.buttons_wrap4 .btn3:not([disabled=disabled]):hover, .buttons_wrap4 .btn3:not([disabled=disabled]):focus {
   -webkit-transform: none;
           transform: none;
 }
-.buttons_wrap4 .btn3:hover .txt:after {
+.buttons_wrap4 .btn3:not([disabled=disabled]):hover .txt:after, .buttons_wrap4 .btn3:not([disabled=disabled]):focus .txt:after {
   width: 10px;
 }
 .buttons_wrap4 .btn4 {
@@ -1637,11 +1639,11 @@
 .buttons_wrap4 .btn4 .txt:after {
   width: 0px;
 }
-.buttons_wrap4 .btn4:hover .trans {
+.buttons_wrap4 .btn4:not([disabled=disabled]):hover .trans, .buttons_wrap4 .btn4:not([disabled=disabled]):focus .trans {
   -webkit-transform: none;
           transform: none;
 }
-.buttons_wrap4 .btn4:hover .txt:after {
+.buttons_wrap4 .btn4:not([disabled=disabled]):hover .txt:after, .buttons_wrap4 .btn4:not([disabled=disabled]):focus .txt:after {
   width: 10px;
 }
 
@@ -1682,7 +1684,7 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap_width .btn:hover {
+.buttons_wrap_width .btn:not([disabled=disabled]):hover, .buttons_wrap_width .btn:not([disabled=disabled]):focus {
   -webkit-box-flex: 1.5;
       -ms-flex: 1.5 1.5;
           flex: 1.5 1.5;

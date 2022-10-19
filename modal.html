@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#e5e5e5" />
+  <title>modals</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+</head>
+
+<body>
+  <div id="page" class="modal-page">
+    <header class="link-wrapper">
+      <!-- ui.js -->
+    </header>
+    <main class="l-center">
+      <p class="infomation">
+        팝업 js 이벤트
+      </p>
+
+      <div class="buttons_wrap buttons_wrap2">
+        <button onclick="openConfirmModal(confirmTtl[0], confirmDec[0])" class="btn btn7"><span
+            class="txt">confirm</span></button>
+        <button onclick="openAlertModal(alertTtl[0], alertDec[0], '확인')" class="btn btn7"><span
+            class="txt">alert</span></button>
+      </div>
+    </main>
+    <!-- START modal -->
+    <!-- confirm modal -->
+    <div class="modal" id="confirm-modal" tabindex="-1">
+      <div class="modal-bg" onclick="closeConfirmModal()"></div>
+      <div class="modal-container">
+        <div class="modal-ttl" id="confirm-title"></div>
+        <div class="modal-desc" id="confirm-desc"></div>
+        <div class="buttons_wrap buttons_wrap3">
+          <button class="btn btn8" onclick="closeConfirmModal()"><span class="txt">취소</span></button>
+          <button class="btn btn8" onclick="closeConfirmModal()"><span class="txt">확인</span></button>
+        </div>
+      </div>
+    </div>
+    <script>
+      confirmModal = document.querySelector('#confirm-modal');
+      confirmTitle = document.querySelector('#confirm-title');
+      confirmDesc = document.querySelector('#confirm-desc');
+
+      confirmTtl = [
+        `컨펌`,
+      ];
+
+      confirmDec = [
+        `컨펌의 내용이 들어옵니다.
+        줄바꿈도 적용`,
+      ];
+
+      function openConfirmModal(modTtl, modDec) {
+        confirmTitle.innerHTML = `${modTtl}`;
+        confirmDesc.innerHTML = `${modDec}`;
+        confirmModal.style.display = 'block';
+
+        focusElement = document.activeElement;
+        confirmModal.setAttribute('tabindex', '0');
+        confirmModal.focus();
+      }
+
+      function closeConfirmModal() {
+        confirmModal.style.display = 'none';
+        confirmModal.setAttribute('tabindex', '-1');
+        focusElement.focus();
+      }
+    </script>
+    <!-- alert modal -->
+    <div class="modal" id="alert-modal" tabindex="-1">
+      <div class="modal-bg" onclick="closeAlertModal()"></div>
+      <div class="modal-container">
+        <div class="modal-ttl" id="alert-title"></div>
+        <div class="modal-desc" id="alert-desc"></div>
+        <div class="buttons_wrap buttons_wrap3">
+          <button class="btn btn8" id="alert-btn" onclick="closeAlertModal()"></button>
+        </div>
+      </div>
+    </div>
+    <script>
+      alertModal = document.querySelector('#alert-modal');
+      alertTitle = document.querySelector('#alert-title');
+      alertDesc = document.querySelector('#alert-desc');
+      alertBtn = document.querySelector('#alert-btn');
+
+      alertTtl = [
+        `알림`,
+      ];
+
+      alertDec = [
+        `알림의 내용이 들어옵니다.
+        줄바꿈도 적용`,
+      ];
+
+      function openAlertModal(modTtl, modDec, modBtn) {
+        alertTitle.innerHTML = `${modTtl}`;
+        alertDesc.innerHTML = `${modDec}`;
+        alertBtn.innerHTML = `<span class="txt">${modBtn}</span>`;
+        alertModal.style.display = 'block';
+
+        alertModal.setAttribute('tabindex', '0');
+        focusElement = document.activeElement;
+        alertModal.focus();
+      }
+
+      function closeAlertModal() {
+        alertModal.style.display = 'none';
+        alertModal.setAttribute('tabindex', '-1');
+        focusElement.focus();
+      }
+    </script>
+    <!-- END modal -->
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/ui.js"></script>
+  </div>
+</body>
+
+</html>
