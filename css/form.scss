@@ -1,5 +1,5 @@
 @import "util";
-
+$main-color: #32cd32;
 /* ---------------------- checkbox style ---------------------- */
 .inp-chck-wrap {
   @include flex {
@@ -16,6 +16,7 @@
 
   .inp-chck-txt {
     margin-left: 4px;
+    border-bottom: 1px solid transparent;
 
     @include hover {
       border-bottom: 1px solid;
@@ -30,7 +31,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    border: 2px solid #32cd32;
+    border: 2px solid $main-color;
     border-radius: 4px;
     transition: all 0.3s;
   }
@@ -41,7 +42,7 @@
       left: 7px;
       height: 15px;
       width: 7px;
-      border-color: #32cd32;
+      border-color: $main-color;
       border-top-color: transparent;
       border-left-color: transparent;
       border-radius: 0;
@@ -60,7 +61,7 @@
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
-      stroke: #32cd32;
+      stroke: $main-color;
       stroke-width: 1.5;
       transform: translate3d(0, 0, 0);
       transition: all 0.2s ease;
@@ -139,12 +140,62 @@
   .inp-chck:checked {
     ~ .inp-chck-icon {
       animation: chck3 0.3s ease-in forwards;
-      background-color: #32cd32;
+      background-color: $main-color;
 
       &:before {
         opacity: 1;
         transform: rotate(405deg);
       }
+    }
+  }
+}
+
+/* checked 4 */
+.inp-chck-wrap4 {
+  .inp-chck-icon {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 4px solid white;
+    border-radius: 3px;
+    background-color: white;
+
+    @include make-virtual {
+      position: absolute;
+      border-radius: 4px;
+      background-color: $main-color;
+    }
+
+    &:before {
+      top: 3px;
+      left: 1px;
+      width: 2px;
+      height: 0;
+      transform-origin: 0% 0%;
+      transform: rotate(-35deg);
+    }
+
+    &:after {
+      top: 9px;
+      left: 7px;
+      width: 0;
+      height: 2px;
+      transform-origin: 0% 100%;
+      transform: rotate(-47deg);
+    }
+  }
+
+  .inp-chck:checked ~ .inp-chck-icon {
+    &:before {
+      height: 9px;
+      transition: all 250ms;
+    }
+
+    &:after {
+      width: 18px;
+      transition: all 250ms;
+      transition-delay: 150ms;
     }
   }
 }
@@ -215,7 +266,7 @@
       left: 0;
       width: 0;
       height: 1px;
-      background-color: #32cd32;
+      background-color: $main-color;
       transition: all 0.5s linear;
     }
   }
