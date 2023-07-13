@@ -1,0 +1,34 @@
+@import "util";
+
+.flex-wrap {
+  @include flex {
+    @include flex-op(flex-start, space-between);
+  }
+}
+
+.left-conts {
+  @include bg-op($s: cover);
+  @include bg-url(img, "bg_fixed.png");
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+
+  h1 {
+    position: absolute;
+    top: auto;
+    bottom: 20px;
+    width: 100%;
+  }
+}
+
+.right-conts {
+  width: 55%;
+  font-size: 3rem;
+}

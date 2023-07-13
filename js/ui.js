@@ -8,7 +8,6 @@ gnbWrap.append(`
 	<a href="inputs.html" class="gnb-link">인풋</a>
 	<a href="animations.html" class="gnb-link">애니메이션</a>
 	<a href="scrolls.html" class="gnb-link">스크롤</a>
-	<a href="modal.html" class="gnb-link">팝업</a>
 </div>`);
 
 const gnbLink = $(".gnb-link");

@@ -1,0 +1,39 @@
+.flex-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.left-conts {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../image/bg_fixed.png");
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+.left-conts h1 {
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+  width: 100%;
+}
+
+.right-conts {
+  width: 55%;
+  font-size: 3rem;
+}

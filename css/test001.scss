@@ -1,0 +1,23 @@
+@import "util";
+
+.sticky-scroll {
+  @include flex {
+    @include flex-op(flex-start, space-between);
+  }
+
+  .left-conts {
+    position: sticky;
+    top: 10px;
+    left: 0;
+    width: 30%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .right-conts {
+    width: 60%;
+    font-size: 3em;
+  }
+}
