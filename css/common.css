@@ -72,3 +72,13 @@ button {
 .d-none {
   display: none;
 }
+
+.voice-only {
+  overflow: hidden;
+  position: fixed;
+  top: -1px;
+  left: -1px;
+  width: 1px;
+  height: 1px;
+  color: transparent;
+}

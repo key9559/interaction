@@ -92,3 +92,9 @@ $path-set: (
   background-size: $s;
   background-repeat: $r;
 }
+
+@mixin circle($s: null) {
+  width: $s;
+  height: $s;
+  border-radius: 50%;
+}

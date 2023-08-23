@@ -8,15 +8,13 @@
 
 .left-conts {
   @include bg-op($s: cover);
-  @include bg-url(img, "bg_fixed.png");
+  @include bg-url(img, "bg_fixed02.png");
 
   position: sticky;
   top: 0;
   left: 0;
-  width: 40%;
+  width: 50%;
   height: 100vh;
-  backdrop-filter: blur(5px);
-  background-attachment: fixed;
   color: white;
   text-align: center;
 
@@ -29,6 +27,34 @@
 }
 
 .right-conts {
-  width: 55%;
+  width: 50%;
   font-size: 3rem;
+}
+
+.flex-wrap1 {
+  @include bg-op($s: cover);
+  @include bg-url(img, "bg_fixed01.png");
+
+  display: block;
+  padding: 0 20px;
+  background-attachment: fixed;
+
+  .left-conts {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-right: 50%;
+    background: none;
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  .right-conts {
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 50%;
+    color: white;
+    text-align: right;
+  }
 }

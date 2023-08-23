@@ -480,12 +480,12 @@
     left: 0;
   }
 }
-.ani-wrap3 .stick-wrap {
+.ani-wrap5 .stick-wrap {
   position: relative;
   width: 300px;
   height: 300px;
 }
-.ani-wrap3 .stick {
+.ani-wrap5 .stick {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -500,7 +500,7 @@
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
 }
-.ani-wrap3 .stick:before {
+.ani-wrap5 .stick:before {
   content: "";
   display: block;
   opacity: 0;
@@ -522,35 +522,165 @@
   -webkit-animation-direction: normal;
           animation-direction: normal;
 }
-.ani-wrap3 .stick1 {
+.ani-wrap5 .stick1 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.ani-wrap3 .stick2 {
+.ani-wrap5 .stick2 {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.ani-wrap3 .stick3 {
+.ani-wrap5 .stick3 {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
 }
-.ani-wrap3 .stick4 {
+.ani-wrap5 .stick4 {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.ani-wrap3 .stick5 {
+.ani-wrap5 .stick5 {
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
 }
-.ani-wrap3 .stick6 {
+.ani-wrap5 .stick6 {
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
 }
-.ani-wrap3 .stick7 {
+.ani-wrap5 .stick7 {
   -webkit-transform: rotate(315deg);
           transform: rotate(315deg);
 }
-.ani-wrap3 .stick8 {
+.ani-wrap5 .stick8 {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+}
+
+@-webkit-keyframes car_dashboard {
+  0% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  18% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  42% {
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  54% {
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  60% {
+    -webkit-transform: rotate(128deg);
+            transform: rotate(128deg);
+  }
+  90% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@keyframes car_dashboard {
+  0% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  18% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  42% {
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  54% {
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
+  }
+  60% {
+    -webkit-transform: rotate(128deg);
+            transform: rotate(128deg);
+  }
+  90% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+.ani-wrap6 {
+  position: relative;
+  height: 80px;
+}
+
+.loading-spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+  background-image: url("../image/bg_spinner.svg");
+  z-index: 10;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 3px solid yellow;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.loading-spinner .stick {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 40%;
+  height: 2px;
+  margin-top: -1px;
+  font-size: 0;
+  background-color: red;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-animation-name: car_dashboard;
+          animation-name: car_dashboard;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 1500ms;
+          animation-duration: 1500ms;
+  -webkit-animation-timing-function: cubic-bezier(1, 0.65, 0.22, 0.35);
+          animation-timing-function: cubic-bezier(1, 0.65, 0.22, 0.35);
+}
+.loading-spinner .stick:before {
+  content: "";
+  display: block;
+  z-index: 2;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: color(primary);
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
 }

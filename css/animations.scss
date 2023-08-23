@@ -315,7 +315,7 @@
     left: 0;
   }
 }
-.ani-wrap3 {
+.ani-wrap5 {
   .stick-wrap {
     position: relative;
     width: 300px;
@@ -353,6 +353,92 @@
   @for $i from 1 through 8 {
     .stick#{$i} {
       transform: rotate($i * 45deg);
+    }
+  }
+}
+
+// car dashboard
+@keyframes car_dashboard {
+  0% {
+    transform: rotate(-30deg);
+  }
+
+  10% {
+    transform: rotate(0deg);
+  }
+
+  18% {
+    transform: rotate(-8deg);
+  }
+
+  42% {
+    transform: rotate(120deg);
+  }
+
+  54% {
+    transform: rotate(120deg);
+  }
+
+  60% {
+    transform: rotate(128deg);
+  }
+
+  90% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.ani-wrap6 {
+  position: relative;
+  height: 80px;
+}
+
+.loading-spinner {
+  @include circle(80px);
+  @include bg-op($s: 80px 80px);
+  @include bg-url(img, "bg_spinner.svg");
+
+  z-index: 10;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 3px solid yellow;
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translate(-50%, -50%);
+
+  .stick {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 40%;
+    height: 2px;
+    margin-top: -1px;
+    font-size: 0;
+    background-color: red;
+    transform-origin: bottom right;
+    animation-name: car_dashboard;
+    animation-iteration-count: infinite;
+    animation-duration: 1500ms;
+    animation-timing-function: cubic-bezier(1, 0.65, 0.22, 0.35);
+
+    @include make-before {
+      z-index: 2;
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: color(primary);
+      transform: translate(50%, 50%);
     }
   }
 }

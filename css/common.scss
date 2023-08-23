@@ -1,5 +1,5 @@
 @import "util";
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap");
 
 // reset
 html,
@@ -10,7 +10,7 @@ body {
   background-color: $bg-color;
   font-size: 15px;
   font-weight: 500;
-  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-family: "IBM Plex Sans KR", sans-serif;
 }
 
 body * {
@@ -74,4 +74,14 @@ button {
 
 .d-none {
   display: none;
+}
+
+.voice-only {
+  overflow: hidden;
+  position: fixed;
+  top: -1px;
+  left: -1px;
+  width: 1px;
+  height: 1px;
+  color: transparent;
 }
