@@ -94,6 +94,7 @@
   }
 }
 
+// firework
 .scr-wrap3 {
   .stick-wrap {
     position: relative;
@@ -136,6 +137,53 @@
       opacity: 1;
       top: 0;
       left: 0;
+    }
+  }
+}
+
+// receipt
+.scr-wrap4 {
+  .receipt-wrap {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .conts1 {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .conts2 {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 70%;
+    height: 500px;
+    margin: 20px auto 0;
+    padding: 20px;
+    border: 1px solid #cdcdcd;
+    background-color: white;
+    transform: translateY(-100%);
+    transition: all 1s linear;
+  }
+
+  .conts3 {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  @include hover {
+    .conts2 {
+      transform: translateY(0%);
     }
   }
 }
