@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#e5e5e5" />
+  <title>scroll events</title>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    /* reset */
+    .sub_content {
+      width: 100%;
+      padding: 0;
+    }
+  
+    #contents {
+      padding: 0;
+    }
+  
+    /* common */
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: 'GmarketSans';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+  
+    .event-page [class] {
+      font-weight: 400;
+      font-family: 'GmarketSans', sans-serif;
+      color: #101828;
+      box-sizing: border-box;
+    }
+  
+    .section {
+      padding: 120px 0;
+    }
+  
+    .l-center {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  
+    .event-page .sec-num {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 70px;
+      border-radius: 50%;
+      background-color: #101828;
+      font-weight: 600;
+      font-size: 36px;
+      color: white;
+    }
+  
+    .event-page .sub-sec-ttl {
+      margin-bottom: 27px;
+      font-size: 57px;
+      text-align: center;
+    }
+  
+    .event-page .sec-ttl {
+      font-weight: 600;
+      font-size: 112px;
+      text-align: center;
+    }
+  
+    .section .btn-fill-black {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background-color: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+      box-shadow: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 168px;
+      border-radius: 56px;
+      background-color: #101F28;
+      font-size: 54px;
+      color: white;
+    }
+  
+    /* section style - visual section */
+    .visual-section {
+      padding: 143px 0;
+      background-color: #FFD916;
+    }
+  
+    .page-ttl {
+      margin-bottom: 38px;
+      text-align: center;
+    }
+  
+    .page-ttl-txt {
+      position: relative;
+      display: inline-block;
+      padding: 31px 24px 19px;
+      line-height: 1;
+      font-size: 45px;
+    }
+  
+    .page-ttl-txt .staccato {
+      vertical-align: inherit;
+    }
+  
+    .bg-conts {
+      height: 1266px;
+      background-position: center top;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-image: url("https://cdn-saas-web-159-230.cdn-nhncommerce.com/mygarage69_godomall_com/data/assets/image/event/bg_ibk_main.svg");
+    }
+  
+    /* section style - first section */
+    .first-section {
+      background-color: #FFF4D4;
+    }
+  
+    .first-section .sec-ttl {
+      margin-bottom: 70px;
+    }
+  
+    .first-section .desc {
+      margin-top: 50px;
+      line-height: 1.33;
+      font-size: 36px;
+      text-align: center;
+      color: #26251B;
+    }
+  
+    .first-section .img-wrap {
+      padding-top: 112px;
+    }
+  
+    .first-section .img-wrap img {
+      max-width: 100%;
+    }
+  
+    /* section style - second section */
+    .coupon-wrap {
+      margin-top: 112px;
+    }
+    .coupon-top {
+      padding: 81px 0 76px;
+      border-radius: 0 0 56px 56px;
+      background-image: linear-gradient(to right, #FFD80B 0%, #FFEA7D 100%);
+      border-bottom: 1px dashed white;
+      text-align: center;
+    }
+  
+    .second-section .coupon-ttl {
+      font-weight: 500;
+      font-size: 36px;
+      font-family: 'pretendard', sans-serif;
+      color: white;
+    }
+  
+    .second-section .coupon-num {
+      font-size: 111px;
+      color: white;
+    }
+  
+    .second-section .coupon-num .bold {
+      font-size: 150px;
+      color: white;
+    }
+  
+    .coupon-bot {
+      padding: 58px 0;
+      border-radius: 56px 56px 0 0;
+      background-image: linear-gradient(to right, #FFD80B 0%, #FFEA7D 100%);
+      text-align: center;
+    }
+  
+    .second-section .coupon-desc {
+      font-weight: 500;
+      font-size: 33px;
+      font-family: 'pretendard', sans-serif;
+      color: white;
+    }
+  
+    .date-list-wrap {
+      margin-top: 100px;
+    }
+  
+    .date-list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 42px;
+    }
+  
+    .second-section .date-ttl {
+      flex-shrink: 0;
+      width: 258px;
+      padding: 21px 36px;
+      border-radius: 50px;
+      background-color: #E4E7EC;
+      font-size: 36px;
+      text-align: center;
+    }
+  
+    .second-section .date {
+      padding-left: 54px;
+      font-size: 48px;
+      color: #475467;
+    }
+  
+    .second-section .btn-fill-black {
+      margin-top: 100px;
+    }
+  
+    .section .btn-fill-black img {
+      margin-top: -10px;
+      margin-left: 24px;
+    }
+  
+    /* section style - third section */
+    .third-section {
+      background-color: #EBEEF2;
+    }
+  
+    .warning-list-wrap {
+      margin-top: 94px;
+    }
+  
+    .warning-list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 50px;
+      padding: 45px;
+      /* padding-left: 136px; */
+      border-radius: 56px;
+      background-color: white;
+    }
+  
+    .warning-list .icon {
+      flex-shrink: 0;
+    }
+  
+    .warning-list .txt {
+      padding-left: 24px;
+      font-size: 42px;
+      line-height: 1.42;
+    }
+  
+    /* ------------------------------ mobile style ------------------------------ */
+    @media all and (max-width: 1024px) {
+      .l-center {
+        padding: 0 15px;
+      }
+  
+      .section {
+        padding: 11.3vw 0;
+      }
+      
+      /* visual section */
+      .visual-section {
+        padding: 13.2vw 0;
+      }
+  
+      .page-ttl {
+        margin-bottom: 3.5vw;
+      }
+  
+      .page-ttl-txt {
+        padding: 2.9vw 2.2vw 1.7vw;
+        font-size: 4.5vw;
+      }
+      
+      .bg-conts {
+        height: 132.6vw;
+        background-size: 295.6vw;
+      }
+  
+      /* number section common */
+      .event-page .sec-num {
+        width: 8.89vw;
+        height: 8.89vw;
+        margin-bottom: 6.49vw;
+        font-size: 3.34vw;
+      }
+  
+      .event-page .sub-sec-ttl {
+        margin-bottom: 2.5vw;
+        font-size: 5.28vw;
+      }
+  
+      .event-page .sec-ttl {
+        font-size: 10.38vw;
+      }
+  
+      /* first section */
+      .first-section .sec-ttl {
+        margin-bottom: 6.49vw;
+      }
+  
+      .first-section .desc {
+        margin-top: 4.63vw;
+        font-size: 3.34vw;
+      }
+  
+      .first-section .img-wrap {
+        padding-top: 10.37vw;
+      }
+      /* second section */
+      .coupon-wrap {
+        margin-top: 10.37vw;
+      }
+  
+      .coupon-top {
+        padding: 7.5vw 0 7.04vw;
+        border-radius: 0 0 5.28vw 5.28vw;
+      }
+  
+      .second-section .coupon-ttl {
+        font-size: 3.34vw;
+      }
+  
+      .second-section .coupon-num {
+        font-size: 10.28vw;
+      }
+  
+      .second-section .coupon-num .bold {
+        /* font-size: 13.89vw; */
+        font-size: 16vw;
+      }
+  
+      .coupon-bot{
+        padding: 5.28vw 0;
+        border-radius: 5.28vw 5.28vw 0 0;
+      }
+  
+      .second-section .coupon-desc{
+        font-size: 3.06vw;
+      }
+  
+      .date-list-wrap {
+        margin-top: 9.26vw;
+      }
+  
+      .date-list{
+        margin-top: 3.89vw;
+      }
+  
+      .second-section .date-ttl {
+        width: 23.92vw;
+        padding: 1.95vw 3.34vw;
+        border-radius: 4.63vw;
+        font-size: 3.34vw;
+      }
+  
+      .second-section .date {
+        padding-left: 3.9vw;
+        font-size: 3.47vw;
+      }
+  
+      .second-section .btn-fill-black {
+        height: 15.56vw;
+        margin-top: 9.26vw;
+        border-radius: 5.2vw;
+        font-size: 5vw;
+      }
+  
+      .section .btn-fill-black img {
+        width: 4.54vw;
+        margin-top: -1.2vw;
+        margin-left: 2.23vw;
+      }
+      /* third section */
+      .warning-list-wrap {
+        margin-top: 8.71vw;
+      }
+  
+      .warning-list {
+        margin-top: 4.63vw;
+        padding: 4.17vw;
+        border-radius: 5.19vw;
+      }
+  
+      .warning-list .icon {
+        width: 5.56vw;
+      }
+  
+      .warning-list .txt {
+        padding-left: 2.23vw;
+        font-size: 3.89vw;
+      }
+    }
+  
+    /* ------------------------------ interaction style ------------------------------ */
+    /* new */
+    [data-aos="line"]:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #735F23;
+      transition: all 0.3s;
+    }
+  
+    [data-aos="line"]:after {
+      content: '';
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background-color: #735F23;
+      transition: all 0.3s;
+    }
+  
+    [data-aos="line"].aos-animate:before,
+    [data-aos="line"].aos-animate:after {
+      width: 100%;
+    }
+  
+    /* visual title */
+    .staccato {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.2s;
+      transition-timing-function: ease-out;
+    }
+  
+    .aos-animate .staccato {
+      opacity: 1;
+      display: inline-block;
+      transform: translateY(0);
+    }
+  
+    .aos-animate .staccato1 {
+      transition-delay: 700ms;
+    }
+  
+    .aos-animate .staccato2 {
+      transition-delay: 850ms;
+    }
+  
+    .aos-animate .staccato3 {
+      transition-delay: 1000ms;
+    }
+  
+    .aos-animate .staccato4 {
+      transition-delay: 1150ms;
+    }
+  
+    /* section title */
+    [data-aos="fade-right"] .sec-ttl {
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s 0.3s;
+    }
+    [data-aos="fade-right"].aos-animate .sec-ttl {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    </style>
+</head>
+
+<body>
+  <div class="event-page">
+    <!-- visual section -->
+    <section class="section visual-section">
+      <div class="l-center">
+        <h2 class="page-ttl">
+          <p class="page-ttl-txt" data-aos="line" data-aos-delay="0" data-aos-duration="300">
+            <span data-aos="fade" data-aos-delay="350">IBK 기업은행 임직원</span>
+            <span class="staccato staccato1">특</span><span class="staccato staccato2">별</span> <span class="staccato staccato3">할</span><span class="staccato staccato4">인</span> 
+            <span data-aos="fade" data-aos-delay="1400">이벤트</span>
+          </p>
+        </h2>
+      </div>
+      <div class="bg-conts" data-aos="fade-up" data-aos-delay="1600" data-aos-duration="500">
+        <div class="voice-only">
+          <p>마이게러지 활동 포인트로</p>
+          <h2>자동차 용품 구매하자</h2>
+        </div>
+      </div>
+    </section>
+    <!-- first section -->
+    <section class="section first-section">
+      <div class="l-center">
+        <span class="sec-num" data-aos="zoom-in">1</span>
+        <div data-aos="fade-right">
+          <p class="sub-sec-ttl">내 손안에 자동차 커뮤니티</p>
+          <h2 class="sec-ttl">마이게러지란?</h2>
+        </div>
+        <div data-aos="fade-down">
+          <p class="desc">
+            마이게러지는 내 자동차와 함께하는 라이프 로그와<br />
+            자동차와밀접한 연관을 가진 지역정보, <br />
+            차쟁이 이웃들과의 소통을 위한 커뮤니티를 통해<br />
+            우리가 추구하는 경험을 제공하고자 합니다.
+          </p>
+          <p class="desc">
+            마이게러지에서 활동하고 쌓인 마일리지로<br />
+            각종 자동차 용품 및 액세서리도 구매할 수 있어요.
+          </p>
+          <div class="img-wrap">
+            <img src="/data/assets/image/event/img_mockup.png" alt="마이게러지 앱 화면 스크린샷" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- second section -->
+    <section class="section second-section">
+      <div class="l-center">
+        <span class="sec-num" data-aos="zoom-in">2</span>
+        <div data-aos="fade-right">
+          <p class="sub-sec-ttl">IBK 기업은행 임직원 적용</p>
+          <h2 class="sec-ttl">10% 할인 쿠폰</h2>
+        </div>
+        <div data-aos="fade-down">
+          <article class="coupon-wrap">
+            <div class="coupon-top">
+              <h3 class="coupon-ttl">IBK 기업은행 임직원 적용</h3>
+              <strong class="coupon-num"><b class="bold">10</b>%</strong>
+            </div>
+            <div class="coupon-bot">
+              <p class="coupon-desc">10,000원 이상 상품 구매시, 최대 30,000원 할인</p>
+            </div>
+          </article>
+          <ul class="date-list-wrap">
+            <li class="date-list">
+              <span class="date-ttl">이벤트 기간</span>
+              <time class="date">~ 2023년 12월 31일</time>
+            </li>
+            <li class="date-list">
+              <span class="date-ttl">사용 기한</span>
+              <time class="date">다운로드일로부터 30일</time>
+            </li>
+          </ul>
+          <button class="btn-fill-black" onclick="javascript:couponLinkDown('3');">마이게러지몰 쿠폰받기<img
+              src="/data/assets/image/event/icon_down_white.svg" alt="" /></button>
+        </div>
+      </div>
+    </section>
+    <!-- third section -->
+    <section class="section third-section">
+      <div class="l-center">
+        <span class="sec-num" data-aos="zoom-in">3</span>
+        <h2 class="sec-ttl" data-aos="fade-down">꼭 확인하세요!</h2>
+        <div data-aos="fade-down">
+          <ul class="warning-list-wrap">
+            <li class="warning-list">
+              <img src="/data/assets/image/event/icon_check_black.svg" alt="" class="icon" />
+              <p class="txt">
+                마이게러지몰 가입 및 로그인 후 <br />
+                위 쿠폰 다운로드 링크를 <br />
+                받으시면 쿠폰이 다운로드 됩니다.
+              </p>
+            </li>
+            <li class="warning-list">
+              <img src="/data/assets/image/event/icon_check_black.svg" alt="" class="icon" />
+              <p class="txt">
+                회원 가입 시 지원되는 1,000마일리지와 동시 사용 가능하니, 많은 관심 부탁드립니다.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    AOS.init({
+      once: true,
+      offset: 200,
+      // duration: 500,
+    });
+  </script>
+</body>
+
+</html>
