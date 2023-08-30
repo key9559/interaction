@@ -442,3 +442,47 @@
     }
   }
 }
+
+// marquee
+@keyframes marquee {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -1590px;
+  }
+}
+
+.marquee-wrap {
+  @include bg-op(left top, 1590px, repeat-x);
+  @include bg-url(img, "marquee.png");
+
+  position: relative;
+  height: 160px;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+// svg stroke animation
+@keyframes svg_stroke {
+  0% {
+    stroke-dashoffset: 100rem;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-ani {
+  stroke-width: 0.125rem;
+  stroke-dasharray: 100rem;
+  stroke-dashoffset: 100rem;
+  animation-name: svg_stroke;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
