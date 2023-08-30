@@ -20,6 +20,4 @@ if ($("#page").hasClass("button-page")) {
 	gnbLink.eq(3).addClass("on");
 } else if ($("#page").hasClass("scroll-page")) {
 	gnbLink.eq(4).addClass("on");
-} else if ($("#page").hasClass("modal-page")) {
-	gnbLink.eq(5).addClass("on");
 }
