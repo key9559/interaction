@@ -294,6 +294,7 @@
 }
 
 .inp-toggle-icon {
+  overflow: hidden;
   position: relative;
   display: block;
   width: 100px;
@@ -335,6 +336,88 @@
       &:before {
         left: calc(100% - 35px);
         background-color: $red-color;
+      }
+    }
+  }
+}
+
+.inp-toggle-wrap2 {
+  .inp-toggle-icon {
+    @include make-after {
+      @include circle(30px);
+
+      position: absolute;
+      top: 5px;
+      left: auto;
+      right: -50px;
+      background-color: $red-color;
+      transition: all 0.3s;
+    }
+  }
+
+  .inp-toggle:checked {
+    ~ .inp-toggle-icon {
+      &:before {
+        left: -50px;
+      }
+
+      &:after {
+        right: 5px;
+      }
+    }
+  }
+}
+
+.inp-toggle-wrap3 {
+  .inp-toggle-icon {
+    @include make-after {
+      @include circle(30px);
+
+      position: absolute;
+      top: -50px;
+      left: auto;
+      right: 5px;
+      background-color: $red-color;
+      transition: all 0.3s;
+    }
+  }
+
+  .inp-toggle:checked {
+    ~ .inp-toggle-icon {
+      &:before {
+        top: -50px;
+      }
+
+      &:after {
+        top: 5px;
+      }
+    }
+  }
+}
+
+.inp-toggle-wrap4 {
+  .inp-toggle-icon {
+    @include make-after {
+      @include circle(30px);
+
+      opacity: 0;
+      position: absolute;
+      top: 5px;
+      left: auto;
+      right: 5px;
+      background-color: $red-color;
+      transition: all 0.3s;
+    }
+  }
+
+  .inp-toggle:checked {
+    ~ .inp-toggle-icon {
+      &:before {
+        opacity: 0;
+      }
+
+      &:after {
+        opacity: 1;
       }
     }
   }

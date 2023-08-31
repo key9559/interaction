@@ -306,6 +306,7 @@
 }
 
 .inp-toggle-icon {
+  overflow: hidden;
   position: relative;
   display: block;
   width: 100px;
@@ -345,4 +346,68 @@
 .inp-toggle-wrap1 .inp-toggle:checked ~ .inp-toggle-icon:before {
   left: calc(100% - 35px);
   background-color: #f31919;
+}
+
+.inp-toggle-wrap2 .inp-toggle-icon:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: auto;
+  right: -50px;
+  background-color: #f31919;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.inp-toggle-wrap2 .inp-toggle:checked ~ .inp-toggle-icon:before {
+  left: -50px;
+}
+.inp-toggle-wrap2 .inp-toggle:checked ~ .inp-toggle-icon:after {
+  right: 5px;
+}
+
+.inp-toggle-wrap3 .inp-toggle-icon:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: auto;
+  right: 5px;
+  background-color: #f31919;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.inp-toggle-wrap3 .inp-toggle:checked ~ .inp-toggle-icon:before {
+  top: -50px;
+}
+.inp-toggle-wrap3 .inp-toggle:checked ~ .inp-toggle-icon:after {
+  top: 5px;
+}
+
+.inp-toggle-wrap4 .inp-toggle-icon:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  left: auto;
+  right: 5px;
+  background-color: #f31919;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.inp-toggle-wrap4 .inp-toggle:checked ~ .inp-toggle-icon:before {
+  opacity: 0;
+}
+.inp-toggle-wrap4 .inp-toggle:checked ~ .inp-toggle-icon:after {
+  opacity: 1;
 }
