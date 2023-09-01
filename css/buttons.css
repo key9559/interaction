@@ -57,7 +57,7 @@
 }
 .buttons_wrap .btn {
   position: relative;
-  width: 100px;
+  width: 200px;
   height: 50px;
   line-height: 50px;
   margin: 10px;
@@ -201,7 +201,7 @@
   transition: all 0.3s;
 }
 .buttons_wrap1 .btn1:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn1:not([disabled=disabled]):focus:before {
-  left: 113px;
+  left: 214px;
 }
 .buttons_wrap1 .btn2 {
   background: none;
@@ -374,10 +374,10 @@
   background-color: #563094;
 }
 .buttons_wrap1 .btn5:not([disabled=disabled]):hover:before, .buttons_wrap1 .btn5:not([disabled=disabled]):focus:before {
-  width: 100px;
+  width: 100%;
 }
 .buttons_wrap1 .btn5:not([disabled=disabled]):hover:after, .buttons_wrap1 .btn5:not([disabled=disabled]):focus:after {
-  width: 100px;
+  width: 100%;
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
 }
@@ -1100,7 +1100,7 @@
   left: 50%;
   -webkit-transform: translateX(-50%) skew(40deg);
           transform: translateX(-50%) skew(40deg);
-  width: 10px;
+  width: 12px;
   height: 100%;
   background-color: transparent;
   -webkit-transition: all 0.4s;
@@ -1563,6 +1563,57 @@
   opacity: 1;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
+}
+.buttons_wrap4 .btn6 .txt {
+  z-index: 2;
+  position: relative;
+  background-color: pink;
+}
+.buttons_wrap4 .btn6:before {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: auto;
+  bottom: 8px;
+  left: 5px;
+  width: 50%;
+  height: 10px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.buttons_wrap4 .btn6:after {
+  content: "";
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: auto;
+  bottom: 8px;
+  left: 5px;
+  width: 50%;
+  height: 10px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.buttons_wrap4 .btn6:after {
+  left: auto;
+  right: 5px;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+}
+.buttons_wrap4 .btn6:not([disabled=disabled]):hover:before, .buttons_wrap4 .btn6:not([disabled=disabled]):focus:before {
+  bottom: 4px;
+}
+.buttons_wrap4 .btn6:not([disabled=disabled]):hover:after, .buttons_wrap4 .btn6:not([disabled=disabled]):focus:after {
+  bottom: 4px;
 }
 
 .buttons_wrap_circle .btn {

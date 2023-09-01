@@ -43,7 +43,7 @@
 
   .btn {
     position: relative;
-    width: 100px;
+    width: 200px;
     height: 50px;
     line-height: 50px;
     margin: 10px;
@@ -189,7 +189,7 @@
 
     @include hover {
       &:before {
-        left: 113px;
+        left: 214px;
       }
     }
   }
@@ -373,11 +373,11 @@
 
     @include hover {
       &:before {
-        width: 100px;
+        width: 100%;
       }
 
       &:after {
-        width: 100px;
+        width: 100%;
         transition-delay: 0.4s;
       }
 
@@ -1160,7 +1160,7 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%) skew(40deg);
-      width: 10px;
+      width: 12px;
       height: 100%;
       background-color: transparent;
       transition: all 0.4s;
@@ -1582,6 +1582,43 @@
       &:after {
         opacity: 1;
         transform: translateY(2px);
+      }
+    }
+  }
+
+  .btn6 {
+    .txt {
+      z-index: 2;
+      position: relative;
+      background-color: pink;
+    }
+
+    @include make-virtual {
+      z-index: 0;
+      position: absolute;
+      top: auto;
+      bottom: 8px;
+      left: 5px;
+      width: 50%;
+      height: 10px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+      transform: rotate(-5deg);
+      transition: all 0.3s;
+    }
+
+    &:after {
+      left: auto;
+      right: 5px;
+      transform: rotate(5deg);
+    }
+
+    @include hover {
+      &:before {
+        bottom: 4px;
+      }
+
+      &:after {
+        bottom: 4px;
       }
     }
   }
