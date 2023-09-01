@@ -35,11 +35,16 @@
     <div class="modal" id="confirm-modal" tabindex="-1">
       <div class="modal-bg" onclick="closeConfirmModal()"></div>
       <div class="modal-container">
+        <span class="modal-interaction-stick stick1"></span>
+        <span class="modal-interaction-stick stick2"></span>
+        <span class="modal-interaction-stick stick3"></span>
+        <div class="modal-conts-wrap">
         <div class="modal-ttl" id="confirm-title"></div>
         <div class="modal-desc" id="confirm-desc"></div>
-        <div class="buttons_wrap buttons_wrap3">
-          <button class="btn btn8" onclick="closeConfirmModal()"><span class="txt">취소</span></button>
-          <button class="btn btn8" onclick="closeConfirmModal()"><span class="txt">확인</span></button>
+          <div class="buttons_wrap buttons_wrap3">
+            <button class="btn btn8" onclick="closeConfirmModal()"><span class="txt">취소</span></button>
+            <button class="btn btn8" onclick="closeConfirmModal()"><span class="txt">확인</span></button>
+          </div>
         </div>
       </div>
     </div>
@@ -77,10 +82,15 @@
     <div class="modal" id="alert-modal" tabindex="-1">
       <div class="modal-bg" onclick="closeAlertModal()"></div>
       <div class="modal-container">
-        <div class="modal-ttl" id="alert-title"></div>
-        <div class="modal-desc" id="alert-desc"></div>
-        <div class="buttons_wrap buttons_wrap3">
-          <button class="btn btn8" id="alert-btn" onclick="closeAlertModal()"></button>
+        <span class="modal-interaction-stick stick1"></span>
+        <span class="modal-interaction-stick stick2"></span>
+        <span class="modal-interaction-stick stick3"></span>
+        <div class="modal-conts-wrap">
+          <div class="modal-ttl" id="alert-title"></div>
+          <div class="modal-desc" id="alert-desc"></div>
+          <div class="buttons_wrap buttons_wrap3">
+            <button class="btn btn8" id="alert-btn" onclick="closeAlertModal()"></button>
+          </div>
         </div>
       </div>
     </div>

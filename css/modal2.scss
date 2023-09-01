@@ -41,8 +41,6 @@
   left: 50%;
   max-width: 720px;
   width: 90%;
-  padding-bottom: 40px;
-  background-color: white;
   transform: translate(-50%, -50%);
 
   @at-root .active & {
@@ -52,6 +50,7 @@
   .buttons_wrap {
     margin: 0;
     padding: 0;
+    text-align: center;
   }
 
   .btn {
@@ -62,6 +61,21 @@
     &:before {
       width: 20px;
     }
+  }
+}
+
+.modal-conts-wrap {
+  opacity: 0;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 40px;
+  background-color: white;
+
+  @at-root .active & {
+    opacity: 1;
+    transition: opacity 0.3s 1200ms;
   }
 }
 
@@ -85,5 +99,71 @@
 
   .img {
     margin-top: 64px;
+  }
+}
+
+.modal-interaction-stick {
+  &.stick1 {
+    @include make-virtual {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: white;
+
+      @at-root .active & {
+        width: 50%;
+        transition: all 0.3s linear;
+      }
+    }
+
+    &:after {
+      left: auto;
+      right: 50%;
+    }
+  }
+
+  &.stick2 {
+    @include make-virtual {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 0;
+      background-color: white;
+
+      @at-root .active & {
+        height: 100%;
+        transition: all 0.3s 0.3s linear;
+      }
+    }
+
+    &:after {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &.stick3 {
+    @include make-virtual {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: white;
+
+      @at-root .active & {
+        width: 50%;
+        transition: all 0.3s 0.6s linear;
+      }
+    }
+
+    &:after {
+      left: auto;
+      right: 0;
+    }
   }
 }
