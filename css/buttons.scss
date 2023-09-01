@@ -279,7 +279,6 @@
     }
 
     @include hover {
-
       &:before,
       &:after {
         height: 50%;
@@ -348,7 +347,6 @@
     }
 
     .txt {
-
       &:before,
       &:after {
         height: 0px;
@@ -400,10 +398,7 @@
     -webkit-background-clip: text;
     color: transparent;
     overflow: hidden;
-    background-image: linear-gradient(to left,
-        #563094 0%,
-        #ffbd54 50%,
-        #563094 100%);
+    background-image: linear-gradient(to left, #563094 0%, #ffbd54 50%, #563094 100%);
     background-position: center left;
     background-size: 200%;
     transition: all 0.5s;
@@ -413,10 +408,7 @@
       top: 44px;
       width: 100%;
       height: 3px;
-      background-image: linear-gradient(to left,
-          #563094 0%,
-          #ffbd54 50%,
-          #563094 100%);
+      background-image: linear-gradient(to left, #563094 0%, #ffbd54 50%, #563094 100%);
       background-position: center left;
       background-size: 200%;
       transition: all 0.5s;
@@ -444,12 +436,7 @@
   }
 
   .btn8 {
-    background-image: linear-gradient(-30deg,
-        #563094,
-        #a67100,
-        #ffbd54,
-        #a67100,
-        #563094);
+    background-image: linear-gradient(-30deg, #563094, #a67100, #ffbd54, #a67100, #563094);
     background-size: 500px 500px;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -488,7 +475,9 @@
     }
 
     @include hover {
-      box-shadow: -10px 10px 25px #563094, 10px -10px 25px #ffbd54;
+      box-shadow:
+        -10px 10px 25px #563094,
+        10px -10px 25px #ffbd54;
 
       .txt {
         background: none;
@@ -508,50 +497,74 @@
   }
 
   .btn1 {
-    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5), inset -3px -3px 5px #fff;
+    box-shadow:
+      inset 3px 3px 5px rgba(0, 0, 0, 0.5),
+      inset -3px -3px 5px #fff;
 
     @include hover {
-      box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.5), inset -2px -2px 3px #fff;
+      box-shadow:
+        inset 2px 2px 3px rgba(0, 0, 0, 0.5),
+        inset -2px -2px 3px #fff;
     }
 
     &:active {
-      box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.7), inset -1px -1px 5px #fff;
+      box-shadow:
+        inset 1px 1px 3px rgba(0, 0, 0, 0.7),
+        inset -1px -1px 5px #fff;
     }
   }
 
   .btn2 {
-    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3), -6px -6px 10px #fff;
+    box-shadow:
+      6px 6px 10px rgba(0, 0, 0, 0.3),
+      -6px -6px 10px #fff;
 
     @include hover {
-      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -4px -4px 8px #fff;
+      box-shadow:
+        4px 4px 8px rgba(0, 0, 0, 0.3),
+        -4px -4px 8px #fff;
     }
 
     &:active {
-      box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3), -1px -1px 2px #fff;
+      box-shadow:
+        3px 3px 4px rgba(0, 0, 0, 0.3),
+        -1px -1px 2px #fff;
     }
   }
 
   .btn3 {
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3), -5px -5px 8px #fff;
+    box-shadow:
+      5px 5px 8px rgba(0, 0, 0, 0.3),
+      -5px -5px 8px #fff;
 
     @include hover {
-      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 8px #fff;
+      box-shadow:
+        3px 3px 5px rgba(0, 0, 0, 0.3),
+        -3px -3px 8px #fff;
     }
 
     &:active {
-      box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5), inset -1px -1px 4px #fff;
+      box-shadow:
+        inset 1px 1px 4px rgba(0, 0, 0, 0.5),
+        inset -1px -1px 4px #fff;
     }
   }
 
   .btn4 {
-    box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.3), inset -1px -1px 6px #fff;
+    box-shadow:
+      inset 1px 1px 6px rgba(0, 0, 0, 0.3),
+      inset -1px -1px 6px #fff;
 
     @include hover {
-      box-shadow: inset 3px 3px 6px rgba(#000, 0.3), inset -3px -3px 6px #fff;
+      box-shadow:
+        inset 3px 3px 6px rgba(#000, 0.3),
+        inset -3px -3px 6px #fff;
     }
 
     &:active {
-      box-shadow: inset 5px 5px 7px rgba(#000, 0.3), inset -5px -5px 7px #fff;
+      box-shadow:
+        inset 5px 5px 7px rgba(#000, 0.3),
+        inset -5px -5px 7px #fff;
     }
   }
 
@@ -682,7 +695,6 @@
     }
 
     @include hover {
-
       &:before,
       &:after {
         width: 100%;
@@ -842,7 +854,6 @@
     }
 
     @include hover {
-
       &:before,
       &:after {
         height: 100%;
@@ -886,71 +897,6 @@
   }
 
   .btn10 {
-    background-color: #ffbd54;
-    color: #666;
-    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3),
-      inset 2px 2px 5px rgba(255, 255, 255, 0.7);
-    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
-
-    @include make-before {
-      position: absolute;
-      top: 7px;
-      left: 8px;
-      width: 5px;
-      height: 20px;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.5);
-      transition: all 0.3s;
-    }
-
-    @include hover {
-      box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3),
-        inset 0px 0px 5px rgba(255, 255, 255, 0.7);
-      text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
-
-      &:before {
-        content: none;
-      }
-    }
-  }
-
-  .btn11 {
-    overflow: hidden;
-
-    .txt {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 0.4s;
-    }
-
-    .icon {
-      @include flex-center;
-
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: all 0.4s;
-    }
-
-    @include hover {
-      background-color: pink;
-
-      .txt {
-        top: -100%;
-      }
-
-      .icon {
-        top: 0;
-      }
-    }
-  }
-
-  .btn12 {
     border-radius: 5px;
     transition-delay: 0s;
     transition-duration: 0.1s;
@@ -994,49 +940,7 @@
     }
   }
 
-  .btn13 {
-    .txt {
-      z-index: 1;
-      position: relative;
-    }
-
-    @include make-before {
-      opacity: 0.1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      transition: all 0.4s;
-    }
-
-    @include make-after {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 1px solid;
-      transform: scale(1.3);
-      transition: all 0.4s;
-    }
-
-    @include hover {
-      &:before {
-        opacity: 0;
-        transform: scale(0.7);
-      }
-
-      &:after {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  }
-
-  .btn14 {
+  .btn11 {
     .txt {
       z-index: 1;
       position: relative;
@@ -1109,7 +1013,8 @@
     }
 
     &:active {
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+      box-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3),
         inset 2px 2px 5px rgba(0, 0, 0, 0.3);
       text-shadow: none;
     }
@@ -1142,7 +1047,10 @@
       width: 1.5em;
       height: 1px;
       background-color: $bg-color;
-      transition: width 0.2s, left 0.4s, right 0.4s;
+      transition:
+        width 0.2s,
+        left 0.4s,
+        right 0.4s;
     }
 
     @include hover {
@@ -1356,14 +1264,12 @@
     }
 
     @include hover {
-
       &:before,
       &:after {
         width: 100%;
       }
 
       .txt {
-
         &:before,
         &:after {
           width: 100%;
@@ -1420,14 +1326,12 @@
     }
 
     @include hover {
-
       &:before,
       &:after {
         height: 100%;
       }
 
       .txt {
-
         &:before,
         &:after {
           height: 100%;
@@ -1459,7 +1363,6 @@
     }
 
     @include hover {
-
       &:before,
       &:after {
         height: 50%;
@@ -1494,7 +1397,6 @@
     }
 
     @include hover {
-
       &:before,
       &:after {
         height: 50%;
@@ -1543,6 +1445,149 @@
 }
 
 .buttons_wrap4 {
+  .btn {
+    border-color: pink;
+    background-color: pink;
+  }
+
+  .btn1 {
+    box-shadow:
+      inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+      inset 2px 2px 5px rgba(255, 255, 255, 0.7);
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+
+    @include make-before {
+      position: absolute;
+      top: 7px;
+      left: 8px;
+      width: 5px;
+      height: 20px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.5);
+      transition: all 0.3s;
+    }
+
+    @include hover {
+      box-shadow:
+        inset 0px 0px 5px rgba(0, 0, 0, 0.3),
+        inset 0px 0px 5px rgba(255, 255, 255, 0.7);
+      text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .btn2 {
+    overflow: hidden;
+
+    .txt {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.4s;
+    }
+
+    .icon {
+      @include flex-center;
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.4s;
+    }
+
+    @include hover {
+      border-color: beige;
+      background-color: beige;
+
+      .txt {
+        top: -100%;
+      }
+
+      .icon {
+        top: 0;
+      }
+    }
+  }
+
+  .btn3 {
+    .txt {
+      z-index: 1;
+      position: relative;
+    }
+
+    @include make-after {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid hotpink;
+      transform: scale(1.3);
+      transition: all 0.4s;
+    }
+
+    @include hover {
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  .btn4 {
+    @include make-before {
+      opacity: 0;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      border: 2px solid white;
+      box-sizing: border-box;
+      transform: scale(0.9);
+      transition: all 0.3s;
+    }
+
+    @include hover {
+      &:before {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+
+  .btn5 {
+    @include make-after {
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 5%;
+      width: 90%;
+      height: 10px;
+      background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+      transition: all 0.3s;
+    }
+
+    @include hover {
+      transform: translateY(-1px);
+
+      &:after {
+        opacity: 1;
+        transform: translateY(2px);
+      }
+    }
+  }
+}
+
+.buttons_wrap_circle {
   .btn {
     width: 50px;
     height: 50px;
@@ -1665,7 +1710,7 @@
   }
 }
 
-.buttons_wrap5 {
+.buttons_wrap_gifstyle {
   .btn {
     overflow: hidden;
     background-repeat: no-repeat;

@@ -854,80 +854,13 @@
   opacity: 1;
 }
 .buttons_wrap2 .btn10 {
-  background-color: #ffbd54;
-  color: #666;
-  -webkit-box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.7);
-          box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.7);
-  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
-}
-.buttons_wrap2 .btn10:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 7px;
-  left: 8px;
-  width: 5px;
-  height: 20px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.buttons_wrap2 .btn10:not([disabled=disabled]):hover, .buttons_wrap2 .btn10:not([disabled=disabled]):focus {
-  -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 5px rgba(255, 255, 255, 0.7);
-          box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 5px rgba(255, 255, 255, 0.7);
-  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
-}
-.buttons_wrap2 .btn10:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn10:not([disabled=disabled]):focus:before {
-  content: none;
-}
-.buttons_wrap2 .btn11 {
-  overflow: hidden;
-}
-.buttons_wrap2 .btn11 .txt {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.buttons_wrap2 .btn11 .icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.buttons_wrap2 .btn11:not([disabled=disabled]):hover, .buttons_wrap2 .btn11:not([disabled=disabled]):focus {
-  background-color: pink;
-}
-.buttons_wrap2 .btn11:not([disabled=disabled]):hover .txt, .buttons_wrap2 .btn11:not([disabled=disabled]):focus .txt {
-  top: -100%;
-}
-.buttons_wrap2 .btn11:not([disabled=disabled]):hover .icon, .buttons_wrap2 .btn11:not([disabled=disabled]):focus .icon {
-  top: 0;
-}
-.buttons_wrap2 .btn12 {
   border-radius: 5px;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
 }
-.buttons_wrap2 .btn12:before, .buttons_wrap2 .btn12:after {
+.buttons_wrap2 .btn10:before, .buttons_wrap2 .btn10:after {
   z-index: 0;
   position: absolute;
   top: 0;
@@ -937,80 +870,38 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap2 .btn12:before {
+.buttons_wrap2 .btn10:before {
   content: "";
   display: block;
   left: 0;
   border-right: none;
   border-radius: 5px 0 0 5px;
 }
-.buttons_wrap2 .btn12:after {
+.buttons_wrap2 .btn10:after {
   content: "";
   display: block;
   right: 0;
   border-left: none;
   border-radius: 0 5px 5px 0;
 }
-.buttons_wrap2 .btn12 .txt {
+.buttons_wrap2 .btn10 .txt {
   z-index: 1;
   position: relative;
 }
-.buttons_wrap2 .btn12:not([disabled=disabled]):hover, .buttons_wrap2 .btn12:not([disabled=disabled]):focus {
+.buttons_wrap2 .btn10:not([disabled=disabled]):hover, .buttons_wrap2 .btn10:not([disabled=disabled]):focus {
   -webkit-transition: all 1s;
   transition: all 1s;
   -webkit-box-shadow: inset 0px 0px 15px rgba(25, 25, 25, 0.4);
           box-shadow: inset 0px 0px 15px rgba(25, 25, 25, 0.4);
 }
-.buttons_wrap2 .btn12:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn12:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn12:not([disabled=disabled]):focus:before, .buttons_wrap2 .btn12:not([disabled=disabled]):focus:after {
+.buttons_wrap2 .btn10:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn10:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn10:not([disabled=disabled]):focus:before, .buttons_wrap2 .btn10:not([disabled=disabled]):focus:after {
   width: 50%;
 }
-.buttons_wrap2 .btn13 .txt {
+.buttons_wrap2 .btn11 .txt {
   z-index: 1;
   position: relative;
 }
-.buttons_wrap2 .btn13:before {
-  content: "";
-  display: block;
-  opacity: 0.1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.buttons_wrap2 .btn13:after {
-  content: "";
-  display: block;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid;
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.buttons_wrap2 .btn13:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn13:not([disabled=disabled]):focus:before {
-  opacity: 0;
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
-}
-.buttons_wrap2 .btn13:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn13:not([disabled=disabled]):focus:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-.buttons_wrap2 .btn14 .txt {
-  z-index: 1;
-  position: relative;
-}
-.buttons_wrap2 .btn14:before {
+.buttons_wrap2 .btn11:before {
   content: "";
   display: block;
   opacity: 0.05;
@@ -1023,7 +914,7 @@
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-.buttons_wrap2 .btn14:after {
+.buttons_wrap2 .btn11:after {
   content: "";
   display: block;
   opacity: 0;
@@ -1039,12 +930,12 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.buttons_wrap2 .btn14:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn14:not([disabled=disabled]):focus:before {
+.buttons_wrap2 .btn11:not([disabled=disabled]):hover:before, .buttons_wrap2 .btn11:not([disabled=disabled]):focus:before {
   opacity: 0;
   -webkit-transform: scaleX(0.5);
           transform: scaleX(0.5);
 }
-.buttons_wrap2 .btn14:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn14:not([disabled=disabled]):focus:after {
+.buttons_wrap2 .btn11:not([disabled=disabled]):hover:after, .buttons_wrap2 .btn11:not([disabled=disabled]):focus:after {
   opacity: 1;
   width: 100%;
 }
@@ -1536,18 +1427,157 @@
 }
 
 .buttons_wrap4 .btn {
+  border-color: pink;
+  background-color: pink;
+}
+.buttons_wrap4 .btn1 {
+  -webkit-box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.7);
+          box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.7);
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+.buttons_wrap4 .btn1:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  width: 5px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.buttons_wrap4 .btn1:not([disabled=disabled]):hover, .buttons_wrap4 .btn1:not([disabled=disabled]):focus {
+  -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 5px rgba(255, 255, 255, 0.7);
+          box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 5px rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
+}
+.buttons_wrap4 .btn1:not([disabled=disabled]):hover:before, .buttons_wrap4 .btn1:not([disabled=disabled]):focus:before {
+  content: none;
+}
+.buttons_wrap4 .btn2 {
+  overflow: hidden;
+}
+.buttons_wrap4 .btn2 .txt {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.buttons_wrap4 .btn2 .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.buttons_wrap4 .btn2:not([disabled=disabled]):hover, .buttons_wrap4 .btn2:not([disabled=disabled]):focus {
+  border-color: beige;
+  background-color: beige;
+}
+.buttons_wrap4 .btn2:not([disabled=disabled]):hover .txt, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .txt {
+  top: -100%;
+}
+.buttons_wrap4 .btn2:not([disabled=disabled]):hover .icon, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .icon {
+  top: 0;
+}
+.buttons_wrap4 .btn3 .txt {
+  z-index: 1;
+  position: relative;
+}
+.buttons_wrap4 .btn3:after {
+  content: "";
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid hotpink;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.buttons_wrap4 .btn3:not([disabled=disabled]):hover:after, .buttons_wrap4 .btn3:not([disabled=disabled]):focus:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.buttons_wrap4 .btn4:before {
+  content: "";
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 2px solid white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.buttons_wrap4 .btn4:not([disabled=disabled]):hover:before, .buttons_wrap4 .btn4:not([disabled=disabled]):focus:before {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+.buttons_wrap4 .btn5:after {
+  content: "";
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  width: 90%;
+  height: 10px;
+  background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.buttons_wrap4 .btn5:not([disabled=disabled]):hover, .buttons_wrap4 .btn5:not([disabled=disabled]):focus {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+.buttons_wrap4 .btn5:not([disabled=disabled]):hover:after, .buttons_wrap4 .btn5:not([disabled=disabled]):focus:after {
+  opacity: 1;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.buttons_wrap_circle .btn {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap4 .btn .txt {
+.buttons_wrap_circle .btn .txt {
   font-size: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap4 .btn .txt:before {
+.buttons_wrap_circle .btn .txt:before {
   content: "";
   display: block;
   position: absolute;
@@ -1561,7 +1591,7 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap4 .btn .txt:after {
+.buttons_wrap_circle .btn .txt:after {
   content: "";
   display: block;
   position: absolute;
@@ -1576,56 +1606,56 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap4 .btn1 .txt {
+.buttons_wrap_circle .btn1 .txt {
   position: absolute;
   top: 0;
   left: -20px;
 }
-.buttons_wrap4 .btn1:not([disabled=disabled]):hover .txt, .buttons_wrap4 .btn1:not([disabled=disabled]):focus .txt {
+.buttons_wrap_circle .btn1:not([disabled=disabled]):hover .txt, .buttons_wrap_circle .btn1:not([disabled=disabled]):focus .txt {
   left: 5px;
 }
-.buttons_wrap4 .btn2 .txt {
+.buttons_wrap_circle .btn2 .txt {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
-.buttons_wrap4 .btn2 .txt:before {
+.buttons_wrap_circle .btn2 .txt:before {
   content: "";
   display: block;
   width: 100%;
 }
-.buttons_wrap4 .btn2 .txt:after {
+.buttons_wrap_circle .btn2 .txt:after {
   content: "";
   display: block;
   width: 0;
 }
-.buttons_wrap4 .btn2:not([disabled=disabled]):hover .txt, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .txt {
+.buttons_wrap_circle .btn2:not([disabled=disabled]):hover .txt, .buttons_wrap_circle .btn2:not([disabled=disabled]):focus .txt {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
-.buttons_wrap4 .btn2:not([disabled=disabled]):hover .txt:before, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .txt:before {
+.buttons_wrap_circle .btn2:not([disabled=disabled]):hover .txt:before, .buttons_wrap_circle .btn2:not([disabled=disabled]):focus .txt:before {
   width: 70%;
 }
-.buttons_wrap4 .btn2:not([disabled=disabled]):hover .txt:after, .buttons_wrap4 .btn2:not([disabled=disabled]):focus .txt:after {
+.buttons_wrap_circle .btn2:not([disabled=disabled]):hover .txt:after, .buttons_wrap_circle .btn2:not([disabled=disabled]):focus .txt:after {
   width: 10px;
 }
-.buttons_wrap4 .btn3 {
+.buttons_wrap_circle .btn3 {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
-.buttons_wrap4 .btn3 .txt:after {
+.buttons_wrap_circle .btn3 .txt:after {
   width: 0;
 }
-.buttons_wrap4 .btn3:not([disabled=disabled]):hover, .buttons_wrap4 .btn3:not([disabled=disabled]):focus {
+.buttons_wrap_circle .btn3:not([disabled=disabled]):hover, .buttons_wrap_circle .btn3:not([disabled=disabled]):focus {
   -webkit-transform: none;
           transform: none;
 }
-.buttons_wrap4 .btn3:not([disabled=disabled]):hover .txt:after, .buttons_wrap4 .btn3:not([disabled=disabled]):focus .txt:after {
+.buttons_wrap_circle .btn3:not([disabled=disabled]):hover .txt:after, .buttons_wrap_circle .btn3:not([disabled=disabled]):focus .txt:after {
   width: 10px;
 }
-.buttons_wrap4 .btn4 {
+.buttons_wrap_circle .btn4 {
   border: 0;
 }
-.buttons_wrap4 .btn4 .trans {
+.buttons_wrap_circle .btn4 .trans {
   display: block;
   width: 100%;
   height: 100%;
@@ -1636,30 +1666,30 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.buttons_wrap4 .btn4 .txt:after {
+.buttons_wrap_circle .btn4 .txt:after {
   width: 0px;
 }
-.buttons_wrap4 .btn4:not([disabled=disabled]):hover .trans, .buttons_wrap4 .btn4:not([disabled=disabled]):focus .trans {
+.buttons_wrap_circle .btn4:not([disabled=disabled]):hover .trans, .buttons_wrap_circle .btn4:not([disabled=disabled]):focus .trans {
   -webkit-transform: none;
           transform: none;
 }
-.buttons_wrap4 .btn4:not([disabled=disabled]):hover .txt:after, .buttons_wrap4 .btn4:not([disabled=disabled]):focus .txt:after {
+.buttons_wrap_circle .btn4:not([disabled=disabled]):hover .txt:after, .buttons_wrap_circle .btn4:not([disabled=disabled]):focus .txt:after {
   width: 10px;
 }
 
-.buttons_wrap5 .btn {
+.buttons_wrap_gifstyle .btn {
   overflow: hidden;
   background-repeat: no-repeat;
 }
-.buttons_wrap5 .btn .txt {
+.buttons_wrap_gifstyle .btn .txt {
   text-indent: -9999em;
 }
-.buttons_wrap5 .btn1 {
+.buttons_wrap_gifstyle .btn1 {
   width: 320px;
   height: 99px;
   background-image: url("../image/btn_start_over.jpg");
 }
-.buttons_wrap5 .btn2 {
+.buttons_wrap_gifstyle .btn2 {
   width: 272px;
   height: 91px;
   background-image: url("../image/img_start.jpg");
