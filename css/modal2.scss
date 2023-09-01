@@ -75,7 +75,7 @@
 
   @at-root .active & {
     opacity: 1;
-    transition: opacity 0.3s 1200ms;
+    transition: opacity 0.3s 800ms;
   }
 }
 
@@ -114,7 +114,7 @@
 
       @at-root .active & {
         width: 50%;
-        transition: all 0.3s linear;
+        transition: all 0.2s linear;
       }
     }
 
@@ -135,7 +135,7 @@
 
       @at-root .active & {
         height: 100%;
-        transition: all 0.3s 0.3s linear;
+        transition: all 0.2s 0.2s linear;
       }
     }
 
@@ -157,7 +157,7 @@
 
       @at-root .active & {
         width: 50%;
-        transition: all 0.3s 0.6s linear;
+        transition: all 0.2s 0.4s linear;
       }
     }
 
