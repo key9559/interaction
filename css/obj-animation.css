@@ -269,3 +269,180 @@
   border: 4px solid white;
   background-color: rgba(255, 255, 255, 0.4);
 }
+
+@-webkit-keyframes cup_steam {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  10% {
+    opacity: 0.3;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cup_steam {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  10% {
+    opacity: 0.3;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.ani-wrap2 {
+  padding-top: 100px;
+}
+.ani-wrap2 .cup {
+  position: relative;
+  width: 400px;
+  height: 280px;
+  margin: 0 auto;
+}
+.ani-wrap2 .steam {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background-color: rgb(228, 198, 98);
+}
+.ani-wrap2 .steam1 {
+  -webkit-animation-name: cup_steam;
+          animation-name: cup_steam;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-transform: translate(-50%, -180%);
+          transform: translate(-50%, -180%);
+}
+.ani-wrap2 .steam2 {
+  -webkit-animation-name: cup_steam;
+          animation-name: cup_steam;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-transform: translate(-80%, -190%);
+          transform: translate(-80%, -190%);
+}
+.ani-wrap2 .steam3 {
+  -webkit-animation-name: cup_steam;
+          animation-name: cup_steam;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+  -webkit-transform: translate(-50%, -160%);
+          transform: translate(-50%, -160%);
+}
+.ani-wrap2 .steam4 {
+  -webkit-animation-name: cup_steam;
+          animation-name: cup_steam;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+  -webkit-transform: translate(-30%, -170%);
+          transform: translate(-30%, -170%);
+}
+.ani-wrap2 .cup-body {
+  z-index: 2;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 180px 180px;
+  background-color: plum;
+}
+.ani-wrap2 .cup-body:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #d07ad0;
+  -webkit-transform: skew(-48deg);
+          transform: skew(-48deg);
+}
+.ani-wrap2 .cup-handle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border: 30px solid #d07ad0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.ani-wrap2 .cup-holder {
+  overflow: hidden;
+  z-index: 3;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 0 0 100px 100px;
+  background-color: plum;
+}
+.ani-wrap2 .cup-holder:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #d07ad0;
+  -webkit-transform: skew(-83deg);
+          transform: skew(-83deg);
+}

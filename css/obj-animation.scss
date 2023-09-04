@@ -202,3 +202,134 @@
     }
   }
 }
+
+// cup animation
+@keyframes cup_steam {
+  0% {
+    opacity: 0.2;
+    transform: translate(-50%, 0);
+  }
+
+  10% {
+    opacity: 0.3;
+    transform: translate(-50%, 0);
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin steam_ani($dl: null, $du: 2s) {
+  animation-name: cup_steam;
+  animation-duration: $du;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-delay: $dl;
+
+  @content;
+}
+.ani-wrap2 {
+  padding-top: 100px;
+
+  .cup {
+    position: relative;
+    width: 400px;
+    height: 280px;
+    margin: 0 auto;
+  }
+
+  .steam {
+    @include circle(80px);
+
+    z-index: 1;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: rgb(228, 198, 98);
+  }
+
+  .steam1 {
+    @include steam_ani;
+
+    transform: translate(-50%, -180%);
+  }
+
+  .steam2 {
+    @include steam_ani(0.8s);
+
+    transform: translate(-80%, -190%);
+  }
+
+  .steam3 {
+    @include steam_ani(1.6s);
+
+    transform: translate(-50%, -160%);
+  }
+
+  .steam4 {
+    @include steam_ani(2.4s);
+
+    transform: translate(-30%, -170%);
+  }
+
+  .cup-body {
+    z-index: 2;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 180px 180px;
+    background-color: plum;
+
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: darken(plum, 10%);
+      transform: skew(-48deg);
+    }
+  }
+
+  .cup-handle {
+    @include circle(200px);
+
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border: 30px solid darken(plum, 10%);
+    transform: translateX(-50%);
+  }
+
+  .cup-holder {
+    overflow: hidden;
+    z-index: 3;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 0 0 100px 100px;
+    background-color: plum;
+
+    @include make-before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: darken(plum, 10%);
+      transform: skew(-83deg);
+    }
+  }
+}
