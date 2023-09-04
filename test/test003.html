@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#e5e5e5" />
+  <title>image accordion</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/test003.css" />
+</head>
+
+<body>
+  <div id="page" class="test2">
+    <header class="link-wrapper">
+      <div class="l-center">
+        <a href="../index.html" class="gnb-link">메인</a>
+      </div>
+    </header>
+    <main>
+      <div class="l-center">
+        <form class="flex-wrap">
+          <div class="conts-wrap">
+            <input type="radio" id="pink" name="colorImage" class=" inp-radio d-none">
+            <label for="pink" class="inp-label">
+              <img src="https://loremflickr.com/400/300/pink" alt="분홍색이 들어간 랜덤이미지" />
+            </label>
+          </div>
+          <div class="conts-wrap">
+            <input type="radio" id="red" name="colorImage" class=" inp-radio d-none" checked>
+            <label for="red" class="inp-label">
+              <img src="https://loremflickr.com/400/300/red" alt="빨간색이 들어간 랜덤이미지" />
+            </label>
+          </div>
+          <div class="conts-wrap">
+            <input type="radio" id="yellow" name="colorImage" class=" inp-radio d-none">
+            <label for="yellow" class="inp-label">
+              <img src="https://loremflickr.com/400/300/yellow" alt="노란색이 들어간 랜덤이미지" />
+            </label>
+          </div>
+          <div class="conts-wrap">
+            <input type="radio" id="green" name="colorImage" class=" inp-radio d-none">
+            <label for="green" class="inp-label">
+              <img src="https://loremflickr.com/400/300/green" alt="초록색이 들어간 랜덤이미지" />
+            </label>
+          </div>
+          <div class="conts-wrap">
+            <input type="radio" id="blue" name="colorImage" class=" inp-radio d-none">
+            <label for="blue" class="inp-label">
+              <img src="https://loremflickr.com/400/300/blue" alt="파란색이 들어간 랜덤이미지" />
+            </label>
+          </div>
+          <div class="conts-wrap">
+            <input type="radio" id="perple" name="colorImage" class=" inp-radio d-none">
+            <label for="perple" class="inp-label">
+              <img src="https://loremflickr.com/400/300/perple" alt="보라색이 들어간 랜덤이미지" />
+            </label>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script>
+    // $(window).on("click", function () {
+    //   $('.conts-wrap').width(50);
+    //   $('.inp-radio:checked').parent('.conts-wrap').width(400);
+    // })
+    $(window).on("click", function () {
+      $('.inp-label').width(50);
+      $('.inp-radio:checked').siblings('.inp-label').width(400);
+    })
+  </script>
+</body>
+
+</html>

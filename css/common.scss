@@ -19,6 +19,10 @@ body * {
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 button {
   border: 1px solid;
   outline: 0px none;

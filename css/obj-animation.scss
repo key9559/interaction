@@ -18,7 +18,7 @@
   }
 }
 
-@mixin slideobj_ani($dl: null, $du: 10s) {
+@mixin slideobj_ani($dl: null, $du: 9s) {
   animation-name: slide_obj;
   animation-duration: $du;
   animation-timing-function: linear;
@@ -74,11 +74,23 @@
   }
 
   .tree2 {
-    @include slideobj_ani(1s);
+    @include slideobj_ani(1.5s);
   }
 
   .tree3 {
     @include slideobj_ani(3s);
+  }
+
+  .tree4 {
+    @include slideobj_ani(4.5s);
+  }
+
+  .tree5 {
+    @include slideobj_ani(6s);
+  }
+
+  .tree6 {
+    @include slideobj_ani(7.5s);
   }
 
   .mountain-wrap {

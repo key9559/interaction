@@ -1,0 +1,19 @@
+.flex-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inp-label {
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.inp-radio:checked ~ .inp-label {
+  width: 400px;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}

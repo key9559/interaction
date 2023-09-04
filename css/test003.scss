@@ -1,0 +1,29 @@
+@import "util";
+
+.flex-wrap {
+  @include flex;
+}
+
+// .conts-wrap {
+//   overflow: hidden;
+//   width: 50px;
+//   transition: all 0.3s linear;
+// }
+
+// .inp-label {
+//   display: block;
+// }
+
+.inp-label {
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  transition: all 0.3s linear;
+}
+
+.inp-radio:checked {
+  ~ .inp-label {
+    width: 400px;
+    transition-delay: 0.2s;
+  }
+}
