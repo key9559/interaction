@@ -161,7 +161,7 @@
           animation-direction: normal;
 }
 .ani-wrap1 .mountain {
-  opacity: 0.2;
+  opacity: 0.7;
   position: relative;
   width: 200px;
   height: 200px;
@@ -312,7 +312,7 @@
 }
 .ani-wrap2 .cup {
   position: relative;
-  width: 400px;
+  max-width: 400px;
   height: 280px;
   margin: 0 auto;
 }
@@ -393,7 +393,7 @@
   z-index: 2;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 100%;
   border-radius: 0 0 180px 180px;
   background-color: rgb(253, 255, 230);
@@ -411,14 +411,14 @@
           transform: skew(-48deg);
 }
 .ani-wrap2 .cup-handle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
   z-index: 0;
   position: absolute;
   top: 0;
-  left: 100%;
-  border: 30px solid #f9ffb3;
+  left: 80%;
+  width: 40%;
+  height: 60%;
+  border-radius: 50%;
+  border: 25px solid #f9ffb3;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -429,7 +429,7 @@
   top: auto;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   height: 40px;
   border-radius: 0 0 100px 100px;
   background-color: rgb(253, 255, 230);
