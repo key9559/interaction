@@ -1,0 +1,192 @@
+@import "util";
+
+// style
+.ani-wrap {
+  margin: 50px 0;
+}
+
+// drive animation
+@keyframes slide_obj {
+  0% {
+    opacity: 1;
+    transform: translateX(1300px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-500px);
+  }
+}
+
+@mixin slideobj_ani($dl: null, $du: 10s) {
+  animation-name: slide_obj;
+  animation-duration: $du;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-delay: $dl;
+
+  @content;
+}
+
+.ani-wrap1 {
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  .load-wrap {
+    overflow: hidden;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-bottom: 5px solid black;
+    background-color: skyblue;
+  }
+
+  .tree {
+    z-index: 2;
+    opacity: 0;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 150px;
+
+    @include make-before {
+      border-bottom: 100px solid green;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+    }
+
+    @include make-after {
+      width: 10px;
+      height: 50px;
+      margin-left: 22px;
+      background-color: brown;
+    }
+  }
+
+  .tree1 {
+    @include slideobj_ani;
+  }
+
+  .tree2 {
+    @include slideobj_ani(1s);
+  }
+
+  .tree3 {
+    @include slideobj_ani(3s);
+  }
+
+  .mountain-wrap {
+    @include slideobj_ani;
+  }
+
+  .mountain {
+    opacity: 0.2;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border-radius: 40px;
+    transform: rotate(45deg) translateY(70%);
+
+    @include make-before {
+      position: absolute;
+      top: 110px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 30px;
+      background-color: green;
+    }
+
+    @include make-after {
+      position: absolute;
+      top: -70px;
+      left: 120px;
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      background-color: green;
+    }
+  }
+
+  .car-wrap {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .car-body {
+    position: relative;
+    bottom: 20px;
+    width: 40px;
+    height: 60px;
+    border-radius: 10px 10px 0 0;
+    border: 4px solid white;
+
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background-color: white;
+    }
+  }
+
+  .car-side {
+    @include make-before {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      right: 100%;
+      width: 22px;
+      height: 26px;
+      border-radius: 6px 0 0 0;
+      background-color: white;
+    }
+
+    @include make-after {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      left: 100%;
+      width: 15px;
+      height: 26px;
+      border-radius: 0 6px 0 0;
+      background-color: white;
+    }
+  }
+
+  .car-wheel {
+    @include make-before {
+      @include circle(23px);
+
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      right: 35px;
+      border: 4px solid white;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    @include make-after {
+      @include circle(23px);
+
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 30px;
+      border: 4px solid white;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}

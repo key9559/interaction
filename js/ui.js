@@ -8,6 +8,7 @@ gnbWrap.append(`
 	<a href="inputs.html" class="gnb-link">인풋</a>
 	<a href="animations.html" class="gnb-link">애니메이션</a>
 	<a href="scrolls.html" class="gnb-link">스크롤</a>
+	<a href="objAnimation.html" class="gnb-link">오브젝트애니</a>
 </div>`);
 
 const gnbLink = $(".gnb-link");
@@ -20,4 +21,6 @@ if ($("#page").hasClass("button-page")) {
 	gnbLink.eq(3).addClass("on");
 } else if ($("#page").hasClass("scroll-page")) {
 	gnbLink.eq(4).addClass("on");
+} else if ($("#page").hasClass("obj-ani-page")) {
+	gnbLink.eq(5).addClass("on");
 }

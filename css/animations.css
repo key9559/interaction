@@ -222,6 +222,10 @@
             transform: rotate(359deg);
   }
 }
+.ani-wrap3 {
+  overflow: hidden;
+}
+
 .rotate-wrapper {
   overflow: hidden;
 }
