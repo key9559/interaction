@@ -396,7 +396,7 @@
   width: 100%;
   height: 100%;
   border-radius: 0 0 180px 180px;
-  background-color: plum;
+  background-color: rgb(253, 255, 230);
 }
 .ani-wrap2 .cup-body:before {
   content: "";
@@ -406,7 +406,7 @@
   left: 50%;
   width: 100%;
   height: 100%;
-  background-color: #d07ad0;
+  background-color: #f9ffb3;
   -webkit-transform: skew(-48deg);
           transform: skew(-48deg);
 }
@@ -418,7 +418,7 @@
   position: absolute;
   top: 0;
   left: 100%;
-  border: 30px solid #d07ad0;
+  border: 30px solid #f9ffb3;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -432,7 +432,7 @@
   width: 100%;
   height: 40px;
   border-radius: 0 0 100px 100px;
-  background-color: plum;
+  background-color: rgb(253, 255, 230);
 }
 .ani-wrap2 .cup-holder:before {
   content: "";
@@ -442,7 +442,7 @@
   left: 50%;
   width: 100%;
   height: 100%;
-  background-color: #d07ad0;
+  background-color: #f9ffb3;
   -webkit-transform: skew(-83deg);
           transform: skew(-83deg);
 }

@@ -286,7 +286,7 @@
     width: 100%;
     height: 100%;
     border-radius: 0 0 180px 180px;
-    background-color: plum;
+    background-color: rgb(253 255 230);
 
     @include make-before {
       position: absolute;
@@ -294,7 +294,7 @@
       left: 50%;
       width: 100%;
       height: 100%;
-      background-color: darken(plum, 10%);
+      background-color: darken(rgb(253 255 230), 10%);
       transform: skew(-48deg);
     }
   }
@@ -306,7 +306,7 @@
     position: absolute;
     top: 0;
     left: 100%;
-    border: 30px solid darken(plum, 10%);
+    border: 30px solid darken(rgb(253 255 230), 10%);
     transform: translateX(-50%);
   }
 
@@ -320,7 +320,7 @@
     width: 100%;
     height: 40px;
     border-radius: 0 0 100px 100px;
-    background-color: plum;
+    background-color: rgb(253 255 230);
 
     @include make-before {
       position: absolute;
@@ -328,7 +328,7 @@
       left: 50%;
       width: 100%;
       height: 100%;
-      background-color: darken(plum, 10%);
+      background-color: darken(rgb(253 255 230), 10%);
       transform: skew(-83deg);
     }
   }
