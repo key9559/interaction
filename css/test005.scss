@@ -1,0 +1,22 @@
+@import "util";
+
+.conts-wrap {
+  @include bg-op($s: cover);
+  @include bg-url(img, "bg_fixed02.png");
+
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.text {
+  width: 100%;
+  font-weight: 600;
+  font-size: 80px;
+  color: white;
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+}

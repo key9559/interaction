@@ -96,6 +96,11 @@ $path-set: (
   background-repeat: $r;
 }
 
+@mixin square($s: null) {
+  width: $s;
+  height: $s;
+}
+
 @mixin circle($s: null) {
   width: $s;
   height: $s;

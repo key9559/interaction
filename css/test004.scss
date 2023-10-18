@@ -1,0 +1,23 @@
+@import "util";
+
+.conts-wrap {
+  height: 700px;
+  padding: 20px;
+  border: 1px solid;
+}
+
+.circle {
+  @include circle(100px);
+
+  background-color: pink;
+}
+
+.square {
+  @include square(100px);
+
+  background-color: skyblue;
+}
+
+// .text {
+//   white-space: nowrap;
+// }
