@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#e5e5e5" />
+  <title>image accordion</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script> -->
+
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/test006.css" />
+</head>
+
+<body>
+  <div id="page" class="test6">
+    <header class="link-wrapper">
+      <div class="l-center">
+        <a href="../index.html" class="gnb-link">메인</a>
+      </div>
+    </header>
+    <div id="container">
+      <section class="section section01">
+        <div class="flex-wrap reverse">
+          <div class="text-wrap">
+            <p class="sub">마이게러지에서는 가능합니다!</p>
+            <h1 class="ttl">하이퍼 로컬 기반의<br />
+              <b class="c-main">커뮤니티 플랫폼 서비스</b>
+            </h1>
+            <p class="txt"><b class="bold">우리동네 커뮤니티</b>
+              주변 자동차 오너들과 공통 관심사와 정보를 공유하며
+              원하는 시간과 장소에서 자유롭게 활동할 수 있습니다.</p>
+          </div>
+          <div class="img-wrap">
+            <img src="https://mygarage.kr/_next/image?url=%2Fimages%2Ffeature_img_01_1.png&w=750&q=75" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="section section02">
+        <div class="flex-wrap">
+          <div class="text-wrap">
+            <p class="sub">마이게러지에서는 가능합니다!</p>
+            <h1 class="ttl">실시간으로 소통할 수 있는<br />
+              <b class="c-main">SNS 서비스</b>
+            </h1>
+            <p class="txt"><b class="bold">실시간 지역 이슈 / 마이카 라이프</b>
+              주변 자동차 오너들과 실시간으로 도로상황에 대한 정보,
+              기상 상황 등 다양한 정보를 공유할 수 있으며,
+              내 차를 뽐낼 수 있는 마이게러지의 기능을 제공합니다.</p>
+          </div>
+          <div class="img-wrap">
+            <img src="https://mygarage.kr/_next/image?url=%2Fimages%2Ffeature_img_02_1.png&w=750&q=75" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="section section03">
+        <div class="flex-wrap reverse">
+          <div class="text-wrap">
+            <p class="sub">마이게러지에서는 가능합니다!</p>
+            <h1 class="ttl">내가 원하는 정보를<br />
+              <b class="c-main">빠르게 찾을 수 있습니다!</b>
+            </h1>
+            <p class="txt"><b class="bold">자동차를 위한 주변정보</b>
+              근처에 있는 정비소, 주유소/충전소, 세차장, 주차장 등
+              자동차 오너라면 궁금한 위치 정보를 확인할 수 있고,
+              네비 어플과 연동을 통해 빠르게 찾아갈 수 있습니다.</p>
+          </div>
+          <div class="img-wrap">
+            <img src="https://mygarage.kr/_next/image?url=%2Fimages%2Ffeature_img_03_1.png&w=750&q=75" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="section section04">
+        <div class="flex-wrap">
+          <div class="text-wrap">
+            <p class="sub">마이게러지에서는 가능합니다!</p>
+            <h1 class="ttl">AI 추천 알고리즘을 통한<br />
+              <b class="c-main">사용자 맞춤형 서비스 제공</b>
+            </h1>
+            <p class="txt"><b class="bold">객관적이고 개인화된 정보</b>
+              소비자의 후기를 요소별로 분석하여 주관적인
+              평가를 객관화하는 모델 개발을 통해
+              객관적이고 개인화된 정보를 제공합니다.
+              (추후 지원 예정)</p>
+          </div>
+          <div class="img-wrap">
+            <img src="https://mygarage.kr/_next/image?url=%2Fimages%2Ffeature_img_04_1.png&w=750&q=75" alt="">
+          </div>
+        </div>
+        <div class="imgs-wrap">
+          <img
+            src="https://cdn-saas-web-159-230.cdn-nhncommerce.com/mygarage69_godomall_com/data/skin/front/on_todaymarket_r_C_C/img/banner/6ed2d5ba4b2461b1a812115a1c994dcd_95204.png"
+            alt="">
+          <img
+            src="https://cdn-saas-web-159-230.cdn-nhncommerce.com/mygarage69_godomall_com/data/skin/front/on_todaymarket_r_C_C/img/banner/b33fa2041f2989f58a25dca2a6a35025_86526.png"
+            alt="">
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    let SECTIONS = gsap.utils.toArray("section");
+
+    gsap.to(SECTIONS, {
+      xPercent: -100 * (SECTIONS.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: '#container',
+        end: () => "+=" + document.querySelector("#container").offsetWidth,
+        pin: true,
+        scrub: 1,
+        // snap: 1 / (SECTIONS.length - 1),
+      }
+    });
+  </script>
+</body>
+
+</html>

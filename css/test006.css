@@ -1,0 +1,76 @@
+.link-wrapper {
+  position: fixed;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#container {
+  width: 400%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 50px 0;
+  -ms-scroll-snap-type: both mandatory;
+      scroll-snap-type: both mandatory;
+}
+
+.c-main {
+  color: #aceeac;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.flex-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  height: 100vh;
+}
+.flex-wrap.reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.text-wrap .sub {
+  font-size: 1.2rem;
+}
+.text-wrap .ttl {
+  margin-top: 20px;
+  line-height: 1.2;
+  font-size: 4rem;
+}
+.text-wrap .txt {
+  margin-top: 30px;
+  font-size: 1rem;
+  white-space: pre-line;
+}
+
+.section04 {
+  height: auto;
+}
+
+.imgs-wrap img {
+  max-width: 100%;
+}
